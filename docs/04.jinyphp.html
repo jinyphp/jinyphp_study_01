@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyPHP 패키지 설치 및 설정 가이드</title>
+    <meta name="description" content="Laravel을 기반으로 한 JinyPHP 확장 프레임워크 설치 및 설정 방법">
+
+    <!-- SEO Meta Tags -->
+    
+    
+    <meta name="robots" content="index, follow">
+    
+    <meta name="language" content="ko">
+
+    <!-- Open Graph Meta Tags -->
+    
+
+    <!-- Twitter Card Meta Tags -->
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/w3schools-style.css">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+            crossorigin="anonymous"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>JinyPHP 패키지 설치 및 설정 가이드 | JinyDev</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="JinyPHP 패키지 설치 및 설정 가이드" />
+<meta name="author" content="JinyPHP Team" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="Laravel을 기반으로 한 JinyPHP 확장 프레임워크 설치 및 설정 방법" />
+<meta property="og:description" content="Laravel을 기반으로 한 JinyPHP 확장 프레임워크 설치 및 설정 방법" />
+<link rel="canonical" href="http://localhost:4000/04.jinyphp.html" />
+<meta property="og:url" content="http://localhost:4000/04.jinyphp.html" />
+<meta property="og:site_name" content="JinyDev" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JinyPHP 패키지 설치 및 설정 가이드" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"JinyPHP Team"},"description":"Laravel을 기반으로 한 JinyPHP 확장 프레임워크 설치 및 설정 방법","headline":"JinyPHP 패키지 설치 및 설정 가이드","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"JinyPHP Team"},"url":"http://localhost:4000/04.jinyphp.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+<!-- Top Navigation -->
+<nav class="top-nav">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="/">JinyDev</a>
+        </div>
+        <div class="nav-tabs">
+            <a href="/" class="nav-tab active">HOME</a>
+            <a href="laravel.jiny.dev" class="nav-tab">Laravel</a>
+            <a href="php.jiny.dev" class="nav-tab">PHP</a>
+            <a href="linux.jiny.dev" class="nav-tab">Linux</a>
+            <a href="/04.Route/" class="nav-tab">라우팅</a>
+            <a href="/05.view/" class="nav-tab">View</a>
+            <a href="/06.templates/" class="nav-tab">Templates</a>
+            <a href="/04.jinyphp.html" class="nav-tab">JinyPHP</a>
+            <a href="git.jiny.dev" class="nav-tab">Git</a>
+            <a href="mysql.jiny.dev" class="nav-tab">MySQL</a>
+            <a href="html.jiny.dev" class="nav-tab">Html</a>
+            <a href="javascript.jiny.dev" class="nav-tab">Javascript</a>
+        </div>
+        <div class="nav-actions">
+            <button class="menu-btn d-lg-none" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h4>JinyPHP 패키지</h4>
+            </div>
+
+            <div class="sidebar-menu">
+                <!-- Laravel 시작하기 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('laravel-start')">
+                        Laravel 시작하기
+                    </div>
+                    <div class="menu-items" id="laravel-start">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('laravel-basics')">
+                                기초 개념
+                            </div>
+                            <div class="category-items" id="laravel-basics">
+                                <a href="/01.Start/" class="menu-item">개요</a>
+                                <a href="/01.Start/01.what-is-laravel.html" class="menu-item">라라벨이란?</a>
+                                <a href="/01.Start/02.php-language.html" class="menu-item">PHP 언어</a>
+                                <a href="/01.Start/03.dependency-issues.html" class="menu-item">의존성 문제</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 개발환경 설정 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('setup')">
+                        개발환경 설정
+                    </div>
+                    <div class="menu-items" id="setup">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-install')">
+                                설치 및 설정
+                            </div>
+                            <div class="category-items" id="setup-install">
+                                <a href="/02.Setup/" class="menu-item">개요</a>
+                                <a href="/02.Setup/01.requirements.html" class="menu-item">사전 요구사항</a>
+                                <a href="/02.Setup/02.laravel-install.html" class="menu-item">Laravel 설치</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-config')">
+                                환경 구성
+                            </div>
+                            <div class="category-items" id="setup-config">
+                                <a href="/02.Setup/03.database.html" class="menu-item">데이터베이스 설정</a>
+                                <a href="/02.Setup/04.local-development.html" class="menu-item">로컬 개발 환경</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 배포 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('deploy')">
+                        서버 배포
+                    </div>
+                    <div class="menu-items" id="deploy">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-setup')">
+                                서버 준비
+                            </div>
+                            <div class="category-items" id="deploy-setup">
+                                <a href="/03.deploy/" class="menu-item">개요</a>
+                                <a href="/03.deploy/01.cloud-setup.html" class="menu-item">클라우드 준비</a>
+                                <a href="/03.deploy/02.server-setup.html" class="menu-item">서버 환경 설정</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-app')">
+                                애플리케이션 배포
+                            </div>
+                            <div class="category-items" id="deploy-app">
+                                <a href="/03.deploy/03.laravel-deploy.html" class="menu-item">Laravel 배포</a>
+                                <a href="/03.deploy/04.domain-https.html" class="menu-item">도메인 HTTPS</a>
+                                <a href="/03.deploy/05.optimization.html" class="menu-item">성능 최적화</a>
+                                <a href="/03.deploy/06.github-deploy.html" class="menu-item">GitHub 배포 자동화</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 백엔드 개발 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('backend')">
+                        백엔드 개발
+                    </div>
+                    <div class="menu-items" id="backend">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('backend-basics')">
+                                기본 개념
+                            </div>
+                            <div class="category-items" id="backend-basics">
+                                <a href="/04.backend.html" class="menu-item">백엔드 개발 가이드</a>
+                                <a href="/04.backend/framework.html" class="menu-item">프레임워크의 이해</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 접속 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('server-access')">
+                        서버 접속
+                    </div>
+                    <div class="menu-items" id="server-access">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('server-concepts')">
+                                서버 기초 이해
+                            </div>
+                            <div class="category-items" id="server-concepts">
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/" class="menu-item">개요</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/%EC%9B%B9%EC%84%9C%EB%B2%84%EB%9E%80.html" class="menu-item">웹서버란?</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/http.html" class="menu-item">HTTP 통신</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 라우팅 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('routing-learning')">
+                        라우팅 학습
+                    </div>
+                    <div class="menu-items" id="routing-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="route-taste-detail">
+                                <a href="/06.route-taste/" class="menu-item">5분 라우팅 체험</a>
+                                <a href="/06.route-taste/%EC%A3%BC%EC%86%8C%EB%9E%80.html" class="menu-item">주소란? URL 체계 이해</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%ED%95%84%EC%9A%94%EC%84%B1.html" class="menu-item">라우트의 필요성</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%EB%8F%99%EC%9E%91.html" class="menu-item">라우트의 동작 원리</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="route-system">
+                                <a href="/04-01.route-taste/" class="menu-item">맛보기 - 5분 라우팅 체험</a>
+                                <a href="/04-02.route-beginner/" class="menu-item">초급 - 라우팅 기초 마스터</a>
+                                <a href="/04-03.route-intermediate/" class="menu-item">중급 - 네임드 라우트와 그룹</a>
+                                <a href="/04-04.route-advanced/" class="menu-item">고급 - 미들웨어와 모델바인딩</a>
+                                <a href="/04-05.route-application/" class="menu-item">응용 - 엔터프라이즈 라우팅</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 뷰 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('view-learning')">
+                        뷰 학습
+                    </div>
+                    <div class="menu-items" id="view-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="view-taste-detail">
+                                <a href="/07.view-taste/" class="menu-item">뷰 맛보기</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="view-system">
+                                <a href="/05-01.view-taste/" class="menu-item">맛보기 - 첫 번째 뷰 만들기</a>
+                                <a href="/05-02.view-beginner/" class="menu-item">초급 - 뷰와 데이터 전달</a>
+                                <a href="/05-03.view-intermediate/" class="menu-item">중급 - HTTP 응답과 리다이렉트</a>
+                                <a href="/05-04.view-advanced/" class="menu-item">고급 - API와 JSON 응답</a>
+                                <a href="/05-05.view-application/" class="menu-item">응용 - 엔터프라이즈 뷰 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 템플릿 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('template-learning')">
+                        템플릿 학습
+                    </div>
+                    <div class="menu-items" id="template-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('template-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="template-system">
+                                <a href="/06-01.template-taste/" class="menu-item">맛보기 - Blade 첫 만남</a>
+                                <a href="/06-02.template-beginner/" class="menu-item">초급 - Blade 기초 마스터</a>
+                                <a href="/06-03.template-intermediate/" class="menu-item">중급 - 컴포넌트와 재사용성</a>
+                                <a href="/06-04.template-advanced/" class="menu-item">고급 - 커스텀 지시어와 최적화</a>
+                                <a href="/06-05.template-application/" class="menu-item">응용 - 엔터프라이즈 템플릿 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JinyPHP 패키지 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('jinyphp')">
+                        JinyPHP 패키지
+                    </div>
+                    <div class="menu-items" id="jinyphp">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('jinyphp-setup')">
+                                패키지 설치
+                            </div>
+                            <div class="category-items" id="jinyphp-setup">
+                                <a href="/04.jinyphp.html" class="menu-item">패키지 설치</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 학습 진도 표시 -->
+                <div class="menu-group mt-4">
+                    <div class="learning-progress">
+                        <h6><i class="fas fa-chart-line me-2"></i>학습 진도</h6>
+                        <div class="progress-items">
+                            <div class="progress-item">
+                                <span class="level-badge level-1">🍯</span>
+                                <span>맛보기 - 5분 체험</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-2">🌱</span>
+                                <span>초급 - 기초 마스터</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-3">🚀</span>
+                                <span>중급 - 실전 활용</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-4">⚡</span>
+                                <span>고급 - 최적화</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-5">🔥</span>
+                                <span>응용 - 엔터프라이즈</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 도움말 -->
+                <div class="menu-group mt-3">
+                    <div class="help-section">
+                        <h6><i class="fas fa-question-circle me-2"></i>학습 가이드</h6>
+                        <div class="help-items">
+                            <div class="help-item">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                <small>단계별로 차근차근 진행하세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-code text-info me-2"></i>
+                                <small>실습 코드를 직접 작성해보세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-bookmark text-success me-2"></i>
+                                <small>중요한 부분은 북마크하세요</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사이드바 하단 정보 -->
+            <div class="sidebar-footer">
+                <div class="version-info">
+                    <small class="text-muted">
+                        <i class="fab fa-laravel me-1"></i>Laravel 12
+                        <br>
+                        <i class="fab fa-php me-1"></i>PHP 8.4+
+                    </small>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Content -->
+                    <div class="col-12 col-xl-9">
+                        <div class="content-wrapper">
+                            <h1 id="jinyphp-패키지-설치-및-설정-가이드">JinyPHP 패키지 설치 및 설정 가이드</h1>
+
+<p>JinyPHP는 Laravel을 기반으로 구축된 확장 프레임워크로, ERP, CMS, 관리자 패널 등의 기능을 제공합니다.</p>
+
+<h2 id="1️⃣-jinyphp-핵심-패키지-설치">1️⃣ JinyPHP 핵심 패키지 설치</h2>
+
+<h3 id="11-jinyerp-핵심-패키지-설치">1.1 JinyERP 핵심 패키지 설치</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># JinyERP 코어 패키지들</span>
+composer require jiny/auth
+composer require jiny/admin
+composer require jiny/site
+
+<span class="c"># 또는 로컬 패키지로 개발하는 경우</span>
+<span class="c"># composer.json에 추가</span>
+</code></pre></div></div>
+
+<h3 id="12-로컬-패키지-개발-설정">1.2 로컬 패키지 개발 설정</h3>
+
+<p>composer.json에 로컬 패키지 설정:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"repositories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./packages/jiny/*"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"jiny/auth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev-main"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"jiny/admin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev-main"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"jiny/site"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev-main"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>📁 JinyERP 패키지 관련 파일 경로:</strong></p>
+<ul>
+  <li><strong>Composer 패키지</strong>: <code class="language-plaintext highlighter-rouge">./vendor/jiny/</code></li>
+  <li><strong>로컬 패키지</strong>: <code class="language-plaintext highlighter-rouge">./packages/jiny/</code></li>
+  <li><strong>Admin 패키지</strong>: <code class="language-plaintext highlighter-rouge">./vendor/jiny/admin/</code></li>
+  <li><strong>Auth 패키지</strong>: <code class="language-plaintext highlighter-rouge">./vendor/jiny/auth/</code></li>
+  <li><strong>Site 패키지</strong>: <code class="language-plaintext highlighter-rouge">./vendor/jiny/site/</code></li>
+  <li><strong>패키지 설정</strong>: <code class="language-plaintext highlighter-rouge">./config/jiny/</code></li>
+  <li><strong>발행된 에셋</strong>: <code class="language-plaintext highlighter-rouge">./public/vendor/jiny/</code></li>
+</ul>
+
+<h2 id="2️⃣-추가-유용한-패키지">2️⃣ 추가 유용한 패키지</h2>
+
+<h3 id="21-개발-및-확장-패키지">2.1 개발 및 확장 패키지</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 개발 도구</span>
+composer require <span class="nt">--dev</span> barryvdh/laravel-debugbar
+composer require <span class="nt">--dev</span> barryvdh/laravel-ide-helper
+
+<span class="c"># API 개발</span>
+composer require laravel/sanctum
+
+<span class="c"># 파일 관리</span>
+composer require spatie/laravel-medialibrary
+
+<span class="c"># 권한 관리</span>
+composer require spatie/laravel-permission
+
+<span class="c"># 다국어 지원</span>
+composer require mcamara/laravel-localization
+
+<span class="c"># 이미지 처리</span>
+composer require intervention/image
+
+<span class="c"># Excel 처리</span>
+composer require maatwebsite/excel
+</code></pre></div></div>
+
+<h3 id="22-패키지-설정-발행">2.2 패키지 설정 발행</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 인증 관련</span>
+php artisan vendor:publish <span class="nt">--provider</span><span class="o">=</span><span class="s2">"Laravel</span><span class="se">\S</span><span class="s2">anctum</span><span class="se">\S</span><span class="s2">anctumServiceProvider"</span>
+
+<span class="c"># Debugbar 설정</span>
+php artisan vendor:publish <span class="nt">--provider</span><span class="o">=</span><span class="s2">"Barryvdh</span><span class="se">\D</span><span class="s2">ebugbar</span><span class="se">\S</span><span class="s2">erviceProvider"</span>
+
+<span class="c"># 권한 관리</span>
+php artisan vendor:publish <span class="nt">--provider</span><span class="o">=</span><span class="s2">"Spatie</span><span class="se">\P</span><span class="s2">ermission</span><span class="se">\P</span><span class="s2">ermissionServiceProvider"</span>
+
+<span class="c"># 미디어 라이브러리</span>
+php artisan vendor:publish <span class="nt">--provider</span><span class="o">=</span><span class="s2">"Spatie</span><span class="se">\M</span><span class="s2">ediaLibrary</span><span class="se">\M</span><span class="s2">ediaLibraryServiceProvider"</span> <span class="nt">--tag</span><span class="o">=</span><span class="s2">"medialibrary-migrations"</span>
+
+<span class="c"># JinyPHP 관련 설정 발행 (예상)</span>
+php artisan vendor:publish <span class="nt">--provider</span><span class="o">=</span><span class="s2">"Jiny</span><span class="se">\A</span><span class="s2">uth</span><span class="se">\A</span><span class="s2">uthServiceProvider"</span>
+php artisan vendor:publish <span class="nt">--provider</span><span class="o">=</span><span class="s2">"Jiny</span><span class="se">\A</span><span class="s2">dmin</span><span class="se">\A</span><span class="s2">dminServiceProvider"</span>
+php artisan vendor:publish <span class="nt">--provider</span><span class="o">=</span><span class="s2">"Jiny</span><span class="se">\S</span><span class="s2">ite</span><span class="se">\S</span><span class="s2">iteServiceProvider"</span>
+</code></pre></div></div>
+
+<p><strong>📁 발행된 설정 파일 경로:</strong></p>
+<ul>
+  <li><strong>Sanctum</strong>: <code class="language-plaintext highlighter-rouge">./config/sanctum.php</code></li>
+  <li><strong>Debugbar</strong>: <code class="language-plaintext highlighter-rouge">./config/debugbar.php</code></li>
+  <li><strong>Permission</strong>: <code class="language-plaintext highlighter-rouge">./config/permission.php</code></li>
+  <li><strong>MediaLibrary</strong>: <code class="language-plaintext highlighter-rouge">./config/media-library.php</code></li>
+  <li><strong>JinyPHP Auth</strong>: <code class="language-plaintext highlighter-rouge">./config/jiny-auth.php</code></li>
+  <li><strong>JinyPHP Admin</strong>: <code class="language-plaintext highlighter-rouge">./config/jiny-admin.php</code></li>
+  <li><strong>JinyPHP Site</strong>: <code class="language-plaintext highlighter-rouge">./config/jiny-site.php</code></li>
+</ul>
+
+<h2 id="3️⃣-jinyphp-패키지-설정-및-초기화">3️⃣ JinyPHP 패키지 설정 및 초기화</h2>
+
+<h3 id="31-패키지-마이그레이션-실행">3.1 패키지 마이그레이션 실행</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># JinyPHP 관련 마이그레이션 실행</span>
+php artisan migrate
+
+<span class="c"># 특정 패키지 마이그레이션만 실행하는 경우</span>
+php artisan migrate <span class="nt">--path</span><span class="o">=</span>/vendor/jiny/auth/database/migrations
+php artisan migrate <span class="nt">--path</span><span class="o">=</span>/vendor/jiny/admin/database/migrations
+php artisan migrate <span class="nt">--path</span><span class="o">=</span>/vendor/jiny/site/database/migrations
+</code></pre></div></div>
+
+<h3 id="32-jinyphp-시더-및-초기-데이터">3.2 JinyPHP 시더 및 초기 데이터</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># JinyPHP 관련 시더 실행 (있는 경우)</span>
+php artisan db:seed <span class="nt">--class</span><span class="o">=</span>JinyAuthSeeder
+php artisan db:seed <span class="nt">--class</span><span class="o">=</span>JinyAdminSeeder
+php artisan db:seed <span class="nt">--class</span><span class="o">=</span>JinySiteSeeder
+
+<span class="c"># 전체 시더 실행</span>
+php artisan db:seed
+</code></pre></div></div>
+
+<h3 id="33-jinyphp-에셋-발행">3.3 JinyPHP 에셋 발행</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># JinyPHP 정적 파일 발행</span>
+php artisan vendor:publish <span class="nt">--tag</span><span class="o">=</span>jiny-auth-assets
+php artisan vendor:publish <span class="nt">--tag</span><span class="o">=</span>jiny-admin-assets
+php artisan vendor:publish <span class="nt">--tag</span><span class="o">=</span>jiny-site-assets
+
+<span class="c"># 또는 전체 에셋 발행</span>
+php artisan vendor:publish <span class="nt">--tag</span><span class="o">=</span>public
+</code></pre></div></div>
+
+<p><strong>📁 발행된 에셋 파일 경로:</strong></p>
+<ul>
+  <li><strong>Auth 에셋</strong>: <code class="language-plaintext highlighter-rouge">./public/vendor/jiny-auth/</code></li>
+  <li><strong>Admin 에셋</strong>: <code class="language-plaintext highlighter-rouge">./public/vendor/jiny-admin/</code></li>
+  <li><strong>Site 에셋</strong>: <code class="language-plaintext highlighter-rouge">./public/vendor/jiny-site/</code></li>
+  <li><strong>CSS 파일</strong>: <code class="language-plaintext highlighter-rouge">./public/vendor/jiny-*/css/</code></li>
+  <li><strong>JS 파일</strong>: <code class="language-plaintext highlighter-rouge">./public/vendor/jiny-*/js/</code></li>
+  <li><strong>이미지</strong>: <code class="language-plaintext highlighter-rouge">./public/vendor/jiny-*/images/</code></li>
+</ul>
+
+<h2 id="4️⃣-jinyphp-환경-설정">4️⃣ JinyPHP 환경 설정</h2>
+
+<h3 id="41-env-파일-jinyphp-관련-설정">4.1 .env 파일 JinyPHP 관련 설정</h3>
+
+<pre><code class="language-env"># JinyPHP 기본 설정
+JINY_AUTH_ENABLED=true
+JINY_ADMIN_ENABLED=true
+JINY_SITE_ENABLED=true
+
+# JinyPHP Admin 설정
+JINY_ADMIN_PREFIX=admin
+JINY_ADMIN_MIDDLEWARE=web,auth
+JINY_ADMIN_THEME=default
+
+# JinyPHP Site 설정
+JINY_SITE_PREFIX=site
+JINY_SITE_THEME=default
+JINY_SITE_CACHE_ENABLED=true
+
+# JinyPHP Auth 설정
+JINY_AUTH_GUARD=web
+JINY_AUTH_PASSWORD_RESET=true
+JINY_AUTH_EMAIL_VERIFICATION=false
+</code></pre>
+
+<h3 id="42-configappphp-서비스-프로바이더-등록">4.2 config/app.php 서비스 프로바이더 등록</h3>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'providers'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="c1">// Laravel 기본 프로바이더들...</span>
+
+    <span class="c1">// JinyPHP 서비스 프로바이더들</span>
+    <span class="nc">Jiny\Auth\AuthServiceProvider</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+    <span class="nc">Jiny\Admin\AdminServiceProvider</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+    <span class="nc">Jiny\Site\SiteServiceProvider</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+<span class="p">],</span>
+</code></pre></div></div>
+
+<p><strong>📁 JinyPHP 설정 관련 파일 경로:</strong></p>
+<ul>
+  <li><strong>App 설정</strong>: <code class="language-plaintext highlighter-rouge">./config/app.php</code></li>
+  <li><strong>Auth 설정</strong>: <code class="language-plaintext highlighter-rouge">./config/auth.php</code></li>
+  <li><strong>JinyPHP 설정들</strong>: <code class="language-plaintext highlighter-rouge">./config/jiny-*.php</code></li>
+  <li><strong>라우트 캐시</strong>: <code class="language-plaintext highlighter-rouge">./bootstrap/cache/routes-v7.php</code></li>
+  <li><strong>설정 캐시</strong>: <code class="language-plaintext highlighter-rouge">./bootstrap/cache/config.php</code></li>
+</ul>
+
+<h2 id="5️⃣-jinyphp-개발-및-사용법">5️⃣ JinyPHP 개발 및 사용법</h2>
+
+<h3 id="51-jinyphp-admin-접속">5.1 JinyPHP Admin 접속</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Admin 패널 접속 (기본 설정)</span>
+<span class="c"># http://localhost:8000/admin</span>
+
+<span class="c"># Admin 사용자 생성 (artisan 명령어가 있는 경우)</span>
+php artisan jiny:admin:create-user
+</code></pre></div></div>
+
+<h3 id="52-jinyphp-컴포넌트-생성">5.2 JinyPHP 컴포넌트 생성</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># JinyPHP 컴포넌트 생성 (예상 명령어)</span>
+php artisan make:jiny-component ComponentName
+php artisan make:jiny-admin AdminComponentName
+php artisan make:jiny-site SiteComponentName
+
+<span class="c"># JinyPHP 모델 생성</span>
+php artisan make:jiny-model ModelName
+</code></pre></div></div>
+
+<h3 id="53-jinyphp-캐시-관리">5.3 JinyPHP 캐시 관리</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># JinyPHP 관련 캐시 클리어</span>
+php artisan jiny:cache:clear
+
+<span class="c"># JinyPHP 설정 캐시 재생성</span>
+php artisan jiny:config:cache
+
+<span class="c"># 전체 최적화 (JinyPHP 포함)</span>
+php artisan optimize
+php artisan jiny:optimize
+</code></pre></div></div>
+
+<p><strong>📁 JinyPHP 개발 관련 파일 경로:</strong></p>
+<ul>
+  <li><strong>JinyPHP 컴포넌트</strong>: <code class="language-plaintext highlighter-rouge">./app/Jiny/</code></li>
+  <li><strong>JinyPHP 뷰</strong>: <code class="language-plaintext highlighter-rouge">./resources/views/jiny/</code></li>
+  <li><strong>JinyPHP 컨트롤러</strong>: <code class="language-plaintext highlighter-rouge">./app/Http/Controllers/Jiny/</code></li>
+  <li><strong>JinyPHP 모델</strong>: <code class="language-plaintext highlighter-rouge">./app/Models/Jiny/</code></li>
+  <li><strong>JinyPHP 라우트</strong>: <code class="language-plaintext highlighter-rouge">./routes/jiny.php</code></li>
+  <li><strong>JinyPHP 캐시</strong>: <code class="language-plaintext highlighter-rouge">./storage/framework/cache/jiny/</code></li>
+</ul>
+
+<hr />
+
+<h2 id="-jinyphp-설치-완료-체크리스트">✅ JinyPHP 설치 완료 체크리스트</h2>
+
+<h3 id="1️⃣-패키지-설치">1️⃣ 패키지 설치</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />JinyERP 핵심 패키지 설치 (<code class="language-plaintext highlighter-rouge">jiny/auth</code>, <code class="language-plaintext highlighter-rouge">jiny/admin</code>, <code class="language-plaintext highlighter-rouge">jiny/site</code>)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />추가 유용한 패키지 설치</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />로컬 패키지 설정 (개발 환경)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />패키지 설정 파일 발행</li>
+</ul>
+
+<h3 id="2️⃣-초기화-및-설정">2️⃣ 초기화 및 설정</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />마이그레이션 실행</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />시더 실행 (선택사항)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />에셋 파일 발행</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />.env 파일 JinyPHP 설정 추가</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />서비스 프로바이더 등록</li>
+</ul>
+
+<h3 id="3️⃣-기능-확인">3️⃣ 기능 확인</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />JinyPHP Admin 패널 접속 확인</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />JinyPHP 인증 시스템 동작 확인</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />JinyPHP Site 기능 확인</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />각 패키지 에셋 로딩 확인</li>
+</ul>
+
+<hr />
+
+<h2 id="-관련-문서">🔗 관련 문서</h2>
+
+<ul>
+  <li><a href="./01.Setup.md">Laravel 개발 환경 설정</a> - JinyPHP 설치 전 Laravel 기본 환경 구성</li>
+  <li><a href="./Deploy.md">서버 배포 가이드</a> - JinyPHP 애플리케이션 서버 배포 방법</li>
+</ul>
+
+<h2 id="-추가-정보">📚 추가 정보</h2>
+
+<h3 id="jinyphp-공식-리소스">JinyPHP 공식 리소스</h3>
+<ul>
+  <li><strong>공식 문서</strong>: <a href="https://jinyphp.com/docs">JinyPHP 문서</a></li>
+  <li><strong>GitHub</strong>: <a href="https://github.com/jinyphp">JinyPHP GitHub</a></li>
+  <li><strong>커뮤니티</strong>: <a href="https://jinyphp.com/community">JinyPHP 커뮤니티</a></li>
+</ul>
+
+<h3 id="개발-참고사항">개발 참고사항</h3>
+<ul>
+  <li>JinyPHP는 Laravel의 확장이므로 Laravel의 모든 기능을 그대로 사용할 수 있습니다</li>
+  <li>JinyPHP 패키지들은 서로 독립적으로 동작하며 필요에 따라 선택적으로 설치 가능합니다</li>
+  <li>로컬 개발 시에는 패키지를 <code class="language-plaintext highlighter-rouge">./packages/jiny/</code> 디렉토리에서 직접 개발할 수 있습니다</li>
+</ul>
+
+                        </div>
+                    </div>
+
+<!-- Right Advertisement Area -->
+<div class="col-12 col-xl-3">
+    <div class="ad-area">
+        <!-- 메인 광고 (300x600 Large Rectangle) -->
+        <div class="ad-container">
+            <h6>Advertisement</h6>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 중간 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 관련 링크 -->
+        <div class="ad-container mt-4">
+            <h6>관련 링크</h6>
+            <div class="related-links">
+                <a href="https://laravel.com/docs" target="_blank">Laravel 공식 문서</a>
+                <a href="https://php.net/docs.php" target="_blank">PHP 공식 문서</a>
+                <a href="https://getbootstrap.com/" target="_blank">Bootstrap 문서</a>
+                <a href="https://www.mysql.com/documentation/" target="_blank">MySQL 문서</a>
+                <a href="https://git-scm.com/docs" target="_blank">Git 문서</a>
+            </div>
+        </div>
+
+        <!-- 하단 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1122334455" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; 2025 JinyDev. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="/assets/w3schools-script.js"></script>
+</body>
+</html>

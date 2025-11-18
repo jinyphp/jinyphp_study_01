@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev</title>
+    <meta name="description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.">
+
+    <!-- SEO Meta Tags -->
+    
+    
+    <meta name="robots" content="index, follow">
+    
+    <meta name="language" content="ko">
+
+    <!-- Open Graph Meta Tags -->
+    
+
+    <!-- Twitter Card Meta Tags -->
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/w3schools-style.css">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+            crossorigin="anonymous"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>JinyDev | JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="JinyDev" />
+<meta name="author" content="JinyPHP Team" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다." />
+<meta property="og:description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다." />
+<link rel="canonical" href="http://localhost:4000/01.Start/01.what-is-laravel.html" />
+<meta property="og:url" content="http://localhost:4000/01.Start/01.what-is-laravel.html" />
+<meta property="og:site_name" content="JinyDev" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JinyDev" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"JinyPHP Team"},"description":"JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.","headline":"JinyDev","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"JinyPHP Team"},"url":"http://localhost:4000/01.Start/01.what-is-laravel.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+<!-- Top Navigation -->
+<nav class="top-nav">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="/">JinyDev</a>
+        </div>
+        <div class="nav-tabs">
+            <a href="/" class="nav-tab active">HOME</a>
+            <a href="laravel.jiny.dev" class="nav-tab">Laravel</a>
+            <a href="php.jiny.dev" class="nav-tab">PHP</a>
+            <a href="linux.jiny.dev" class="nav-tab">Linux</a>
+            <a href="/04.Route/" class="nav-tab">라우팅</a>
+            <a href="/05.view/" class="nav-tab">View</a>
+            <a href="/06.templates/" class="nav-tab">Templates</a>
+            <a href="/04.jinyphp.html" class="nav-tab">JinyPHP</a>
+            <a href="git.jiny.dev" class="nav-tab">Git</a>
+            <a href="mysql.jiny.dev" class="nav-tab">MySQL</a>
+            <a href="html.jiny.dev" class="nav-tab">Html</a>
+            <a href="javascript.jiny.dev" class="nav-tab">Javascript</a>
+        </div>
+        <div class="nav-actions">
+            <button class="menu-btn d-lg-none" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h4>학습 가이드</h4>
+            </div>
+
+            <div class="sidebar-menu">
+                <!-- Laravel 시작하기 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('laravel-start')">
+                        Laravel 시작하기
+                    </div>
+                    <div class="menu-items" id="laravel-start">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('laravel-basics')">
+                                기초 개념
+                            </div>
+                            <div class="category-items" id="laravel-basics">
+                                <a href="/01.Start/" class="menu-item">개요</a>
+                                <a href="/01.Start/01.what-is-laravel.html" class="menu-item">라라벨이란?</a>
+                                <a href="/01.Start/02.php-language.html" class="menu-item">PHP 언어</a>
+                                <a href="/01.Start/03.dependency-issues.html" class="menu-item">의존성 문제</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 개발환경 설정 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('setup')">
+                        개발환경 설정
+                    </div>
+                    <div class="menu-items" id="setup">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-install')">
+                                설치 및 설정
+                            </div>
+                            <div class="category-items" id="setup-install">
+                                <a href="/02.Setup/" class="menu-item">개요</a>
+                                <a href="/02.Setup/01.requirements.html" class="menu-item">사전 요구사항</a>
+                                <a href="/02.Setup/02.laravel-install.html" class="menu-item">Laravel 설치</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-config')">
+                                환경 구성
+                            </div>
+                            <div class="category-items" id="setup-config">
+                                <a href="/02.Setup/03.database.html" class="menu-item">데이터베이스 설정</a>
+                                <a href="/02.Setup/04.local-development.html" class="menu-item">로컬 개발 환경</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 배포 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('deploy')">
+                        서버 배포
+                    </div>
+                    <div class="menu-items" id="deploy">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-setup')">
+                                서버 준비
+                            </div>
+                            <div class="category-items" id="deploy-setup">
+                                <a href="/03.deploy/" class="menu-item">개요</a>
+                                <a href="/03.deploy/01.cloud-setup.html" class="menu-item">클라우드 준비</a>
+                                <a href="/03.deploy/02.server-setup.html" class="menu-item">서버 환경 설정</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-app')">
+                                애플리케이션 배포
+                            </div>
+                            <div class="category-items" id="deploy-app">
+                                <a href="/03.deploy/03.laravel-deploy.html" class="menu-item">Laravel 배포</a>
+                                <a href="/03.deploy/04.domain-https.html" class="menu-item">도메인 HTTPS</a>
+                                <a href="/03.deploy/05.optimization.html" class="menu-item">성능 최적화</a>
+                                <a href="/03.deploy/06.github-deploy.html" class="menu-item">GitHub 배포 자동화</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 백엔드 개발 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('backend')">
+                        백엔드 개발
+                    </div>
+                    <div class="menu-items" id="backend">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('backend-basics')">
+                                기본 개념
+                            </div>
+                            <div class="category-items" id="backend-basics">
+                                <a href="/04.backend.html" class="menu-item">백엔드 개발 가이드</a>
+                                <a href="/04.backend/framework.html" class="menu-item">프레임워크의 이해</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 접속 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('server-access')">
+                        서버 접속
+                    </div>
+                    <div class="menu-items" id="server-access">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('server-concepts')">
+                                서버 기초 이해
+                            </div>
+                            <div class="category-items" id="server-concepts">
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/" class="menu-item">개요</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/%EC%9B%B9%EC%84%9C%EB%B2%84%EB%9E%80.html" class="menu-item">웹서버란?</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/http.html" class="menu-item">HTTP 통신</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 라우팅 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('routing-learning')">
+                        라우팅 학습
+                    </div>
+                    <div class="menu-items" id="routing-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="route-taste-detail">
+                                <a href="/06.route-taste/" class="menu-item">5분 라우팅 체험</a>
+                                <a href="/06.route-taste/%EC%A3%BC%EC%86%8C%EB%9E%80.html" class="menu-item">주소란? URL 체계 이해</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%ED%95%84%EC%9A%94%EC%84%B1.html" class="menu-item">라우트의 필요성</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%EB%8F%99%EC%9E%91.html" class="menu-item">라우트의 동작 원리</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="route-system">
+                                <a href="/04-01.route-taste/" class="menu-item">맛보기 - 5분 라우팅 체험</a>
+                                <a href="/04-02.route-beginner/" class="menu-item">초급 - 라우팅 기초 마스터</a>
+                                <a href="/04-03.route-intermediate/" class="menu-item">중급 - 네임드 라우트와 그룹</a>
+                                <a href="/04-04.route-advanced/" class="menu-item">고급 - 미들웨어와 모델바인딩</a>
+                                <a href="/04-05.route-application/" class="menu-item">응용 - 엔터프라이즈 라우팅</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 뷰 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('view-learning')">
+                        뷰 학습
+                    </div>
+                    <div class="menu-items" id="view-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="view-taste-detail">
+                                <a href="/07.view-taste/" class="menu-item">뷰 맛보기</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="view-system">
+                                <a href="/05-01.view-taste/" class="menu-item">맛보기 - 첫 번째 뷰 만들기</a>
+                                <a href="/05-02.view-beginner/" class="menu-item">초급 - 뷰와 데이터 전달</a>
+                                <a href="/05-03.view-intermediate/" class="menu-item">중급 - HTTP 응답과 리다이렉트</a>
+                                <a href="/05-04.view-advanced/" class="menu-item">고급 - API와 JSON 응답</a>
+                                <a href="/05-05.view-application/" class="menu-item">응용 - 엔터프라이즈 뷰 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 템플릿 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('template-learning')">
+                        템플릿 학습
+                    </div>
+                    <div class="menu-items" id="template-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('template-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="template-system">
+                                <a href="/06-01.template-taste/" class="menu-item">맛보기 - Blade 첫 만남</a>
+                                <a href="/06-02.template-beginner/" class="menu-item">초급 - Blade 기초 마스터</a>
+                                <a href="/06-03.template-intermediate/" class="menu-item">중급 - 컴포넌트와 재사용성</a>
+                                <a href="/06-04.template-advanced/" class="menu-item">고급 - 커스텀 지시어와 최적화</a>
+                                <a href="/06-05.template-application/" class="menu-item">응용 - 엔터프라이즈 템플릿 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JinyPHP 패키지 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('jinyphp')">
+                        JinyPHP 패키지
+                    </div>
+                    <div class="menu-items" id="jinyphp">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('jinyphp-setup')">
+                                패키지 설치
+                            </div>
+                            <div class="category-items" id="jinyphp-setup">
+                                <a href="/04.jinyphp.html" class="menu-item">패키지 설치</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 학습 진도 표시 -->
+                <div class="menu-group mt-4">
+                    <div class="learning-progress">
+                        <h6><i class="fas fa-chart-line me-2"></i>학습 진도</h6>
+                        <div class="progress-items">
+                            <div class="progress-item">
+                                <span class="level-badge level-1">🍯</span>
+                                <span>맛보기 - 5분 체험</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-2">🌱</span>
+                                <span>초급 - 기초 마스터</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-3">🚀</span>
+                                <span>중급 - 실전 활용</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-4">⚡</span>
+                                <span>고급 - 최적화</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-5">🔥</span>
+                                <span>응용 - 엔터프라이즈</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 도움말 -->
+                <div class="menu-group mt-3">
+                    <div class="help-section">
+                        <h6><i class="fas fa-question-circle me-2"></i>학습 가이드</h6>
+                        <div class="help-items">
+                            <div class="help-item">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                <small>단계별로 차근차근 진행하세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-code text-info me-2"></i>
+                                <small>실습 코드를 직접 작성해보세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-bookmark text-success me-2"></i>
+                                <small>중요한 부분은 북마크하세요</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사이드바 하단 정보 -->
+            <div class="sidebar-footer">
+                <div class="version-info">
+                    <small class="text-muted">
+                        <i class="fab fa-laravel me-1"></i>Laravel 12
+                        <br>
+                        <i class="fab fa-php me-1"></i>PHP 8.4+
+                    </small>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Content -->
+                    <div class="col-12 col-xl-9">
+                        <div class="content-wrapper">
+                            <h1 id="라라벨이란">라라벨이란?</h1>
+
+<p>“Laravel”… 처음 들어보시나요? 아니면 이름은 들어봤는데 정확히 뭔지는 모르시겠나요?
+걱정하지 마세요. 이 페이지를 다 읽고 나면, Laravel이 무엇이고 왜 이렇게 많은 개발자들이 사랑하는지 완벽하게 이해하실 수 있을 거예요.</p>
+
+<h2 id="laravel의-탄생-스토리">Laravel의 탄생 스토리</h2>
+
+<h3 id="2011년-한-개발자의-불편함에서-시작된-혁명">2011년, 한 개발자의 불편함에서 시작된 혁명</h3>
+
+<p>Laravel의 창시자 Taylor Otwell은 2011년, 기존 PHP 프레임워크(특히 CodeIgniter)를 사용하면서 많은 불편함을 느꼈습니다.</p>
+
+<p>“왜 이렇게 복잡하지?”
+“더 우아하고 간결한 방법은 없을까?”
+“개발자가 코드를 작성하는 게 즐거워야 하지 않을까?”</p>
+
+<p>이런 생각들이 모여서 Laravel이 탄생했습니다.</p>
+
+<h3 id="이름의-유래">이름의 유래</h3>
+<p>“Laravel”이라는 이름은 “Narnia”의 수도인 “Cair Paravel”에서 영감을 받았다고 해요. Taylor가 Narnia 시리즈를 좋아했거든요. 판타지 소설에서 영감을 받은 프레임워크라니, 뭔가 로맨틱하지 않나요?</p>
+
+<h2 id="laravel을-한-문장으로-정의하면">Laravel을 한 문장으로 정의하면?</h2>
+
+<p><strong>Laravel은 “웹 장인(Web Artisan)을 위한” PHP 웹 애플리케이션 프레임워크입니다.</strong></p>
+
+<p>여기서 “웹 장인”이라는 표현이 중요해요. Laravel은 단순히 웹사이트를 만드는 도구가 아니라, 아름답고 우아한 코드를 작성하는 예술가를 위한 도구라는 의미죠.</p>
+
+<h2 id="왜-laravel인가">왜 Laravel인가?</h2>
+
+<h3 id="1-우아한-문법-elegant-syntax">1. 우아한 문법 (Elegant Syntax)</h3>
+
+<p>Laravel의 코드는 마치 시를 읽는 것처럼 아름답습니다. 예를 들어볼까요?</p>
+
+<p><strong>다른 프레임워크에서:</strong></p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 사용자 정보를 가져와서 게시글을 필터링하는 복잡한 코드</span>
+<span class="nv">$user</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="s2">"SELECT * FROM users WHERE id = ?"</span><span class="p">,</span> <span class="p">[</span><span class="nv">$id</span><span class="p">]);</span>
+<span class="nv">$posts</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="s2">"SELECT * FROM posts WHERE user_id = ? AND status = 'published'"</span><span class="p">,</span> <span class="p">[</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">]);</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$posts</span> <span class="k">as</span> <span class="nv">$post</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$post</span><span class="o">-&gt;</span><span class="n">comments</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="s2">"SELECT * FROM comments WHERE post_id = ?"</span><span class="p">,</span> <span class="p">[</span><span class="nv">$post</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Laravel에서:</strong></p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 같은 작업을 하는 Laravel 코드</span>
+<span class="nv">$user</span> <span class="o">=</span> <span class="nc">User</span><span class="o">::</span><span class="nf">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="nv">$posts</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="nf">posts</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">where</span><span class="p">(</span><span class="s1">'status'</span><span class="p">,</span> <span class="s1">'published'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">with</span><span class="p">(</span><span class="s1">'comments'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>보이시나요? 코드가 영어 문장처럼 읽히죠? 이게 바로 Laravel의 매력입니다.</p>
+
+<h3 id="2-개발자-경험-developer-experience">2. 개발자 경험 (Developer Experience)</h3>
+
+<p>Laravel은 개발자가 행복하게 코딩할 수 있도록 모든 것을 고려했습니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 회원가입 이메일 보내기 - 단 한 줄!</span>
+<span class="nc">Mail</span><span class="o">::</span><span class="nf">to</span><span class="p">(</span><span class="nv">$user</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">send</span><span class="p">(</span><span class="k">new</span> <span class="nc">WelcomeMail</span><span class="p">());</span>
+
+<span class="c1">// 파일 업로드 - 믿을 수 없을 만큼 간단</span>
+<span class="nv">$request</span><span class="o">-&gt;</span><span class="nb">file</span><span class="p">(</span><span class="s1">'avatar'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">store</span><span class="p">(</span><span class="s1">'avatars'</span><span class="p">);</span>
+
+<span class="c1">// 작업 큐에 추가 - 비동기 처리도 쉽게</span>
+<span class="nc">ProcessPodcast</span><span class="o">::</span><span class="nf">dispatch</span><span class="p">(</span><span class="nv">$podcast</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>각각의 기능을 직접 구현하려면 수백 줄의 코드가 필요하지만, Laravel에서는 단 한 줄이면 됩니다.</p>
+
+<h3 id="3-풍부한-생태계">3. 풍부한 생태계</h3>
+
+<p>Laravel은 단순한 프레임워크가 아닙니다. 완벽한 생태계를 갖추고 있어요.</p>
+
+<h4 id="laravel-ecosystem">Laravel Ecosystem</h4>
+
+<p><strong>Forge</strong> - 서버 관리 도구</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>서버 설정, 배포, 모니터링을 클릭 몇 번으로!
+더 이상 리눅스 명령어와 씨름하지 않아도 됩니다.
+</code></pre></div></div>
+
+<p><strong>Vapor</strong> - 서버리스 배포 플랫폼</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AWS Lambda를 Laravel에서 쉽게 사용
+자동 스케일링, 무한대 확장 가능
+</code></pre></div></div>
+
+<p><strong>Nova</strong> - 관리자 패널</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 아름다운 관리자 페이지가 자동으로 생성됩니다</span>
+<span class="kd">class</span> <span class="nc">User</span> <span class="kd">extends</span> <span class="nc">Resource</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">fields</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="no">ID</span><span class="o">::</span><span class="nf">make</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">sortable</span><span class="p">(),</span>
+            <span class="nc">Text</span><span class="o">::</span><span class="nf">make</span><span class="p">(</span><span class="s1">'Name'</span><span class="p">),</span>
+            <span class="nc">Email</span><span class="o">::</span><span class="nf">make</span><span class="p">(</span><span class="s1">'Email'</span><span class="p">),</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Horizon</strong> - 큐 모니터링</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>실시간으로 작업 큐를 모니터링
+아름다운 대시보드로 한눈에 파악
+</code></pre></div></div>
+
+<p><strong>Telescope</strong> - 디버깅 도구</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>모든 요청, 쿼리, 이메일, 작업을 추적
+개발할 때 슈퍼파워를 가진 듯한 느낌!
+</code></pre></div></div>
+
+<h3 id="4-활발한-커뮤니티">4. 활발한 커뮤니티</h3>
+
+<h4 id="숫자로-보는-laravel의-인기">숫자로 보는 Laravel의 인기</h4>
+
+<ul>
+  <li><strong>GitHub Stars</strong>: 78,000+ (PHP 프레임워크 중 1위)</li>
+  <li><strong>Packagist 다운로드</strong>: 5억 회 이상</li>
+  <li><strong>Laravel 개발자</strong>: 전 세계 200만 명 이상</li>
+  <li><strong>Laravel 관련 패키지</strong>: 15,000개 이상</li>
+</ul>
+
+<h4 id="한국의-laravel-커뮤니티">한국의 Laravel 커뮤니티</h4>
+
+<p>한국에도 활발한 Laravel 커뮤니티가 있어요:</p>
+<ul>
+  <li>Laravel Korea 페이스북 그룹</li>
+  <li>Laravel Korea 슬랙 채널</li>
+  <li>정기적인 밋업과 컨퍼런스</li>
+  <li>한글로 된 풍부한 튜토리얼</li>
+</ul>
+
+<h3 id="5-지속적인-발전">5. 지속적인 발전</h3>
+
+<p>Laravel은 매년 새로운 버전을 출시합니다.</p>
+
+<h4 id="laravel-버전-히스토리">Laravel 버전 히스토리</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Laravel 1 (2011) - 시작
+Laravel 2 (2011) - 컨트롤러 지원
+Laravel 3 (2012) - 마이그레이션, 시딩
+Laravel 4 (2013) - Composer 통합
+Laravel 5 (2015) - 완전히 새로워진 구조
+Laravel 6 (2019) - LTS 버전
+Laravel 7 (2020) - Fluent 문자열
+Laravel 8 (2020) - Jetstream
+Laravel 9 (2022) - PHP 8 최소 요구
+Laravel 10 (2023) - 타입 힌팅 강화
+Laravel 11 (2024) - 간소화된 구조
+Laravel 12 (2025) - 최신 버전! ← 우리가 배울 버전
+</code></pre></div></div>
+
+<h2 id="laravel로-무엇을-만들-수-있나요">Laravel로 무엇을 만들 수 있나요?</h2>
+
+<h3 id="1-블로그--cms-콘텐츠-관리-시스템">1. 블로그 &amp; CMS (콘텐츠 관리 시스템)</h3>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 블로그 게시글 작성 - 이렇게 간단해요</span>
+<span class="kd">class</span> <span class="nc">PostController</span> <span class="kd">extends</span> <span class="nc">Controller</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">store</span><span class="p">(</span><span class="kt">Request</span> <span class="nv">$request</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$post</span> <span class="o">=</span> <span class="nc">Post</span><span class="o">::</span><span class="nf">create</span><span class="p">([</span>
+            <span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="n">title</span><span class="p">,</span>
+            <span class="s1">'content'</span> <span class="o">=&gt;</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="n">content</span><span class="p">,</span>
+            <span class="s1">'user_id'</span> <span class="o">=&gt;</span> <span class="nf">auth</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">id</span><span class="p">(),</span>
+        <span class="p">]);</span>
+
+        <span class="k">return</span> <span class="nf">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">route</span><span class="p">(</span><span class="s1">'posts.show'</span><span class="p">,</span> <span class="nv">$post</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>실제 사례:</strong></p>
+<ul>
+  <li><strong>Statamic</strong>: Laravel 기반 CMS</li>
+  <li><strong>October CMS</strong>: 유연한 콘텐츠 관리</li>
+  <li>수많은 개인 블로그와 기업 블로그</li>
+</ul>
+
+<h3 id="2-전자상거래-e-commerce">2. 전자상거래 (E-Commerce)</h3>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 장바구니 추가 - 너무 쉽죠?</span>
+<span class="nc">Cart</span><span class="o">::</span><span class="nf">add</span><span class="p">(</span><span class="nv">$product</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">,</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">,</span> <span class="nv">$quantity</span><span class="p">,</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="n">price</span><span class="p">);</span>
+
+<span class="c1">// 결제 처리</span>
+<span class="nc">Payment</span><span class="o">::</span><span class="nf">charge</span><span class="p">(</span><span class="nv">$user</span><span class="p">,</span> <span class="nv">$amount</span><span class="p">);</span>
+
+<span class="c1">// 주문 완료 이메일</span>
+<span class="nc">Mail</span><span class="o">::</span><span class="nf">to</span><span class="p">(</span><span class="nv">$user</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">send</span><span class="p">(</span><span class="k">new</span> <span class="nc">OrderConfirmed</span><span class="p">(</span><span class="nv">$order</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><strong>실제 사례:</strong></p>
+<ul>
+  <li><strong>Bagisto</strong>: 무료 Laravel 쇼핑몰 솔루션</li>
+  <li><strong>Aimeos</strong>: 엔터프라이즈급 e-커머스</li>
+  <li>쿠팡, 배민 같은 대형 서비스도 Laravel 사용</li>
+</ul>
+
+<h3 id="3-saas-애플리케이션">3. SaaS 애플리케이션</h3>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 구독 관리 - Laravel Cashier로 간단하게</span>
+<span class="nv">$user</span><span class="o">-&gt;</span><span class="nf">newSubscription</span><span class="p">(</span><span class="s1">'default'</span><span class="p">,</span> <span class="s1">'price_premium'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">(</span><span class="nv">$paymentMethod</span><span class="p">);</span>
+
+<span class="c1">// 사용량 기반 요금</span>
+<span class="nv">$user</span><span class="o">-&gt;</span><span class="nf">recordUsage</span><span class="p">(</span><span class="s1">'api-calls'</span><span class="p">,</span> <span class="mi">150</span><span class="p">);</span>
+
+<span class="c1">// 구독 상태 확인</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="nf">subscribed</span><span class="p">(</span><span class="s1">'default'</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// 프리미엄 기능 제공</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>실제 사례:</strong></p>
+<ul>
+  <li><strong>Laravel Forge</strong>: 서버 관리 SaaS</li>
+  <li><strong>Envoyer</strong>: 배포 자동화 도구</li>
+  <li><strong>Monica</strong>: 개인 CRM</li>
+</ul>
+
+<h3 id="4-api-서버">4. API 서버</h3>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// RESTful API - 5분 만에 완성</span>
+<span class="nc">Route</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="s1">'/api/users'</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nc">User</span><span class="o">::</span><span class="nf">all</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="nc">Route</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="s1">'/api/users/{id}'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nc">User</span><span class="o">::</span><span class="nf">findOrFail</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// API 인증도 간단</span>
+<span class="nc">Route</span><span class="o">::</span><span class="nf">middleware</span><span class="p">(</span><span class="s1">'auth:sanctum'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">group</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nc">Route</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="s1">'/user'</span><span class="p">,</span> <span class="k">fn</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">auth</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">user</span><span class="p">());</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>실제 사례:</strong></p>
+<ul>
+  <li>모바일 앱 백엔드</li>
+  <li>React/Vue 프론트엔드와 연동</li>
+  <li>마이크로서비스 아키텍처</li>
+</ul>
+
+<h3 id="5-실시간-애플리케이션">5. 실시간 애플리케이션</h3>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 실시간 채팅 - WebSocket 지원</span>
+<span class="nf">broadcast</span><span class="p">(</span><span class="k">new</span> <span class="nc">MessageSent</span><span class="p">(</span><span class="nv">$message</span><span class="p">))</span><span class="o">-&gt;</span><span class="nf">toOthers</span><span class="p">();</span>
+
+<span class="c1">// 프론트엔드에서 수신</span>
+<span class="k">Echo</span><span class="mf">.</span><span class="nf">channel</span><span class="p">(</span><span class="s1">'chat'</span><span class="p">)</span>
+    <span class="mf">.</span><span class="nf">listen</span><span class="p">(</span><span class="s1">'MessageSent'</span><span class="p">,</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="n">console</span><span class="mf">.</span><span class="nb">log</span><span class="p">(</span><span class="n">e</span><span class="mf">.</span><span class="n">message</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>실제 사례:</strong></p>
+<ul>
+  <li>채팅 애플리케이션</li>
+  <li>실시간 알림 시스템</li>
+  <li>협업 도구</li>
+</ul>
+
+<h3 id="6-소셜-네트워크">6. 소셜 네트워크</h3>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 팔로우 기능</span>
+<span class="nv">$user</span><span class="o">-&gt;</span><span class="nf">follow</span><span class="p">(</span><span class="nv">$anotherUser</span><span class="p">);</span>
+
+<span class="c1">// 타임라인 피드</span>
+<span class="nv">$posts</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="nf">timeline</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">latest</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">paginate</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+
+<span class="c1">// 좋아요</span>
+<span class="nv">$post</span><span class="o">-&gt;</span><span class="nf">like</span><span class="p">();</span>
+
+<span class="c1">// 댓글</span>
+<span class="nv">$post</span><span class="o">-&gt;</span><span class="nf">comment</span><span class="p">(</span><span class="s1">'멋진 글이네요!'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="laravel의-핵심-철학">Laravel의 핵심 철학</h2>
+
+<h3 id="1-convention-over-configuration-관례-우선-설정">1. Convention over Configuration (관례 우선 설정)</h3>
+
+<p>“설정보다는 관례를 따르자”</p>
+
+<p>Laravel은 합리적인 기본값을 제공합니다. 대부분의 경우 설정을 건드릴 필요가 없어요.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 모델 이름이 User면, 테이블은 자동으로 users</span>
+<span class="kd">class</span> <span class="nc">User</span> <span class="kd">extends</span> <span class="nc">Model</span>
+<span class="p">{</span>
+    <span class="c1">// 아무것도 설정하지 않아도 작동!</span>
+<span class="p">}</span>
+
+<span class="c1">// 필요할 때만 커스터마이즈</span>
+<span class="kd">class</span> <span class="nc">Person</span> <span class="kd">extends</span> <span class="nc">Model</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$table</span> <span class="o">=</span> <span class="s1">'my_people_table'</span><span class="p">;</span> <span class="c1">// 테이블명 변경</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-dont-repeat-yourself-dry">2. Don’t Repeat Yourself (DRY)</h3>
+
+<p>같은 코드를 반복하지 마세요. Laravel은 재사용을 쉽게 만듭니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 공통 로직을 Trait으로</span>
+<span class="kd">trait</span> <span class="nc">Commentable</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">comments</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">morphMany</span><span class="p">(</span><span class="nc">Comment</span><span class="o">::</span><span class="n">class</span><span class="p">,</span> <span class="s1">'commentable'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 여러 모델에서 재사용</span>
+<span class="kd">class</span> <span class="nc">Post</span> <span class="kd">extends</span> <span class="nc">Model</span>
+<span class="p">{</span>
+    <span class="kn">use</span> <span class="nc">Commentable</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Video</span> <span class="kd">extends</span> <span class="nc">Model</span>
+<span class="p">{</span>
+    <span class="kn">use</span> <span class="nc">Commentable</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="3-expressive-beautiful-code-표현력-있고-아름다운-코드">3. Expressive, Beautiful Code (표현력 있고 아름다운 코드)</h3>
+
+<p>코드는 시처럼 읽혀야 합니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 이렇게 쓰면 안 됩니다 ❌</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$users</span> <span class="k">as</span> <span class="nv">$user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="n">status</span> <span class="o">==</span> <span class="s1">'active'</span> <span class="o">&amp;&amp;</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$result</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="n">email</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Laravel 스타일 ✅</span>
+<span class="nv">$emails</span> <span class="o">=</span> <span class="nc">User</span><span class="o">::</span><span class="nf">where</span><span class="p">(</span><span class="s1">'status'</span><span class="p">,</span> <span class="s1">'active'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="nf">where</span><span class="p">(</span><span class="s1">'age'</span><span class="p">,</span> <span class="s1">'&gt;='</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="nf">pluck</span><span class="p">(</span><span class="s1">'email'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="4-developer-happiness-개발자의-행복">4. Developer Happiness (개발자의 행복)</h3>
+
+<p>Taylor Otwell은 항상 말합니다:</p>
+<blockquote>
+  <p>“개발자가 행복해야 좋은 제품이 나온다”</p>
+</blockquote>
+
+<p>Laravel의 모든 기능은 개발자의 행복을 염두에 두고 설계되었습니다.</p>
+
+<h2 id="laravel-vs-다른-프레임워크">Laravel vs 다른 프레임워크</h2>
+
+<h3 id="laravel-vs-wordpress">Laravel vs WordPress</h3>
+
+<p><strong>WordPress:</strong></p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// WordPress 스타일</span>
+<span class="k">global</span> <span class="nv">$wpdb</span><span class="p">;</span>
+<span class="nv">$results</span> <span class="o">=</span> <span class="nv">$wpdb</span><span class="o">-&gt;</span><span class="nf">get_results</span><span class="p">(</span><span class="s2">"SELECT * FROM wp_posts WHERE post_status = 'publish'"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>Laravel:</strong></p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Laravel 스타일</span>
+<span class="nv">$posts</span> <span class="o">=</span> <span class="nc">Post</span><span class="o">::</span><span class="nf">where</span><span class="p">(</span><span class="s1">'status'</span><span class="p">,</span> <span class="s1">'published'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><strong>언제 WordPress?</strong></p>
+<ul>
+  <li>간단한 블로그</li>
+  <li>비개발자가 관리</li>
+  <li>많은 플러그인 필요</li>
+</ul>
+
+<p><strong>언제 Laravel?</strong></p>
+<ul>
+  <li>커스텀 웹 애플리케이션</li>
+  <li>확장성이 중요</li>
+  <li>깨끗한 코드 원함</li>
+</ul>
+
+<h3 id="laravel-vs-symfony">Laravel vs Symfony</h3>
+
+<p><strong>Symfony:</strong></p>
+<ul>
+  <li>더 많은 설정 필요</li>
+  <li>엔터프라이즈급 프로젝트에 적합</li>
+  <li>학습 곡선이 가파름</li>
+</ul>
+
+<p><strong>Laravel:</strong></p>
+<ul>
+  <li>빠른 시작 가능</li>
+  <li>초보자 친화적</li>
+  <li>Symfony 컴포넌트를 기반으로 함 (둘이 친구!)</li>
+</ul>
+
+<h3 id="laravel-vs-codeigniter">Laravel vs CodeIgniter</h3>
+
+<p><strong>CodeIgniter:</strong></p>
+<ul>
+  <li>가볍고 빠름</li>
+  <li>오래된 스타일의 PHP</li>
+  <li>현대적 기능 부족</li>
+</ul>
+
+<p><strong>Laravel:</strong></p>
+<ul>
+  <li>현대적인 PHP 기능 활용</li>
+  <li>풍부한 생태계</li>
+  <li>활발한 업데이트</li>
+</ul>
+
+<h3 id="laravel-vs-django-python">Laravel vs Django (Python)</h3>
+
+<p><strong>Django:</strong></p>
+<ul>
+  <li>Python 생태계</li>
+  <li>기본 관리자 페이지 제공</li>
+  <li>“Batteries included”</li>
+</ul>
+
+<p><strong>Laravel:</strong></p>
+<ul>
+  <li>PHP 생태계</li>
+  <li>더 유연한 구조</li>
+  <li>더 큰 커뮤니티 (PHP 시장)</li>
+</ul>
+
+<h2 id="laravel이-적합한-경우">Laravel이 적합한 경우</h2>
+
+<h3 id="-laravel을-선택하세요">✅ Laravel을 선택하세요:</h3>
+
+<ol>
+  <li><strong>PHP를 사용하는 경우</strong>
+    <ul>
+      <li>기존 PHP 개발자</li>
+      <li>공유 호스팅 사용</li>
+      <li>PHP 생태계가 필요</li>
+    </ul>
+  </li>
+  <li><strong>빠른 개발이 필요한 경우</strong>
+    <ul>
+      <li>스타트업</li>
+      <li>MVP (최소 기능 제품)</li>
+      <li>프로토타입</li>
+    </ul>
+  </li>
+  <li><strong>풀스택 개발을 원하는 경우</strong>
+    <ul>
+      <li>프론트엔드 + 백엔드</li>
+      <li>하나의 프레임워크로 모든 것</li>
+      <li>Livewire로 SPA 같은 경험</li>
+    </ul>
+  </li>
+  <li><strong>개발자 경험을 중시하는 경우</strong>
+    <ul>
+      <li>코드 품질</li>
+      <li>유지보수성</li>
+      <li>개발 즐거움</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="-laravel이-적합하지-않은-경우">❌ Laravel이 적합하지 않은 경우:</h3>
+
+<ol>
+  <li><strong>Python을 써야 하는 경우</strong>
+    <ul>
+      <li>머신러닝 / AI 프로젝트</li>
+      <li>데이터 과학</li>
+      <li>→ Django 사용하세요</li>
+    </ul>
+  </li>
+  <li><strong>Node.js가 필수인 경우</strong>
+    <ul>
+      <li>실시간 처리 위주</li>
+      <li>JavaScript 풀스택</li>
+      <li>→ Express / NestJS 사용하세요</li>
+    </ul>
+  </li>
+  <li><strong>초고속 성능이 필수인 경우</strong>
+    <ul>
+      <li>게임 서버</li>
+      <li>초저지연 시스템</li>
+      <li>→ Go / Rust 사용하세요</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="laravel-12의-새로운-기능">Laravel 12의 새로운 기능</h2>
+
+<h3 id="2025년-최신-버전">2025년 최신 버전!</h3>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 1. 개선된 타입 안정성</span>
+<span class="k">function</span> <span class="n">processUser</span><span class="p">(</span><span class="kt">User</span> <span class="nv">$user</span><span class="p">):</span> <span class="kt">PostCollection</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="nf">posts</span><span class="p">()</span>
+        <span class="o">-&gt;</span><span class="nf">where</span><span class="p">(</span><span class="s1">'published'</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="nf">get</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// 2. 더 강력한 Eloquent</span>
+<span class="nc">User</span><span class="o">::</span><span class="nf">query</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="nf">whereHas</span><span class="p">(</span><span class="s1">'posts'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$query</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$query</span><span class="o">-&gt;</span><span class="nf">popular</span><span class="p">();</span>
+    <span class="p">})</span>
+    <span class="o">-&gt;</span><span class="nf">lazyById</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="nb">each</span><span class="p">(</span><span class="k">fn</span><span class="p">(</span><span class="nv">$user</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="nf">notify</span><span class="p">());</span>
+
+<span class="c1">// 3. 향상된 성능</span>
+<span class="c1">// 자동 쿼리 최적화</span>
+<span class="c1">// 더 빠른 라우팅</span>
+<span class="c1">// 개선된 캐싱</span>
+
+<span class="c1">// 4. 새로운 헬퍼 함수들</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nf">str</span><span class="p">(</span><span class="s1">'hello world'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="nf">title</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="nf">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="nf">toString</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="실제-성공-사례">실제 성공 사례</h2>
+
+<h3 id="대기업들도-laravel을-사용합니다">대기업들도 Laravel을 사용합니다</h3>
+
+<p><strong>Disney+</strong></p>
+<ul>
+  <li>스트리밍 서비스 백엔드</li>
+  <li>수백만 사용자 처리</li>
+</ul>
+
+<p><strong>Twitch (Amazon)</strong></p>
+<ul>
+  <li>라이브 스트리밍 플랫폼</li>
+  <li>실시간 채팅 처리</li>
+</ul>
+
+<p><strong>The New York Times</strong></p>
+<ul>
+  <li>뉴스 포털</li>
+  <li>대용량 트래픽 처리</li>
+</ul>
+
+<p><strong>9GAG</strong></p>
+<ul>
+  <li>소셜 미디어</li>
+  <li>수억 개의 포스트</li>
+</ul>
+
+<h3 id="한국-기업들">한국 기업들</h3>
+
+<ul>
+  <li><strong>토스</strong>의 일부 서비스</li>
+  <li><strong>당근마켓</strong>의 내부 도구</li>
+  <li>수많은 스타트업과 에이전시</li>
+</ul>
+
+<h2 id="시작해볼까요">시작해볼까요?</h2>
+
+<p>이제 Laravel이 무엇인지 이해하셨나요?</p>
+
+<p>Laravel은:</p>
+<ul>
+  <li>✅ 우아하고 표현력 있는 문법</li>
+  <li>✅ 개발자 경험 최우선</li>
+  <li>✅ 풍부한 생태계</li>
+  <li>✅ 활발한 커뮤니티</li>
+  <li>✅ 지속적인 발전</li>
+  <li>✅ 무한한 가능성</li>
+</ul>
+
+<h2 id="다음-단계">다음 단계</h2>
+
+<p>Laravel에 대해 이해했으니, 이제 Laravel의 기반이 되는 PHP 언어에 대해 알아볼 차례입니다.</p>
+
+<p>“잠깐, Laravel 배우는 거 아니었나요? 왜 PHP를 배워요?”</p>
+
+<p>좋은 질문이에요! Laravel은 PHP로 작성되어 있기 때문에, PHP의 기본을 이해하면 Laravel을 훨씬 더 깊이 있게 사용할 수 있답니다.</p>
+
+<p>마치 피아노를 배우기 전에 음계를 아는 것처럼요!</p>
+
+<hr />
+
+<p><strong>네비게이션</strong></p>
+<ul>
+  <li><strong>이전</strong>: <a href="/01.Start/">01.Start 소개</a></li>
+  <li><strong>다음</strong>: <a href="/01.Start/02.php-language.html">PHP 언어</a></li>
+  <li><strong>상위</strong>: <a href="/01.Start/">01.Start 목차</a></li>
+</ul>
+
+<hr />
+
+<p><strong>핵심 요약</strong></p>
+
+<p>Laravel은 웹 장인을 위한 PHP 프레임워크입니다.</p>
+<ul>
+  <li>우아한 문법으로 개발자를 행복하게 만듭니다</li>
+  <li>풍부한 생태계로 빠른 개발이 가능합니다</li>
+  <li>전 세계 200만 개발자가 사랑합니다</li>
+  <li>블로그부터 대규모 SaaS까지 모든 것을 만들 수 있습니다</li>
+</ul>
+
+<p>다음 장에서는 Laravel의 토대인 PHP 언어에 대해 알아봅니다!</p>
+
+<hr />
+
+<table>
+  <tbody>
+    <tr>
+      <td>마지막 업데이트: 2025-11-18</td>
+      <td>Laravel 12 &amp; PHP 8.4 기준</td>
+    </tr>
+  </tbody>
+</table>
+
+                        </div>
+                    </div>
+
+<!-- Right Advertisement Area -->
+<div class="col-12 col-xl-3">
+    <div class="ad-area">
+        <!-- 메인 광고 (300x600 Large Rectangle) -->
+        <div class="ad-container">
+            <h6>Advertisement</h6>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 중간 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 관련 링크 -->
+        <div class="ad-container mt-4">
+            <h6>관련 링크</h6>
+            <div class="related-links">
+                <a href="https://laravel.com/docs" target="_blank">Laravel 공식 문서</a>
+                <a href="https://php.net/docs.php" target="_blank">PHP 공식 문서</a>
+                <a href="https://getbootstrap.com/" target="_blank">Bootstrap 문서</a>
+                <a href="https://www.mysql.com/documentation/" target="_blank">MySQL 문서</a>
+                <a href="https://git-scm.com/docs" target="_blank">Git 문서</a>
+            </div>
+        </div>
+
+        <!-- 하단 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1122334455" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; 2025 JinyDev. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="/assets/w3schools-script.js"></script>
+</body>
+</html>

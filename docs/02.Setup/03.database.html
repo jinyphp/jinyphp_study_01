@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev</title>
+    <meta name="description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.">
+
+    <!-- SEO Meta Tags -->
+    
+    
+    <meta name="robots" content="index, follow">
+    
+    <meta name="language" content="ko">
+
+    <!-- Open Graph Meta Tags -->
+    
+
+    <!-- Twitter Card Meta Tags -->
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/w3schools-style.css">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+            crossorigin="anonymous"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>JinyDev | JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="JinyDev" />
+<meta name="author" content="JinyPHP Team" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다." />
+<meta property="og:description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다." />
+<link rel="canonical" href="http://localhost:4000/02.Setup/03.database.html" />
+<meta property="og:url" content="http://localhost:4000/02.Setup/03.database.html" />
+<meta property="og:site_name" content="JinyDev" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JinyDev" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"JinyPHP Team"},"description":"JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.","headline":"JinyDev","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"JinyPHP Team"},"url":"http://localhost:4000/02.Setup/03.database.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+<!-- Top Navigation -->
+<nav class="top-nav">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="/">JinyDev</a>
+        </div>
+        <div class="nav-tabs">
+            <a href="/" class="nav-tab active">HOME</a>
+            <a href="laravel.jiny.dev" class="nav-tab">Laravel</a>
+            <a href="php.jiny.dev" class="nav-tab">PHP</a>
+            <a href="linux.jiny.dev" class="nav-tab">Linux</a>
+            <a href="/04.Route/" class="nav-tab">라우팅</a>
+            <a href="/05.view/" class="nav-tab">View</a>
+            <a href="/06.templates/" class="nav-tab">Templates</a>
+            <a href="/04.jinyphp.html" class="nav-tab">JinyPHP</a>
+            <a href="git.jiny.dev" class="nav-tab">Git</a>
+            <a href="mysql.jiny.dev" class="nav-tab">MySQL</a>
+            <a href="html.jiny.dev" class="nav-tab">Html</a>
+            <a href="javascript.jiny.dev" class="nav-tab">Javascript</a>
+        </div>
+        <div class="nav-actions">
+            <button class="menu-btn d-lg-none" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h4>학습 가이드</h4>
+            </div>
+
+            <div class="sidebar-menu">
+                <!-- Laravel 시작하기 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('laravel-start')">
+                        Laravel 시작하기
+                    </div>
+                    <div class="menu-items" id="laravel-start">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('laravel-basics')">
+                                기초 개념
+                            </div>
+                            <div class="category-items" id="laravel-basics">
+                                <a href="/01.Start/" class="menu-item">개요</a>
+                                <a href="/01.Start/01.what-is-laravel.html" class="menu-item">라라벨이란?</a>
+                                <a href="/01.Start/02.php-language.html" class="menu-item">PHP 언어</a>
+                                <a href="/01.Start/03.dependency-issues.html" class="menu-item">의존성 문제</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 개발환경 설정 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('setup')">
+                        개발환경 설정
+                    </div>
+                    <div class="menu-items" id="setup">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-install')">
+                                설치 및 설정
+                            </div>
+                            <div class="category-items" id="setup-install">
+                                <a href="/02.Setup/" class="menu-item">개요</a>
+                                <a href="/02.Setup/01.requirements.html" class="menu-item">사전 요구사항</a>
+                                <a href="/02.Setup/02.laravel-install.html" class="menu-item">Laravel 설치</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-config')">
+                                환경 구성
+                            </div>
+                            <div class="category-items" id="setup-config">
+                                <a href="/02.Setup/03.database.html" class="menu-item">데이터베이스 설정</a>
+                                <a href="/02.Setup/04.local-development.html" class="menu-item">로컬 개발 환경</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 배포 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('deploy')">
+                        서버 배포
+                    </div>
+                    <div class="menu-items" id="deploy">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-setup')">
+                                서버 준비
+                            </div>
+                            <div class="category-items" id="deploy-setup">
+                                <a href="/03.deploy/" class="menu-item">개요</a>
+                                <a href="/03.deploy/01.cloud-setup.html" class="menu-item">클라우드 준비</a>
+                                <a href="/03.deploy/02.server-setup.html" class="menu-item">서버 환경 설정</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-app')">
+                                애플리케이션 배포
+                            </div>
+                            <div class="category-items" id="deploy-app">
+                                <a href="/03.deploy/03.laravel-deploy.html" class="menu-item">Laravel 배포</a>
+                                <a href="/03.deploy/04.domain-https.html" class="menu-item">도메인 HTTPS</a>
+                                <a href="/03.deploy/05.optimization.html" class="menu-item">성능 최적화</a>
+                                <a href="/03.deploy/06.github-deploy.html" class="menu-item">GitHub 배포 자동화</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 백엔드 개발 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('backend')">
+                        백엔드 개발
+                    </div>
+                    <div class="menu-items" id="backend">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('backend-basics')">
+                                기본 개념
+                            </div>
+                            <div class="category-items" id="backend-basics">
+                                <a href="/04.backend.html" class="menu-item">백엔드 개발 가이드</a>
+                                <a href="/04.backend/framework.html" class="menu-item">프레임워크의 이해</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 접속 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('server-access')">
+                        서버 접속
+                    </div>
+                    <div class="menu-items" id="server-access">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('server-concepts')">
+                                서버 기초 이해
+                            </div>
+                            <div class="category-items" id="server-concepts">
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/" class="menu-item">개요</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/%EC%9B%B9%EC%84%9C%EB%B2%84%EB%9E%80.html" class="menu-item">웹서버란?</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/http.html" class="menu-item">HTTP 통신</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 라우팅 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('routing-learning')">
+                        라우팅 학습
+                    </div>
+                    <div class="menu-items" id="routing-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="route-taste-detail">
+                                <a href="/06.route-taste/" class="menu-item">5분 라우팅 체험</a>
+                                <a href="/06.route-taste/%EC%A3%BC%EC%86%8C%EB%9E%80.html" class="menu-item">주소란? URL 체계 이해</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%ED%95%84%EC%9A%94%EC%84%B1.html" class="menu-item">라우트의 필요성</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%EB%8F%99%EC%9E%91.html" class="menu-item">라우트의 동작 원리</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="route-system">
+                                <a href="/04-01.route-taste/" class="menu-item">맛보기 - 5분 라우팅 체험</a>
+                                <a href="/04-02.route-beginner/" class="menu-item">초급 - 라우팅 기초 마스터</a>
+                                <a href="/04-03.route-intermediate/" class="menu-item">중급 - 네임드 라우트와 그룹</a>
+                                <a href="/04-04.route-advanced/" class="menu-item">고급 - 미들웨어와 모델바인딩</a>
+                                <a href="/04-05.route-application/" class="menu-item">응용 - 엔터프라이즈 라우팅</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 뷰 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('view-learning')">
+                        뷰 학습
+                    </div>
+                    <div class="menu-items" id="view-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="view-taste-detail">
+                                <a href="/07.view-taste/" class="menu-item">뷰 맛보기</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="view-system">
+                                <a href="/05-01.view-taste/" class="menu-item">맛보기 - 첫 번째 뷰 만들기</a>
+                                <a href="/05-02.view-beginner/" class="menu-item">초급 - 뷰와 데이터 전달</a>
+                                <a href="/05-03.view-intermediate/" class="menu-item">중급 - HTTP 응답과 리다이렉트</a>
+                                <a href="/05-04.view-advanced/" class="menu-item">고급 - API와 JSON 응답</a>
+                                <a href="/05-05.view-application/" class="menu-item">응용 - 엔터프라이즈 뷰 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 템플릿 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('template-learning')">
+                        템플릿 학습
+                    </div>
+                    <div class="menu-items" id="template-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('template-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="template-system">
+                                <a href="/06-01.template-taste/" class="menu-item">맛보기 - Blade 첫 만남</a>
+                                <a href="/06-02.template-beginner/" class="menu-item">초급 - Blade 기초 마스터</a>
+                                <a href="/06-03.template-intermediate/" class="menu-item">중급 - 컴포넌트와 재사용성</a>
+                                <a href="/06-04.template-advanced/" class="menu-item">고급 - 커스텀 지시어와 최적화</a>
+                                <a href="/06-05.template-application/" class="menu-item">응용 - 엔터프라이즈 템플릿 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JinyPHP 패키지 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('jinyphp')">
+                        JinyPHP 패키지
+                    </div>
+                    <div class="menu-items" id="jinyphp">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('jinyphp-setup')">
+                                패키지 설치
+                            </div>
+                            <div class="category-items" id="jinyphp-setup">
+                                <a href="/04.jinyphp.html" class="menu-item">패키지 설치</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 학습 진도 표시 -->
+                <div class="menu-group mt-4">
+                    <div class="learning-progress">
+                        <h6><i class="fas fa-chart-line me-2"></i>학습 진도</h6>
+                        <div class="progress-items">
+                            <div class="progress-item">
+                                <span class="level-badge level-1">🍯</span>
+                                <span>맛보기 - 5분 체험</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-2">🌱</span>
+                                <span>초급 - 기초 마스터</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-3">🚀</span>
+                                <span>중급 - 실전 활용</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-4">⚡</span>
+                                <span>고급 - 최적화</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-5">🔥</span>
+                                <span>응용 - 엔터프라이즈</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 도움말 -->
+                <div class="menu-group mt-3">
+                    <div class="help-section">
+                        <h6><i class="fas fa-question-circle me-2"></i>학습 가이드</h6>
+                        <div class="help-items">
+                            <div class="help-item">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                <small>단계별로 차근차근 진행하세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-code text-info me-2"></i>
+                                <small>실습 코드를 직접 작성해보세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-bookmark text-success me-2"></i>
+                                <small>중요한 부분은 북마크하세요</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사이드바 하단 정보 -->
+            <div class="sidebar-footer">
+                <div class="version-info">
+                    <small class="text-muted">
+                        <i class="fab fa-laravel me-1"></i>Laravel 12
+                        <br>
+                        <i class="fab fa-php me-1"></i>PHP 8.4+
+                    </small>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Content -->
+                    <div class="col-12 col-xl-9">
+                        <div class="content-wrapper">
+                            <h1 id="데이터베이스-설정">데이터베이스 설정</h1>
+
+<p>안녕하세요! 이제 Laravel에 데이터베이스를 연결해보겠습니다. <strong>데이터베이스는 우리 애플리케이션의 기억 저장소라고 생각하시면 됩니다.</strong> 사용자 정보, 게시글, 주문 내역 등 모든 중요한 데이터가 여기에 저장돼요.</p>
+
+<blockquote>
+  <p><strong>💡 강의 노트</strong>: 데이터베이스 설정이 Laravel에서 가장 중요한 부분 중 하나입니다. 한 번 제대로 설정해두면 Laravel이 알아서 모든 걸 처리해줘요!</p>
+</blockquote>
+
+<h2 id="-어떤-데이터베이스를-선택할까요">🤔 어떤 데이터베이스를 선택할까요?</h2>
+
+<p><strong>Laravel은 3가지 주요 데이터베이스를 지원합니다:</strong></p>
+
+<h3 id="-데이터베이스-선택지-비교">📊 데이터베이스 선택지 비교</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>특성</th>
+      <th>SQLite</th>
+      <th>PostgreSQL</th>
+      <th>MySQL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>설치</strong></td>
+      <td>불필요 (Laravel 내장)</td>
+      <td>별도 설치 필요</td>
+      <td>별도 설치 필요</td>
+    </tr>
+    <tr>
+      <td><strong>복잡도</strong></td>
+      <td>매우 간단</td>
+      <td>중간</td>
+      <td>중간</td>
+    </tr>
+    <tr>
+      <td><strong>성능</strong></td>
+      <td>낮음</td>
+      <td>매우 높음</td>
+      <td>높음</td>
+    </tr>
+    <tr>
+      <td><strong>동시 접속</strong></td>
+      <td>제한적</td>
+      <td>우수</td>
+      <td>우수</td>
+    </tr>
+    <tr>
+      <td><strong>적합한 용도</strong></td>
+      <td>개발/학습/소규모</td>
+      <td>운영/대규모</td>
+      <td>운영/웹서비스</td>
+    </tr>
+    <tr>
+      <td><strong>파일 크기</strong></td>
+      <td>단일 파일</td>
+      <td>복수 파일</td>
+      <td>복수 파일</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="-상황별-추천">🎯 상황별 추천</h3>
+
+<h4 id="1-처음-laravel을-배우는-분">1. <strong>처음 Laravel을 배우는 분</strong></h4>
+<ul>
+  <li><strong>SQLite 추천</strong> → 설치 없이 바로 시작 가능</li>
+</ul>
+
+<h4 id="2-실제-서비스를-개발하는-분">2. <strong>실제 서비스를 개발하는 분</strong></h4>
+<ul>
+  <li><strong>PostgreSQL 추천</strong> → 최고의 성능과 안정성</li>
+</ul>
+
+<h4 id="3-기존에-mysql-경험이-있는-분">3. <strong>기존에 MySQL 경험이 있는 분</strong></h4>
+<ul>
+  <li><strong>MySQL 선택</strong> → 익숙한 환경에서 학습</li>
+</ul>
+
+<blockquote>
+  <p><strong>💡 학습 팁</strong>: SQLite로 시작해서 Laravel을 익힌 후, 나중에 PostgreSQL이나 MySQL로 이전하는 것도 좋은 전략입니다!</p>
+</blockquote>
+
+<hr />
+
+<h2 id="-방법-1-sqlite-설정-가장-간단">📱 방법 1: SQLite 설정 (가장 간단)</h2>
+
+<p><strong>SQLite는 Laravel에 기본으로 포함되어 있어서 별도 설치가 필요 없습니다!</strong> 파일 기반 데이터베이스라서 학습이나 개발용으로 완벽해요.</p>
+
+<blockquote>
+  <p><strong>🚀 초보자 최적</strong>: 복잡한 설치 과정 없이 바로 Laravel을 체험할 수 있어요!</p>
+</blockquote>
+
+<h3 id="sqlite-장점">SQLite 장점</h3>
+<ul>
+  <li><strong>🎯 설치 불필요</strong> - Laravel에 이미 포함됨</li>
+  <li><strong>📁 단일 파일</strong> - 데이터베이스가 하나의 파일로 관리됨</li>
+  <li><strong>⚡️ 빠른 시작</strong> - 즉시 개발 시작 가능</li>
+  <li><strong>🔄 이동 용이</strong> - 파일 하나만 백업/복사하면 됨</li>
+</ul>
+
+<h3 id="sqlite-단점">SQLite 단점</h3>
+<ul>
+  <li><strong>👥 동시 접속 제한</strong> - 여러 사용자가 동시에 사용하기 어려움</li>
+  <li><strong>📈 대용량 데이터 제한</strong> - 큰 서비스에는 부적합</li>
+  <li><strong>🌐 네트워크 접속 불가</strong> - 원격 접속 불가능</li>
+</ul>
+
+<h3 id="sqlite-설정하기">SQLite 설정하기</h3>
+
+<p><strong>이미 Laravel에 포함되어 있으니 설정만 하면 끝!</strong></p>
+
+<p><strong>.env 파일을 열어서 다음과 같이 수정하세요:</strong></p>
+
+<pre><code class="language-env"># 데이터베이스 설정 (SQLite)
+DB_CONNECTION=sqlite
+# DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD는 주석 처리하거나 삭제
+</code></pre>
+
+<p><strong>database 폴더에 SQLite 파일을 생성하세요:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Laravel 프로젝트 폴더에서 실행</span>
+<span class="nb">touch </span>database/database.sqlite
+
+<span class="c"># Windows에서는</span>
+echo. <span class="o">&gt;</span> database/database.sqlite
+</code></pre></div></div>
+
+<p><strong>📁 SQLite 관련 파일들</strong>:</p>
+<ul>
+  <li><strong>데이터베이스 파일</strong>: <code class="language-plaintext highlighter-rouge">database/database.sqlite</code></li>
+  <li><strong>설정 파일</strong>: <code class="language-plaintext highlighter-rouge">.env</code> (DB_CONNECTION=sqlite)</li>
+</ul>
+
+<h3 id="sqlite-연결-테스트">SQLite 연결 테스트</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Laravel에서 연결 확인</span>
+php artisan tinker
+</code></pre></div></div>
+
+<p><strong>tinker에서 테스트:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 데이터베이스 연결 테스트</span>
+<span class="no">DB</span><span class="o">::</span><span class="nf">connection</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getPdo</span><span class="p">();</span>
+
+<span class="c1">// SQLite 버전 확인</span>
+<span class="no">DB</span><span class="o">::</span><span class="nf">select</span><span class="p">(</span><span class="s2">"SELECT sqlite_version()"</span><span class="p">);</span>
+
+<span class="c1">// 종료</span>
+<span class="k">exit</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>✅ 성공 신호</strong>: 에러 없이 실행되고 SQLite 버전이 표시되면 성공!</p>
+</blockquote>
+
+<h3 id="언제-sqlite를-사용할까요">언제 SQLite를 사용할까요?</h3>
+
+<p><strong>✅ 좋은 경우:</strong></p>
+<ul>
+  <li>Laravel을 처음 배울 때</li>
+  <li>개인 프로젝트나 포트폴리오</li>
+  <li>프로토타입 개발</li>
+  <li>소규모 내부 도구</li>
+</ul>
+
+<p><strong>❌ 피해야 하는 경우:</strong></p>
+<ul>
+  <li>여러 사용자가 동시에 사용하는 서비스</li>
+  <li>대용량 데이터 처리</li>
+  <li>고성능이 필요한 애플리케이션</li>
+</ul>
+
+<hr />
+
+<h2 id="-방법-2-postgresql-설정-운영-권장">🐘 방법 2: PostgreSQL 설정 (운영 권장)</h2>
+
+<p><strong>PostgreSQL을 ‘포스트그레스큐엘’ 또는 줄여서 ‘포스트그레스’라고 부릅니다.</strong> 세계에서 가장 발전된 오픈 소스 데이터베이스 중 하나예요.</p>
+
+<h3 id="postgresql-설치하기">PostgreSQL 설치하기</h3>
+
+<p><strong>운영체제별로 설치 방법이 다릅니다.</strong></p>
+
+<h4 id="macos-사용자">macOS 사용자</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Homebrew로 PostgreSQL 설치</span>
+brew <span class="nb">install </span>postgresql@15
+
+<span class="c"># PostgreSQL 서비스 시작</span>
+brew services start postgresql@15
+
+<span class="c"># 설치 확인</span>
+psql <span class="nt">--version</span>
+</code></pre></div></div>
+
+<h4 id="windows-사용자">Windows 사용자</h4>
+<ol>
+  <li><a href="https://www.postgresql.org/download/windows/">PostgreSQL 공식 사이트</a>에서 다운로드</li>
+  <li>설치 프로그램 실행</li>
+  <li>비밀번호 설정 (잊지 마세요!)</li>
+</ol>
+
+<h4 id="ubuntulinux-사용자">Ubuntu/Linux 사용자</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># PostgreSQL 설치</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>postgresql-15 postgresql-contrib-15
+
+<span class="c"># 서비스 시작</span>
+<span class="nb">sudo </span>systemctl start postgresql
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>postgresql
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>🔐 중요</strong>: PostgreSQL 설치 시 설정한 비밀번호를 꼭 기억해주세요!</p>
+</blockquote>
+
+<h3 id="데이터베이스-생성하기">데이터베이스 생성하기</h3>
+
+<p><strong>이제 우리 프로젝트용 데이터베이스를 만들어보겠습니다.</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># PostgreSQL에 접속 (비밀번호 입력 필요)</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> postgres psql
+
+<span class="c"># 또는 macOS에서</span>
+psql postgres
+</code></pre></div></div>
+
+<p><strong>PostgreSQL에 접속하면 다음 명령어들을 입력하세요:</strong></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- 우리 프로젝트용 데이터베이스 생성</span>
+<span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">jinyphp_demo_01</span><span class="p">;</span>
+
+<span class="c1">-- 전용 사용자 생성 (보안을 위해)</span>
+<span class="k">CREATE</span> <span class="k">USER</span> <span class="n">jinyphp</span> <span class="k">WITH</span> <span class="n">PASSWORD</span> <span class="s1">'your_password_here'</span><span class="p">;</span>
+
+<span class="c1">-- 사용자에게 데이터베이스 권한 부여</span>
+<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="k">DATABASE</span> <span class="n">jinyphp_demo_01</span> <span class="k">TO</span> <span class="n">jinyphp</span><span class="p">;</span>
+
+<span class="c1">-- UUID 확장 설치 (Laravel에서 유용)</span>
+<span class="err">\</span><span class="k">c</span> <span class="n">jinyphp_demo_01</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="n">EXTENSION</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="nv">"uuid-ossp"</span><span class="p">;</span>
+
+<span class="c1">-- 접속 종료</span>
+<span class="err">\</span><span class="n">q</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>📝 비밀번호 설정</strong>: <code class="language-plaintext highlighter-rouge">your_password_here</code> 부분을 원하는 비밀번호로 바꿔주세요! (예: <code class="language-plaintext highlighter-rouge">password123</code>)</p>
+</blockquote>
+
+<h3 id="laravel에서-postgresql-설정">Laravel에서 PostgreSQL 설정</h3>
+
+<p><strong>이제 Laravel이 PostgreSQL에 연결할 수 있도록 설정해보겠습니다.</strong></p>
+
+<p><strong>.env 파일을 열어서 다음과 같이 수정하세요:</strong></p>
+
+<pre><code class="language-env"># 데이터베이스 설정 (PostgreSQL)
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=jinyphp_demo_01
+DB_USERNAME=jinyphp
+DB_PASSWORD=your_password_here
+</code></pre>
+
+<blockquote>
+  <p><strong>⚠️ 주의</strong>: <code class="language-plaintext highlighter-rouge">DB_PASSWORD</code>에는 위에서 설정한 실제 비밀번호를 입력하세요!</p>
+</blockquote>
+
+<p><strong>📁 PostgreSQL 관련 파일들</strong>:</p>
+<ul>
+  <li><strong>macOS 설정</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/var/postgres/postgresql.conf</code></li>
+  <li><strong>Ubuntu 설정</strong>: <code class="language-plaintext highlighter-rouge">/etc/postgresql/15/main/postgresql.conf</code></li>
+  <li><strong>데이터 저장 위치</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/var/postgres/</code> (macOS)</li>
+</ul>
+
+<hr />
+
+<h2 id="-방법-3-mysql-설정-인기-선택지">🐬 방법 3: MySQL 설정 (인기 선택지)</h2>
+
+<p><strong>MySQL을 ‘마이에스큐엘’이라고 부릅니다.</strong> 세계에서 가장 널리 사용되는 데이터베이스 중 하나예요.</p>
+
+<h3 id="mysql-설치하기">MySQL 설치하기</h3>
+
+<h4 id="macos-사용자-1">macOS 사용자</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Homebrew로 MySQL 설치</span>
+brew <span class="nb">install </span>mysql@8.0
+
+<span class="c"># MySQL 서비스 시작</span>
+brew services start mysql@8.0
+
+<span class="c"># 보안 설정 (중요!)</span>
+mysql_secure_installation
+</code></pre></div></div>
+
+<h4 id="windows-사용자-1">Windows 사용자</h4>
+<ol>
+  <li><a href="https://dev.mysql.com/downloads/installer/">MySQL 공식 사이트</a>에서 다운로드</li>
+  <li>MySQL Installer 실행</li>
+  <li>‘Developer Default’ 선택</li>
+  <li>루트 비밀번호 설정</li>
+</ol>
+
+<h4 id="ubuntulinux-사용자-1">Ubuntu/Linux 사용자</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># MySQL 설치</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>mysql-server-8.0
+
+<span class="c"># 보안 설정</span>
+<span class="nb">sudo </span>mysql_secure_installation
+</code></pre></div></div>
+
+<h3 id="mysql-데이터베이스-생성하기">MySQL 데이터베이스 생성하기</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># MySQL에 루트로 접속</span>
+mysql <span class="nt">-u</span> root <span class="nt">-p</span>
+<span class="c"># 비밀번호 입력</span>
+</code></pre></div></div>
+
+<p><strong>MySQL에 접속하면 다음 명령어들을 입력하세요:</strong></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- 프로젝트용 데이터베이스 생성</span>
+<span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">jinyphp_demo_01</span> <span class="nb">CHARACTER</span> <span class="k">SET</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="n">utf8mb4_unicode_ci</span><span class="p">;</span>
+
+<span class="c1">-- 전용 사용자 생성</span>
+<span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">'jinyphp'</span><span class="o">@</span><span class="s1">'localhost'</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">'your_password_here'</span><span class="p">;</span>
+
+<span class="c1">-- 권한 부여</span>
+<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n">jinyphp_demo_01</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">'jinyphp'</span><span class="o">@</span><span class="s1">'localhost'</span><span class="p">;</span>
+
+<span class="c1">-- 권한 적용</span>
+<span class="n">FLUSH</span> <span class="k">PRIVILEGES</span><span class="p">;</span>
+
+<span class="c1">-- 접속 종료</span>
+<span class="n">EXIT</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="laravel에서-mysql-설정">Laravel에서 MySQL 설정</h3>
+
+<p><strong>.env 파일에서 다음과 같이 수정하세요:</strong></p>
+
+<pre><code class="language-env"># 데이터베이스 설정 (MySQL)
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=jinyphp_demo_01
+DB_USERNAME=jinyphp
+DB_PASSWORD=your_password_here
+</code></pre>
+
+<p><strong>📁 MySQL 관련 파일들</strong>:</p>
+<ul>
+  <li><strong>macOS 설정</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/etc/my.cnf</code></li>
+  <li><strong>Ubuntu 설정</strong>: <code class="language-plaintext highlighter-rouge">/etc/mysql/mysql.conf.d/mysqld.cnf</code></li>
+  <li><strong>데이터 저장 위치</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/var/mysql/</code></li>
+</ul>
+
+<hr />
+
+<h2 id="-데이터베이스-연결-테스트">🧪 데이터베이스 연결 테스트</h2>
+
+<p><strong>설정이 끝났으니 실제로 연결이 되는지 확인해보겠습니다!</strong></p>
+
+<h3 id="laravel에서-연결-확인">Laravel에서 연결 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Laravel 프로젝트 폴더에서 실행</span>
+php artisan tinker
+</code></pre></div></div>
+
+<p><strong>tinker가 실행되면 다음 명령어를 입력하세요:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 데이터베이스 연결 테스트</span>
+<span class="no">DB</span><span class="o">::</span><span class="nf">connection</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getPdo</span><span class="p">();</span>
+
+<span class="c1">// 성공하면 PDO 객체 정보가 출력됩니다</span>
+<span class="c1">// 실패하면 에러 메시지가 나타납니다</span>
+
+<span class="c1">// tinker 종료</span>
+<span class="k">exit</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>✅ 성공 신호</strong>: 에러 없이 PDO 객체 정보가 나오면 연결 성공!
+<strong>🚨 실패 시</strong>: 사용자명, 비밀번호, 데이터베이스 이름을 다시 확인해보세요.</p>
+</blockquote>
+
+<h3 id="직접-데이터베이스-연결-확인">직접 데이터베이스 연결 확인</h3>
+
+<p><strong>터미널에서도 확인할 수 있어요:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># SQLite 연결 테스트</span>
+sqlite3 database/database.sqlite <span class="s2">".tables"</span>
+
+<span class="c"># PostgreSQL 연결 테스트</span>
+psql <span class="nt">-U</span> jinyphp <span class="nt">-d</span> jinyphp_demo_01 <span class="nt">-h</span> localhost
+
+<span class="c"># MySQL 연결 테스트</span>
+mysql <span class="nt">-u</span> jinyphp <span class="nt">-p</span> <span class="nt">-h</span> localhost jinyphp_demo_01
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-마이그레이션-실행">📊 마이그레이션 실행</h2>
+
+<p><strong>Laravel의 마법 같은 기능을 체험해보겠습니다!</strong> 마이그레이션은 데이터베이스 테이블을 자동으로 만들어주는 기능이에요.</p>
+
+<blockquote>
+  <p><strong>💫 Laravel의 마법</strong>: 복잡한 SQL 문을 직접 작성할 필요 없이 Laravel이 알아서 테이블을 만들어줍니다!</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 기본 테이블들 생성 (사용자, 비밀번호 재설정 등)</span>
+php artisan migrate
+
+<span class="c"># 성공 메시지 확인</span>
+<span class="c"># Migration table created successfully.</span>
+<span class="c"># Migrating: 2014_10_12_000000_create_users_table</span>
+<span class="c"># Migrated:  2014_10_12_000000_create_users_table (15.23ms)</span>
+</code></pre></div></div>
+
+<p><strong>🎉 성공하면 다음 테이블들이 자동으로 생성됩니다:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">users</code> - 사용자 정보</li>
+  <li><code class="language-plaintext highlighter-rouge">password_reset_tokens</code> - 비밀번호 재설정</li>
+  <li><code class="language-plaintext highlighter-rouge">sessions</code> - 사용자 세션</li>
+  <li><code class="language-plaintext highlighter-rouge">cache</code> - 캐시 데이터</li>
+</ul>
+
+<h3 id="마이그레이션-상태-확인">마이그레이션 상태 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 어떤 마이그레이션이 실행되었는지 확인</span>
+php artisan migrate:status
+
+<span class="c"># 결과 예시:</span>
+<span class="c"># +------+----------------------------------------------+-------+</span>
+<span class="c"># | Ran? | Migration                                    | Batch |</span>
+<span class="c"># +------+----------------------------------------------+-------+</span>
+<span class="c"># | Yes  | 2014_10_12_000000_create_users_table         | 1     |</span>
+<span class="c"># | Yes  | 2014_10_12_100000_create_password_...        | 1     |</span>
+<span class="c"># +------+----------------------------------------------+-------+</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>📋 해석</strong>: ‘Yes’로 표시된 것들은 이미 실행된 마이그레이션입니다.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="-샘플-데이터-추가-선택사항">🎯 샘플 데이터 추가 (선택사항)</h2>
+
+<p><strong>테스트용 데이터를 추가해보겠습니다.</strong> 실제 개발할 때 유용해요.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 샘플 데이터 생성 (있는 경우에만)</span>
+php artisan db:seed
+
+<span class="c"># 또는 특정 시더 실행</span>
+php artisan db:seed <span class="nt">--class</span><span class="o">=</span>UserSeeder
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>💡 참고</strong>: 기본 Laravel에는 시더가 없을 수도 있어요. 나중에 필요할 때 만들면 됩니다.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="-데이터베이스-설정-완료-체크리스트">✅ 데이터베이스 설정 완료 체크리스트</h2>
+
+<h3 id="설치-및-설정">설치 및 설정</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>데이터베이스 선택</strong> - SQLite / PostgreSQL / MySQL 중 하나</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>SQLite</strong>: database/database.sqlite 파일 생성</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>PostgreSQL/MySQL</strong>: 데이터베이스 생성 (<code class="language-plaintext highlighter-rouge">jinyphp_demo_01</code>)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>PostgreSQL/MySQL</strong>: 전용 사용자 생성 (<code class="language-plaintext highlighter-rouge">jinyphp</code>)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Laravel .env</strong> 파일 수정 완료</li>
+</ul>
+
+<h3 id="연결-테스트">연결 테스트</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Laravel tinker</strong>로 연결 확인</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>직접 데이터베이스</strong> 접속 확인</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>마이그레이션</strong> 실행 성공</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>테이블</strong> 생성 확인</li>
+</ul>
+
+<hr />
+
+<h2 id="-다음-단계">🔗 다음 단계</h2>
+
+<p>데이터베이스 설정이 완료되었습니다! 이제:</p>
+
+<ol>
+  <li><strong>GitHub 배포 설정</strong> → <a href="/02.Setup/04.github-deploy.html"><code class="language-plaintext highlighter-rouge">04.github-deploy.md</code></a>
+    <ul>
+      <li>Git 저장소 설정</li>
+      <li>소스코드 버전 관리</li>
+    </ul>
+  </li>
+  <li><strong>JinyPHP 패키지 설치</strong> → <a href="../02.jinyphp.md"><code class="language-plaintext highlighter-rouge">../02.jinyphp.md</code></a>
+    <ul>
+      <li>Laravel 확장 기능 추가</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="-자주-발생하는-문제들">❓ 자주 발생하는 문제들</h2>
+
+<h3 id="q1-sqlite-파일을-찾을-수-없다고-나와요">Q1: SQLite 파일을 찾을 수 없다고 나와요</h3>
+<p><strong>A</strong>: <code class="language-plaintext highlighter-rouge">database/database.sqlite</code> 파일이 존재하는지 확인하세요. 없으면 <code class="language-plaintext highlighter-rouge">touch database/database.sqlite</code> 명령으로 생성하세요.</p>
+
+<h3 id="q2-access-denied-for-user-에러가-나요-postgresqlmysql">Q2: “Access denied for user” 에러가 나요 (PostgreSQL/MySQL)</h3>
+<p><strong>A</strong>: 사용자명이나 비밀번호가 틀렸을 가능성이 높습니다. .env 파일을 다시 확인해보세요.</p>
+
+<h3 id="q3-database-does-not-exist-에러가-나요">Q3: “Database does not exist” 에러가 나요</h3>
+<p><strong>A</strong>: 데이터베이스 이름을 확인해보세요. 대소문자도 정확해야 합니다.</p>
+
+<h3 id="q4-postgresqlmysql-서비스가-시작되지-않아요">Q4: PostgreSQL/MySQL 서비스가 시작되지 않아요</h3>
+<p><strong>A</strong>:</p>
+<ul>
+  <li>macOS: <code class="language-plaintext highlighter-rouge">brew services restart postgresql@15</code></li>
+  <li>Ubuntu: <code class="language-plaintext highlighter-rouge">sudo systemctl restart postgresql</code></li>
+</ul>
+
+<h3 id="q5-마이그레이션이-실행되지-않아요">Q5: 마이그레이션이 실행되지 않아요</h3>
+<p><strong>A</strong>: 먼저 데이터베이스 연결을 확인해보세요. <code class="language-plaintext highlighter-rouge">php artisan tinker</code>로 테스트 후 다시 시도해보세요.</p>
+
+<h3 id="q6-sqlite-권한-오류가-나요">Q6: SQLite 권한 오류가 나요</h3>
+<p><strong>A</strong>: database 폴더와 SQLite 파일에 쓰기 권한이 있는지 확인하세요:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>755 database/
+<span class="nb">chmod </span>664 database/database.sqlite
+</code></pre></div></div>
+
+<h3 id="q7-포트가-이미-사용-중이라고-나와요">Q7: 포트가 이미 사용 중이라고 나와요</h3>
+<p><strong>A</strong>: 다른 프로그램이 같은 포트를 사용하고 있을 수 있습니다. 데이터베이스 서비스를 재시작하거나 다른 포트를 사용해보세요.</p>
+
+<hr />
+
+<p><em>수고하셨습니다! 이제 Laravel이 데이터베이스와 완전히 연결되었어요. 다음 강의에서 Git 설정을 해보겠습니다! 🎉</em></p>
+
+                        </div>
+                    </div>
+
+<!-- Right Advertisement Area -->
+<div class="col-12 col-xl-3">
+    <div class="ad-area">
+        <!-- 메인 광고 (300x600 Large Rectangle) -->
+        <div class="ad-container">
+            <h6>Advertisement</h6>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 중간 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 관련 링크 -->
+        <div class="ad-container mt-4">
+            <h6>관련 링크</h6>
+            <div class="related-links">
+                <a href="https://laravel.com/docs" target="_blank">Laravel 공식 문서</a>
+                <a href="https://php.net/docs.php" target="_blank">PHP 공식 문서</a>
+                <a href="https://getbootstrap.com/" target="_blank">Bootstrap 문서</a>
+                <a href="https://www.mysql.com/documentation/" target="_blank">MySQL 문서</a>
+                <a href="https://git-scm.com/docs" target="_blank">Git 문서</a>
+            </div>
+        </div>
+
+        <!-- 하단 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1122334455" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; 2025 JinyDev. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="/assets/w3schools-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev</title>
+    <meta name="description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.">
+
+    <!-- SEO Meta Tags -->
+    
+    
+    <meta name="robots" content="index, follow">
+    
+    <meta name="language" content="ko">
+
+    <!-- Open Graph Meta Tags -->
+    
+
+    <!-- Twitter Card Meta Tags -->
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/w3schools-style.css">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+            crossorigin="anonymous"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>JinyDev | JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="JinyDev" />
+<meta name="author" content="JinyPHP Team" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다." />
+<meta property="og:description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다." />
+<link rel="canonical" href="http://localhost:4000/03.deploy/05.optimization.html" />
+<meta property="og:url" content="http://localhost:4000/03.deploy/05.optimization.html" />
+<meta property="og:site_name" content="JinyDev" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JinyDev" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"JinyPHP Team"},"description":"JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.","headline":"JinyDev","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"JinyPHP Team"},"url":"http://localhost:4000/03.deploy/05.optimization.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+<!-- Top Navigation -->
+<nav class="top-nav">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="/">JinyDev</a>
+        </div>
+        <div class="nav-tabs">
+            <a href="/" class="nav-tab active">HOME</a>
+            <a href="laravel.jiny.dev" class="nav-tab">Laravel</a>
+            <a href="php.jiny.dev" class="nav-tab">PHP</a>
+            <a href="linux.jiny.dev" class="nav-tab">Linux</a>
+            <a href="/04.Route/" class="nav-tab">라우팅</a>
+            <a href="/05.view/" class="nav-tab">View</a>
+            <a href="/06.templates/" class="nav-tab">Templates</a>
+            <a href="/04.jinyphp.html" class="nav-tab">JinyPHP</a>
+            <a href="git.jiny.dev" class="nav-tab">Git</a>
+            <a href="mysql.jiny.dev" class="nav-tab">MySQL</a>
+            <a href="html.jiny.dev" class="nav-tab">Html</a>
+            <a href="javascript.jiny.dev" class="nav-tab">Javascript</a>
+        </div>
+        <div class="nav-actions">
+            <button class="menu-btn d-lg-none" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h4>학습 가이드</h4>
+            </div>
+
+            <div class="sidebar-menu">
+                <!-- Laravel 시작하기 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('laravel-start')">
+                        Laravel 시작하기
+                    </div>
+                    <div class="menu-items" id="laravel-start">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('laravel-basics')">
+                                기초 개념
+                            </div>
+                            <div class="category-items" id="laravel-basics">
+                                <a href="/01.Start/" class="menu-item">개요</a>
+                                <a href="/01.Start/01.what-is-laravel.html" class="menu-item">라라벨이란?</a>
+                                <a href="/01.Start/02.php-language.html" class="menu-item">PHP 언어</a>
+                                <a href="/01.Start/03.dependency-issues.html" class="menu-item">의존성 문제</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 개발환경 설정 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('setup')">
+                        개발환경 설정
+                    </div>
+                    <div class="menu-items" id="setup">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-install')">
+                                설치 및 설정
+                            </div>
+                            <div class="category-items" id="setup-install">
+                                <a href="/02.Setup/" class="menu-item">개요</a>
+                                <a href="/02.Setup/01.requirements.html" class="menu-item">사전 요구사항</a>
+                                <a href="/02.Setup/02.laravel-install.html" class="menu-item">Laravel 설치</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-config')">
+                                환경 구성
+                            </div>
+                            <div class="category-items" id="setup-config">
+                                <a href="/02.Setup/03.database.html" class="menu-item">데이터베이스 설정</a>
+                                <a href="/02.Setup/04.local-development.html" class="menu-item">로컬 개발 환경</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 배포 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('deploy')">
+                        서버 배포
+                    </div>
+                    <div class="menu-items" id="deploy">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-setup')">
+                                서버 준비
+                            </div>
+                            <div class="category-items" id="deploy-setup">
+                                <a href="/03.deploy/" class="menu-item">개요</a>
+                                <a href="/03.deploy/01.cloud-setup.html" class="menu-item">클라우드 준비</a>
+                                <a href="/03.deploy/02.server-setup.html" class="menu-item">서버 환경 설정</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-app')">
+                                애플리케이션 배포
+                            </div>
+                            <div class="category-items" id="deploy-app">
+                                <a href="/03.deploy/03.laravel-deploy.html" class="menu-item">Laravel 배포</a>
+                                <a href="/03.deploy/04.domain-https.html" class="menu-item">도메인 HTTPS</a>
+                                <a href="/03.deploy/05.optimization.html" class="menu-item">성능 최적화</a>
+                                <a href="/03.deploy/06.github-deploy.html" class="menu-item">GitHub 배포 자동화</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 백엔드 개발 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('backend')">
+                        백엔드 개발
+                    </div>
+                    <div class="menu-items" id="backend">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('backend-basics')">
+                                기본 개념
+                            </div>
+                            <div class="category-items" id="backend-basics">
+                                <a href="/04.backend.html" class="menu-item">백엔드 개발 가이드</a>
+                                <a href="/04.backend/framework.html" class="menu-item">프레임워크의 이해</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 접속 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('server-access')">
+                        서버 접속
+                    </div>
+                    <div class="menu-items" id="server-access">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('server-concepts')">
+                                서버 기초 이해
+                            </div>
+                            <div class="category-items" id="server-concepts">
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/" class="menu-item">개요</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/%EC%9B%B9%EC%84%9C%EB%B2%84%EB%9E%80.html" class="menu-item">웹서버란?</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/http.html" class="menu-item">HTTP 통신</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 라우팅 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('routing-learning')">
+                        라우팅 학습
+                    </div>
+                    <div class="menu-items" id="routing-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="route-taste-detail">
+                                <a href="/06.route-taste/" class="menu-item">5분 라우팅 체험</a>
+                                <a href="/06.route-taste/%EC%A3%BC%EC%86%8C%EB%9E%80.html" class="menu-item">주소란? URL 체계 이해</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%ED%95%84%EC%9A%94%EC%84%B1.html" class="menu-item">라우트의 필요성</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%EB%8F%99%EC%9E%91.html" class="menu-item">라우트의 동작 원리</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="route-system">
+                                <a href="/04-01.route-taste/" class="menu-item">맛보기 - 5분 라우팅 체험</a>
+                                <a href="/04-02.route-beginner/" class="menu-item">초급 - 라우팅 기초 마스터</a>
+                                <a href="/04-03.route-intermediate/" class="menu-item">중급 - 네임드 라우트와 그룹</a>
+                                <a href="/04-04.route-advanced/" class="menu-item">고급 - 미들웨어와 모델바인딩</a>
+                                <a href="/04-05.route-application/" class="menu-item">응용 - 엔터프라이즈 라우팅</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 뷰 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('view-learning')">
+                        뷰 학습
+                    </div>
+                    <div class="menu-items" id="view-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="view-taste-detail">
+                                <a href="/07.view-taste/" class="menu-item">뷰 맛보기</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="view-system">
+                                <a href="/05-01.view-taste/" class="menu-item">맛보기 - 첫 번째 뷰 만들기</a>
+                                <a href="/05-02.view-beginner/" class="menu-item">초급 - 뷰와 데이터 전달</a>
+                                <a href="/05-03.view-intermediate/" class="menu-item">중급 - HTTP 응답과 리다이렉트</a>
+                                <a href="/05-04.view-advanced/" class="menu-item">고급 - API와 JSON 응답</a>
+                                <a href="/05-05.view-application/" class="menu-item">응용 - 엔터프라이즈 뷰 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 템플릿 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('template-learning')">
+                        템플릿 학습
+                    </div>
+                    <div class="menu-items" id="template-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('template-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="template-system">
+                                <a href="/06-01.template-taste/" class="menu-item">맛보기 - Blade 첫 만남</a>
+                                <a href="/06-02.template-beginner/" class="menu-item">초급 - Blade 기초 마스터</a>
+                                <a href="/06-03.template-intermediate/" class="menu-item">중급 - 컴포넌트와 재사용성</a>
+                                <a href="/06-04.template-advanced/" class="menu-item">고급 - 커스텀 지시어와 최적화</a>
+                                <a href="/06-05.template-application/" class="menu-item">응용 - 엔터프라이즈 템플릿 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JinyPHP 패키지 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('jinyphp')">
+                        JinyPHP 패키지
+                    </div>
+                    <div class="menu-items" id="jinyphp">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('jinyphp-setup')">
+                                패키지 설치
+                            </div>
+                            <div class="category-items" id="jinyphp-setup">
+                                <a href="/04.jinyphp.html" class="menu-item">패키지 설치</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 학습 진도 표시 -->
+                <div class="menu-group mt-4">
+                    <div class="learning-progress">
+                        <h6><i class="fas fa-chart-line me-2"></i>학습 진도</h6>
+                        <div class="progress-items">
+                            <div class="progress-item">
+                                <span class="level-badge level-1">🍯</span>
+                                <span>맛보기 - 5분 체험</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-2">🌱</span>
+                                <span>초급 - 기초 마스터</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-3">🚀</span>
+                                <span>중급 - 실전 활용</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-4">⚡</span>
+                                <span>고급 - 최적화</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-5">🔥</span>
+                                <span>응용 - 엔터프라이즈</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 도움말 -->
+                <div class="menu-group mt-3">
+                    <div class="help-section">
+                        <h6><i class="fas fa-question-circle me-2"></i>학습 가이드</h6>
+                        <div class="help-items">
+                            <div class="help-item">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                <small>단계별로 차근차근 진행하세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-code text-info me-2"></i>
+                                <small>실습 코드를 직접 작성해보세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-bookmark text-success me-2"></i>
+                                <small>중요한 부분은 북마크하세요</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사이드바 하단 정보 -->
+            <div class="sidebar-footer">
+                <div class="version-info">
+                    <small class="text-muted">
+                        <i class="fab fa-laravel me-1"></i>Laravel 12
+                        <br>
+                        <i class="fab fa-php me-1"></i>PHP 8.4+
+                    </small>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Content -->
+                    <div class="col-12 col-xl-9">
+                        <div class="content-wrapper">
+                            <h1 id="5단계-성능-최적화-및-관리">5단계: 성능 최적화 및 관리</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/03.deploy/04.domain-https.html">← 이전: 도메인/HTTPS 설정</a></td>
+      <td><a href="/03.deploy/">메인으로</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>마지막 단계예요! 이제 서버를 최적화하고, 자동 배포를 설정하고, 모니터링 방법을 배워봅시다. 특히 1GB RAM 환경에서도 안정적으로 운영하는 방법을 알려드릴게요.</p>
+
+<h2 id="이-단계에서-배울-내용">이 단계에서 배울 내용</h2>
+
+<ul>
+  <li>1GB RAM 서버 최적화 (MySQL, Redis, PHP-FPM, Nginx)</li>
+  <li>스왑 메모리 설정</li>
+  <li>자동 배포 스크립트 작성</li>
+  <li>크론잡 설정 (Laravel 스케줄러)</li>
+  <li>로그 로테이션 설정</li>
+  <li>백업 설정</li>
+  <li>모니터링 및 성능 체크</li>
+  <li>실제 운영 환경 가이드</li>
+</ul>
+
+<blockquote>
+  <p><strong>💡 예상 소요 시간</strong>: 30-40분 정도 걸려요.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>⚠️ 중요</strong>: 1GB RAM은 학습/테스트용입니다. 실제 서비스 운영은 최소 2GB 이상을 권장해요!</p>
+</blockquote>
+
+<hr />
+
+<h2 id="51-1gb-ram-서버-최적화">5.1 1GB RAM 서버 최적화</h2>
+
+<h3 id="왜-최적화가-필요한가요">왜 최적화가 필요한가요?</h3>
+
+<p>1GB RAM은 제한적이에요. MySQL, PHP-FPM, Nginx, Redis가 모두 메모리를 사용하기 때문에 최적화 없이는 서버가 느려지거나 멈출 수 있어요.</p>
+
+<h3 id="현재-메모리-사용량-확인">현재 메모리 사용량 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 현재 메모리 사용량 확인</span>
+free <span class="nt">-h</span>
+
+<span class="c"># 출력 예시:</span>
+<span class="c">#               total        used        free</span>
+<span class="c"># Mem:          985Mi       742Mi       89Mi</span>
+<span class="c"># Swap:           0B          0B          0B</span>
+</code></pre></div></div>
+
+<h3 id="프로세스별-메모리-사용량">프로세스별 메모리 사용량</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 메모리를 많이 사용하는 프로세스 확인</span>
+ps aux <span class="nt">--sort</span><span class="o">=</span>-%mem | <span class="nb">head</span> <span class="nt">-10</span>
+
+<span class="c"># 서비스별 메모리 사용량</span>
+systemctl status mysql redis-server nginx php8.4-fpm <span class="nt">--lines</span><span class="o">=</span>0 | <span class="nb">grep </span>Memory
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="52-mysql-최적화-1gb-ram용">5.2 MySQL 최적화 (1GB RAM용)</h2>
+
+<h3 id="mysql-설정-파일-편집">MySQL 설정 파일 편집</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># MySQL 설정 파일 편집</span>
+<span class="nb">sudo </span>nano /etc/mysql/mysql.conf.d/mysqld.cnf
+</code></pre></div></div>
+
+<p>다음 설정을 <code class="language-plaintext highlighter-rouge">[mysqld]</code> 섹션에 추가하거나 수정:</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[mysqld]</span><span class="w">
+</span><span class="c"># === 메모리 사용량 최소화 ===
+</span><span class="py">innodb_buffer_pool_size</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">128M          # 가장 중요한 설정</span>
+<span class="py">key_buffer_size</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">32M                   # MyISAM 키 캐시</span>
+<span class="py">table_open_cache</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">64                   # 테이블 캐시</span>
+<span class="py">sort_buffer_size</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">512K                 # 정렬 버퍼</span>
+<span class="py">read_buffer_size</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">256K                 # 순차 읽기 버퍼</span>
+<span class="py">read_rnd_buffer_size</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">512K             # 랜덤 읽기 버퍼</span>
+<span class="w">
+</span><span class="c"># === 연결 설정 ===
+</span><span class="py">max_connections</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">10                    # 최대 동시 연결 수</span>
+<span class="py">thread_cache_size</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">8                   # 스레드 캐시</span>
+<span class="w">
+</span><span class="c"># === 쿼리 캐시 (MySQL 5.7 이하) ===
+# MySQL 8.x에서는 제거됨
+# query_cache_size = 16M
+# query_cache_type = 1
+</span><span class="w">
+</span><span class="c"># === 임시 테이블 ===
+</span><span class="py">tmp_table_size</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">32M                    # 임시 테이블 크기</span>
+<span class="py">max_heap_table_size</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">32M               # 힙 테이블 크기</span>
+<span class="w">
+</span><span class="c"># === 로깅 (프로덕션에서는 필요 시만) ===
+</span><span class="py">slow_query_log</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">1</span>
+<span class="py">slow_query_log_file</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">/var/log/mysql/mysql-slow.log</span>
+<span class="py">long_query_time</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">2</span>
+<span class="w">
+</span><span class="c"># === InnoDB 최적화 ===
+</span><span class="py">innodb_log_file_size</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">64M              # 로그 파일 크기</span>
+<span class="py">innodb_log_buffer_size</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">8M             # 로그 버퍼</span>
+<span class="py">innodb_flush_method</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">O_DIRECT          # 더블 버퍼링 방지</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>💡 innodb_buffer_pool_size</strong>: 가장 중요한 설정이에요. RAM의 약 12-15% 정도가 적당합니다.</p>
+</blockquote>
+
+<h3 id="mysql-재시작">MySQL 재시작</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># MySQL 재시작</span>
+<span class="nb">sudo </span>systemctl restart mysql
+
+<span class="c"># 상태 확인</span>
+<span class="nb">sudo </span>systemctl status mysql
+
+<span class="c"># 설정 적용 확인</span>
+mysql <span class="nt">-u</span> root <span class="nt">-p</span> <span class="nt">-e</span> <span class="s2">"SHOW VARIABLES LIKE 'innodb_buffer_pool_size';"</span>
+mysql <span class="nt">-u</span> root <span class="nt">-p</span> <span class="nt">-e</span> <span class="s2">"SHOW VARIABLES LIKE 'max_connections';"</span>
+</code></pre></div></div>
+
+<h3 id="mysql-메모리-사용량-재확인">MySQL 메모리 사용량 재확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># MySQL 메모리 사용량</span>
+ps aux | <span class="nb">grep </span>mysql | <span class="nb">grep</span> <span class="nt">-v</span> <span class="nb">grep</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="53-redis-최적화-1gb-ram용">5.3 Redis 최적화 (1GB RAM용)</h2>
+
+<h3 id="redis-설정-편집">Redis 설정 편집</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Redis 설정 파일 편집</span>
+<span class="nb">sudo </span>nano /etc/redis/redis.conf
+</code></pre></div></div>
+
+<p>다음 설정들을 찾아서 수정:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># === 메모리 제한 ===</span>
+maxmemory 64mb                          <span class="c"># 최대 메모리 64MB</span>
+maxmemory-policy allkeys-lru            <span class="c"># 메모리 가득 차면 LRU로 제거</span>
+
+<span class="c"># === 데이터 지속성 (가벼운 설정) ===</span>
+save 900 1                              <span class="c"># 15분에 1개 이상 변경</span>
+save 300 10                             <span class="c"># 5분에 10개 이상 변경</span>
+save 60 10000                           <span class="c"># 1분에 10000개 이상 변경</span>
+
+<span class="c"># === 네트워크 최적화 ===</span>
+<span class="nb">timeout </span>300                             <span class="c"># 클라이언트 타임아웃</span>
+tcp-keepalive 300                       <span class="c"># TCP 연결 유지</span>
+
+<span class="c"># === 로깅 ===</span>
+loglevel notice
+logfile /var/log/redis/redis-server.log
+
+<span class="c"># === 보안 (이미 설정했다면 확인) ===</span>
+requirepass your_redis_password_here
+<span class="nb">bind </span>127.0.0.1 ::1
+</code></pre></div></div>
+
+<h3 id="redis-재시작">Redis 재시작</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Redis 재시작</span>
+<span class="nb">sudo </span>systemctl restart redis-server
+
+<span class="c"># 상태 확인</span>
+<span class="nb">sudo </span>systemctl status redis-server
+
+<span class="c"># 메모리 사용량 확인</span>
+redis-cli <span class="nt">-a</span> your_redis_password_here INFO memory
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="54-php-fpm-최적화-1gb-ram용">5.4 PHP-FPM 최적화 (1GB RAM용)</h2>
+
+<h3 id="php-fpm-풀-설정-편집">PHP-FPM 풀 설정 편집</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># PHP-FPM 풀 설정 파일 편집</span>
+<span class="nb">sudo </span>nano /etc/php/8.4/fpm/pool.d/www.conf
+</code></pre></div></div>
+
+<p>다음 설정들을 찾아서 수정:</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[www]</span><span class="w">
+</span><span class="c"># === 프로세스 관리자 ===
+</span><span class="py">pm</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">dynamic                            # 동적 프로세스 관리</span>
+<span class="py">pm.max_children</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">8                     # 최대 자식 프로세스 (중요!)</span>
+<span class="py">pm.start_servers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">2                    # 시작 시 프로세스 수</span>
+<span class="py">pm.min_spare_servers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">1                # 최소 대기 프로세스</span>
+<span class="py">pm.max_spare_servers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">3                # 최대 대기 프로세스</span>
+<span class="py">pm.process_idle_timeout</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">10s           # 유휴 프로세스 타임아웃</span>
+<span class="py">pm.max_requests</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">200                   # 프로세스당 최대 요청 수</span>
+<span class="w">
+</span><span class="c"># === 상태 모니터링 (선택사항) ===
+</span><span class="py">pm.status_path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">/status</span>
+<span class="w">
+</span><span class="c"># === 슬로우 로그 ===
+</span><span class="py">slowlog</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">/var/log/php8.4-fpm.slow.log</span>
+<span class="py">request_slowlog_timeout</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">5s</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>💡 pm.max_children 계산법</strong>:</p>
+  <ul>
+    <li>각 PHP-FPM 프로세스: 약 50-80MB</li>
+    <li>1GB RAM에서: 8개면 충분 (640MB 정도)</li>
+  </ul>
+</blockquote>
+
+<h3 id="php-fpm-재시작">PHP-FPM 재시작</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># PHP-FPM 재시작</span>
+<span class="nb">sudo </span>systemctl restart php8.4-fpm
+
+<span class="c"># 상태 확인</span>
+<span class="nb">sudo </span>systemctl status php8.4-fpm
+
+<span class="c"># 프로세스 수 확인</span>
+ps aux | <span class="nb">grep </span>php-fpm | <span class="nb">wc</span> <span class="nt">-l</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="55-nginx-최적화-1gb-ram용">5.5 Nginx 최적화 (1GB RAM용)</h2>
+
+<h3 id="nginx-메인-설정-확인">Nginx 메인 설정 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Nginx 설정 파일 편집 (이미 4단계에서 했을 수도 있음)</span>
+<span class="nb">sudo </span>nano /etc/nginx/nginx.conf
+</code></pre></div></div>
+
+<p>다음 설정들을 확인:</p>
+
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># === 워커 프로세스 ===</span>
+<span class="k">worker_processes</span> <span class="mi">1</span><span class="p">;</span>                     <span class="c1"># 1GB RAM에서는 1개</span>
+<span class="k">worker_rlimit_nofile</span> <span class="mi">1024</span><span class="p">;</span>
+
+<span class="k">events</span> <span class="p">{</span>
+    <span class="kn">worker_connections</span> <span class="mi">512</span><span class="p">;</span>             <span class="c1"># 동시 연결 수 제한</span>
+    <span class="kn">use</span> <span class="s">epoll</span><span class="p">;</span>                          <span class="c1"># 효율적인 이벤트 처리</span>
+    <span class="kn">multi_accept</span> <span class="no">on</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">http</span> <span class="p">{</span>
+    <span class="c1"># === 기본 설정 ===</span>
+    <span class="kn">sendfile</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">tcp_nopush</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">tcp_nodelay</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">keepalive_timeout</span> <span class="mi">15</span><span class="p">;</span>               <span class="c1"># 짧게 설정 (메모리 절약)</span>
+    <span class="kn">types_hash_max_size</span> <span class="mi">2048</span><span class="p">;</span>
+    <span class="kn">server_tokens</span> <span class="no">off</span><span class="p">;</span>
+
+    <span class="c1"># === 버퍼 크기 (메모리 절약) ===</span>
+    <span class="kn">client_body_buffer_size</span> <span class="mi">1K</span><span class="p">;</span>
+    <span class="kn">client_header_buffer_size</span> <span class="mi">1k</span><span class="p">;</span>
+    <span class="kn">large_client_header_buffers</span> <span class="mi">2</span> <span class="mi">1k</span><span class="p">;</span>
+    <span class="kn">client_max_body_size</span> <span class="mi">64M</span><span class="p">;</span>
+
+    <span class="c1"># === Gzip 압축 ===</span>
+    <span class="kn">gzip</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">gzip_vary</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">gzip_proxied</span> <span class="s">any</span><span class="p">;</span>
+    <span class="kn">gzip_comp_level</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="kn">gzip_min_length</span> <span class="mi">1000</span><span class="p">;</span>
+    <span class="kn">gzip_types</span>
+        <span class="nc">application/javascript</span>
+        <span class="nc">application/json</span>
+        <span class="nc">text/css</span>
+        <span class="nc">text/plain</span><span class="p">;</span>
+
+    <span class="c1"># === 로깅 ===</span>
+    <span class="kn">access_log</span> <span class="n">/var/log/nginx/access.log</span> <span class="s">combined</span> <span class="s">buffer=16k</span><span class="p">;</span>
+    <span class="kn">error_log</span> <span class="n">/var/log/nginx/error.log</span> <span class="s">warn</span><span class="p">;</span>
+
+    <span class="c1"># === 기타 설정 포함 ===</span>
+    <span class="kn">include</span> <span class="n">/etc/nginx/mime.types</span><span class="p">;</span>
+    <span class="kn">include</span> <span class="n">/etc/nginx/conf.d/*.conf</span><span class="p">;</span>
+    <span class="kn">include</span> <span class="n">/etc/nginx/sites-enabled/*</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="nginx-재시작">Nginx 재시작</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 설정 문법 확인</span>
+<span class="nb">sudo </span>nginx <span class="nt">-t</span>
+
+<span class="c"># Nginx 재시작</span>
+<span class="nb">sudo </span>systemctl reload nginx
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="56-스왑-메모리-설정-필수">5.6 스왑 메모리 설정 (필수!)</h2>
+
+<h3 id="스왑이-뭔가요">스왑이 뭔가요?</h3>
+
+<p>RAM이 부족할 때 디스크의 일부를 메모리처럼 사용하는 거예요. 속도는 느리지만 서버가 멈추는 걸 방지해요.</p>
+
+<h3 id="스왑-파일-생성">스왑 파일 생성</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 2GB 스왑 파일 생성</span>
+<span class="nb">sudo </span>fallocate <span class="nt">-l</span> 2G /swapfile
+
+<span class="c"># 권한 설정 (보안)</span>
+<span class="nb">sudo chmod </span>600 /swapfile
+
+<span class="c"># 스왑 파일로 설정</span>
+<span class="nb">sudo </span>mkswap /swapfile
+
+<span class="c"># 스왑 활성화</span>
+<span class="nb">sudo </span>swapon /swapfile
+
+<span class="c"># 확인</span>
+free <span class="nt">-h</span>
+</code></pre></div></div>
+
+<h3 id="영구적으로-설정">영구적으로 설정</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 부팅 시 자동 마운트 설정</span>
+<span class="nb">echo</span> <span class="s1">'/swapfile none swap sw 0 0'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/fstab
+
+<span class="c"># 스왑 사용 빈도 조정 (낮을수록 RAM 우선)</span>
+<span class="nb">echo</span> <span class="s1">'vm.swappiness=10'</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/sysctl.conf
+
+<span class="c"># 설정 적용</span>
+<span class="nb">sudo </span>sysctl <span class="nt">-p</span>
+</code></pre></div></div>
+
+<h3 id="스왑-사용량-확인">스왑 사용량 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 스왑 사용 상태</span>
+free <span class="nt">-h</span>
+
+<span class="c"># 스왑 사용 빈도 확인</span>
+<span class="nb">cat</span> /proc/sys/vm/swappiness
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="57-laravel-앱-최적화">5.7 Laravel 앱 최적화</h2>
+
+<h3 id="캐시-최적화">캐시 최적화</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /var/www/jinyerp_demo_01
+
+<span class="c"># 모든 캐시 재생성</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan config:cache
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan route:cache
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan view:cache
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan event:cache
+
+<span class="c"># OPcache 상태 확인</span>
+php <span class="nt">-i</span> | <span class="nb">grep </span>opcache
+</code></pre></div></div>
+
+<h3 id="불필요한-패키지-제거">불필요한 패키지 제거</h3>
+
+<p>프로덕션 환경에서는 개발용 패키지가 필요 없어요:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 개발 의존성 제거</span>
+<span class="nb">cd</span> /var/www/jinyerp_demo_01
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data composer <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="58-자동-배포-스크립트">5.8 자동 배포 스크립트</h2>
+
+<h3 id="배포-스크립트-생성">배포 스크립트 생성</h3>
+
+<p>코드를 업데이트할 때마다 수동으로 하는 건 번거로워요. 스크립트를 만들어봅시다:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 배포 스크립트 생성</span>
+<span class="nb">sudo </span>nano /home/deploy/deploy.sh
+</code></pre></div></div>
+
+<p>다음 내용을 작성:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># Laravel 자동 배포 스크립트</span>
+<span class="c"># 사용법: bash /home/deploy/deploy.sh</span>
+
+<span class="nb">set</span> <span class="nt">-e</span>  <span class="c"># 에러 발생 시 중단</span>
+
+<span class="nb">echo</span> <span class="s2">"🚀 Laravel 배포를 시작합니다..."</span>
+
+<span class="c"># 프로젝트 디렉토리로 이동</span>
+<span class="nb">cd</span> /var/www/jinyerp_demo_01
+
+<span class="c"># 1. 유지보수 모드 활성화</span>
+<span class="nb">echo</span> <span class="s2">"📝 유지보수 모드 활성화..."</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan down
+
+<span class="c"># 2. Git에서 최신 코드 받기</span>
+<span class="nb">echo</span> <span class="s2">"📦 최신 코드 받기..."</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data git pull origin main
+
+<span class="c"># 3. Composer 의존성 업데이트</span>
+<span class="nb">echo</span> <span class="s2">"📦 Composer 의존성 업데이트..."</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data composer <span class="nb">install</span> <span class="nt">--optimize-autoloader</span> <span class="nt">--no-dev</span>
+
+<span class="c"># 4. NPM 빌드 (프론트엔드가 있다면)</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-f</span> <span class="s2">"package.json"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"🎨 프론트엔드 빌드..."</span>
+    <span class="nb">sudo</span> <span class="nt">-u</span> www-data npm ci
+    <span class="nb">sudo</span> <span class="nt">-u</span> www-data npm run build
+<span class="k">fi</span>
+
+<span class="c"># 5. 데이터베이스 마이그레이션</span>
+<span class="nb">echo</span> <span class="s2">"🗄️ 데이터베이스 마이그레이션..."</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan migrate <span class="nt">--force</span>
+
+<span class="c"># 6. 캐시 갱신</span>
+<span class="nb">echo</span> <span class="s2">"⚡ 캐시 갱신..."</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan config:cache
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan route:cache
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan view:cache
+
+<span class="c"># 7. 유지보수 모드 해제</span>
+<span class="nb">echo</span> <span class="s2">"✅ 유지보수 모드 해제..."</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan up
+
+<span class="nb">echo</span> <span class="s2">"🎉 배포가 완료되었습니다!"</span>
+</code></pre></div></div>
+
+<h3 id="실행-권한-부여">실행 권한 부여</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 실행 권한 부여</span>
+<span class="nb">sudo chmod</span> +x /home/deploy/deploy.sh
+
+<span class="c"># 소유권 설정</span>
+<span class="nb">sudo chown </span>deploy:deploy /home/deploy/deploy.sh
+</code></pre></div></div>
+
+<h3 id="배포-스크립트-사용">배포 스크립트 사용</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 배포 실행</span>
+bash /home/deploy/deploy.sh
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="59-laravel-스케줄러-크론잡-설정">5.9 Laravel 스케줄러 (크론잡 설정)</h2>
+
+<h3 id="laravel-스케줄러가-뭔가요">Laravel 스케줄러가 뭔가요?</h3>
+
+<p>Laravel의 예약 작업(매일 실행, 매시간 실행 등)을 관리하는 기능이에요.</p>
+
+<h3 id="크론탭-설정">크론탭 설정</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># www-data 사용자의 크론탭 편집</span>
+<span class="nb">sudo </span>crontab <span class="nt">-u</span> www-data <span class="nt">-e</span>
+</code></pre></div></div>
+
+<p>다음 줄을 추가:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Laravel 스케줄러 (매분 실행)</span>
+<span class="k">*</span> <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> <span class="nb">cd</span> /var/www/jinyerp_demo_01 <span class="o">&amp;&amp;</span> php artisan schedule:run <span class="o">&gt;&gt;</span> /dev/null 2&gt;&amp;1
+</code></pre></div></div>
+
+<p>저장하고 종료: <code class="language-plaintext highlighter-rouge">Ctrl + X</code>, <code class="language-plaintext highlighter-rouge">Y</code>, <code class="language-plaintext highlighter-rouge">Enter</code></p>
+
+<h3 id="크론잡-확인">크론잡 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># www-data 크론탭 확인</span>
+<span class="nb">sudo </span>crontab <span class="nt">-u</span> www-data <span class="nt">-l</span>
+
+<span class="c"># 크론 서비스 상태 확인</span>
+<span class="nb">sudo </span>systemctl status cron
+</code></pre></div></div>
+
+<h3 id="laravel-스케줄-작업-확인">Laravel 스케줄 작업 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 예약된 작업 목록 확인</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan schedule:list
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="510-로그-로테이션-설정">5.10 로그 로테이션 설정</h2>
+
+<h3 id="로그가-계속-쌓이면-디스크가-가득-차요">로그가 계속 쌓이면 디스크가 가득 차요</h3>
+
+<p>자동으로 오래된 로그를 삭제하도록 설정해봅시다:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Laravel 로그 로테이션 설정 파일 생성</span>
+<span class="nb">sudo </span>nano /etc/logrotate.d/laravel
+</code></pre></div></div>
+
+<p>다음 내용 작성:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/var/www/jinyerp_demo_01/storage/logs/*.log {
+    daily                               # 매일 로테이션
+    missingok                           # 파일 없어도 에러 안냄
+    rotate 14                           # 14일치 보관
+    compress                            # 압축 저장
+    delaycompress                       # 최신 로그는 압축 안함
+    notifempty                          # 비어있으면 로테이션 안함
+    create 644 www-data www-data        # 새 파일 생성 권한
+    sharedscripts                       # 스크립트 한 번만 실행
+}
+</code></pre></div></div>
+
+<p>저장하고 종료</p>
+
+<h3 id="nginx-로그-로테이션-확인">Nginx 로그 로테이션 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Nginx 로그 로테이션 설정 확인</span>
+<span class="nb">cat</span> /etc/logrotate.d/nginx
+</code></pre></div></div>
+
+<h3 id="로그-로테이션-테스트">로그 로테이션 테스트</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 로그 로테이션 테스트 (실제 실행 안함)</span>
+<span class="nb">sudo </span>logrotate <span class="nt">-d</span> /etc/logrotate.d/laravel
+
+<span class="c"># 강제 실행 (테스트)</span>
+<span class="nb">sudo </span>logrotate <span class="nt">-f</span> /etc/logrotate.d/laravel
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="511-백업-설정">5.11 백업 설정</h2>
+
+<h3 id="데이터베이스-백업-스크립트">데이터베이스 백업 스크립트</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 백업 스크립트 생성</span>
+<span class="nb">sudo </span>nano /home/deploy/backup.sh
+</code></pre></div></div>
+
+<p>다음 내용 작성:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># MySQL 데이터베이스 백업 스크립트</span>
+
+<span class="c"># 설정</span>
+<span class="nv">DB_NAME</span><span class="o">=</span><span class="s2">"jinyerp_demo"</span>
+<span class="nv">DB_USER</span><span class="o">=</span><span class="s2">"jinyerp"</span>
+<span class="nv">DB_PASS</span><span class="o">=</span><span class="s2">"your_mysql_password_here"</span>
+<span class="nv">BACKUP_DIR</span><span class="o">=</span><span class="s2">"/home/deploy/backups"</span>
+<span class="nv">DATE</span><span class="o">=</span><span class="si">$(</span><span class="nb">date</span> +%Y%m%d_%H%M%S<span class="si">)</span>
+<span class="nv">FILENAME</span><span class="o">=</span><span class="s2">"backup_</span><span class="k">${</span><span class="nv">DB_NAME</span><span class="k">}</span><span class="s2">_</span><span class="k">${</span><span class="nv">DATE</span><span class="k">}</span><span class="s2">.sql.gz"</span>
+
+<span class="c"># 백업 디렉토리 생성</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$BACKUP_DIR</span>
+
+<span class="c"># 데이터베이스 백업</span>
+<span class="nb">echo</span> <span class="s2">"📦 데이터베이스 백업 시작..."</span>
+mysqldump <span class="nt">-u</span> <span class="nv">$DB_USER</span> <span class="nt">-p</span><span class="nv">$DB_PASS</span> <span class="nv">$DB_NAME</span> | <span class="nb">gzip</span> <span class="o">&gt;</span> <span class="s2">"</span><span class="k">${</span><span class="nv">BACKUP_DIR</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">FILENAME</span><span class="k">}</span><span class="s2">"</span>
+
+<span class="c"># 30일 이상 된 백업 삭제</span>
+<span class="nb">echo</span> <span class="s2">"🗑️ 오래된 백업 삭제..."</span>
+find <span class="nv">$BACKUP_DIR</span> <span class="nt">-name</span> <span class="s2">"backup_*.sql.gz"</span> <span class="nt">-mtime</span> +30 <span class="nt">-delete</span>
+
+<span class="nb">echo</span> <span class="s2">"✅ 백업 완료: </span><span class="k">${</span><span class="nv">FILENAME</span><span class="k">}</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="s2">"📊 백업 크기: </span><span class="si">$(</span><span class="nb">du</span> <span class="nt">-h</span> <span class="k">${</span><span class="nv">BACKUP_DIR</span><span class="k">}</span>/<span class="k">${</span><span class="nv">FILENAME</span><span class="k">}</span><span class="si">)</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<h3 id="실행-권한-부여-1">실행 권한 부여</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 실행 권한</span>
+<span class="nb">sudo chmod</span> +x /home/deploy/backup.sh
+
+<span class="c"># 소유권 설정</span>
+<span class="nb">sudo chown </span>deploy:deploy /home/deploy/backup.sh
+
+<span class="c"># 백업 디렉토리 생성</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> /home/deploy/backups
+</code></pre></div></div>
+
+<h3 id="자동-백업-크론잡-설정">자동 백업 크론잡 설정</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># deploy 사용자 크론탭 편집</span>
+crontab <span class="nt">-e</span>
+</code></pre></div></div>
+
+<p>다음 줄 추가:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 매일 새벽 2시 데이터베이스 백업</span>
+0 2 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /home/deploy/backup.sh <span class="o">&gt;&gt;</span> /home/deploy/backups/backup.log 2&gt;&amp;1
+</code></pre></div></div>
+
+<h3 id="백업-테스트">백업 테스트</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 백업 스크립트 실행</span>
+bash /home/deploy/backup.sh
+
+<span class="c"># 백업 파일 확인</span>
+<span class="nb">ls</span> <span class="nt">-lh</span> /home/deploy/backups/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="512-모니터링-및-성능-체크">5.12 모니터링 및 성능 체크</h2>
+
+<h3 id="실시간-메모리-모니터링">실시간 메모리 모니터링</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 메모리 사용량 실시간 모니터링</span>
+watch <span class="nt">-n</span> 1 <span class="s1">'free -h &amp;&amp; echo "=== TOP 5 MEMORY USERS ===" &amp;&amp; ps aux --sort=-%mem | head -6'</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Ctrl + C</code>로 종료</p>
+
+<h3 id="서비스별-메모리-사용량">서비스별 메모리 사용량</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 서비스별 메모리 확인</span>
+<span class="nb">echo</span> <span class="s2">"=== MySQL ==="</span> <span class="o">&amp;&amp;</span> ps aux | <span class="nb">grep </span>mysql | <span class="nb">grep</span> <span class="nt">-v</span> <span class="nb">grep
+echo</span> <span class="s2">"=== Redis ==="</span> <span class="o">&amp;&amp;</span> ps aux | <span class="nb">grep </span>redis | <span class="nb">grep</span> <span class="nt">-v</span> <span class="nb">grep
+echo</span> <span class="s2">"=== PHP-FPM ==="</span> <span class="o">&amp;&amp;</span> ps aux | <span class="nb">grep </span>php-fpm | <span class="nb">grep</span> <span class="nt">-v</span> <span class="nb">grep
+echo</span> <span class="s2">"=== Nginx ==="</span> <span class="o">&amp;&amp;</span> ps aux | <span class="nb">grep </span>nginx | <span class="nb">grep</span> <span class="nt">-v</span> <span class="nb">grep</span>
+</code></pre></div></div>
+
+<h3 id="디스크-사용량-확인">디스크 사용량 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 디스크 사용량</span>
+<span class="nb">df</span> <span class="nt">-h</span>
+
+<span class="c"># Laravel 로그 크기</span>
+<span class="nb">du</span> <span class="nt">-sh</span> /var/www/jinyerp_demo_01/storage/logs/
+
+<span class="c"># 전체 프로젝트 크기</span>
+<span class="nb">du</span> <span class="nt">-sh</span> /var/www/jinyerp_demo_01/
+</code></pre></div></div>
+
+<h3 id="laravel-성능-확인">Laravel 성능 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /var/www/jinyerp_demo_01
+
+<span class="c"># 캐시 상태 확인</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan config:show
+
+<span class="c"># 라우트 캐시 확인</span>
+<span class="nb">ls</span> <span class="nt">-lh</span> bootstrap/cache/
+
+<span class="c"># OPcache 통계</span>
+php <span class="nt">-i</span> | <span class="nb">grep</span> <span class="nt">-A</span> 10 opcache
+</code></pre></div></div>
+
+<h3 id="간단한-모니터링-스크립트">간단한 모니터링 스크립트</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 모니터링 스크립트 생성</span>
+<span class="nb">sudo </span>nano /home/deploy/monitor.sh
+</code></pre></div></div>
+
+<p>다음 내용:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># 서버 상태 모니터링 스크립트</span>
+
+<span class="nb">echo</span> <span class="s2">"======================================"</span>
+<span class="nb">echo</span> <span class="s2">"서버 상태 리포트 - </span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="s2">"======================================"</span>
+
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"=== 메모리 사용량 ==="</span>
+free <span class="nt">-h</span>
+
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"=== 디스크 사용량 ==="</span>
+<span class="nb">df</span> <span class="nt">-h</span> /
+
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"=== CPU 로드 ==="</span>
+<span class="nb">uptime
+
+echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"=== 서비스 상태 ==="</span>
+systemctl is-active mysql <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"✅ MySQL: Running"</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"❌ MySQL: Stopped"</span>
+systemctl is-active redis-server <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"✅ Redis: Running"</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"❌ Redis: Stopped"</span>
+systemctl is-active nginx <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"✅ Nginx: Running"</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"❌ Nginx: Stopped"</span>
+systemctl is-active php8.4-fpm <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"✅ PHP-FPM: Running"</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"❌ PHP-FPM: Stopped"</span>
+
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"=== 최근 Laravel 에러 (최근 10줄) ==="</span>
+<span class="nb">tail</span> <span class="nt">-n</span> 10 /var/www/jinyerp_demo_01/storage/logs/laravel.log 2&gt;/dev/null <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"로그 없음"</span>
+
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"======================================"</span>
+</code></pre></div></div>
+
+<p>실행 권한:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chmod</span> +x /home/deploy/monitor.sh
+</code></pre></div></div>
+
+<p>사용:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash /home/deploy/monitor.sh
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="513-1gb-ram-운영-팁-및-주의사항">5.13 1GB RAM 운영 팁 및 주의사항</h2>
+
+<h3 id="해야-할-것-">해야 할 것 ✅</h3>
+
+<ul>
+  <li><strong>스왑 메모리 필수 설정</strong> (2GB 권장)</li>
+  <li><strong>로그 로테이션 설정</strong> (디스크 공간 절약)</li>
+  <li><strong>캐시 적극 활용</strong> (Redis, OPcache)</li>
+  <li><strong>불필요한 서비스 비활성화</strong></li>
+  <li><strong>정기적인 메모리 모니터링</strong></li>
+</ul>
+
+<h3 id="하지-말아야-할-것-">하지 말아야 할 것 ❌</h3>
+
+<ul>
+  <li><strong>개발 도구 설치 금지</strong> (PhpMyAdmin, Node modules 등)</li>
+  <li><strong>대용량 파일 업로드 제한</strong> (64MB 이하)</li>
+  <li><strong>동시 접속자 과다</strong> (10-20명 이하)</li>
+  <li><strong>백그라운드 작업 과다</strong> (큐 워커 1개만)</li>
+  <li><strong>디버그 모드 켜두기</strong> (프로덕션에서 APP_DEBUG=false)</li>
+</ul>
+
+<h3 id="메모리-부족-증상">메모리 부족 증상</h3>
+
+<p>이런 증상이 보이면 메모리 부족이에요:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 웹사이트 응답 느림
+- 502 Bad Gateway 에러
+- MySQL 연결 실패
+- PHP-FPM 프로세스 죽음
+- 서버 전체가 느려짐
+</code></pre></div></div>
+
+<p><strong>해결 방법</strong>:</p>
+<ol>
+  <li>서버 재시작: <code class="language-plaintext highlighter-rouge">sudo reboot</code></li>
+  <li>메모리 확인: <code class="language-plaintext highlighter-rouge">free -h</code></li>
+  <li>스왑 확인: <code class="language-plaintext highlighter-rouge">swapon --show</code></li>
+  <li>서버 업그레이드 고려 (2GB+)</li>
+</ol>
+
+<hr />
+
+<h2 id="514-실제-운영-환경-최소-제한-사항">5.14 실제 운영 환경 최소 제한 사항</h2>
+
+<h3 id="하드웨어-최소-제한">하드웨어 최소 제한</h3>
+
+<h4 id="소규모-서비스-1-50-동시-사용자">소규모 서비스 (1-50 동시 사용자)</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CPU: 2 vCPU (최소)
+RAM: 4GB (권장 8GB)
+Storage: 40GB SSD
+Network: 2TB/월
+예상 비용: $20-40/월
+</code></pre></div></div>
+
+<h4 id="중규모-서비스-50-200-동시-사용자">중규모 서비스 (50-200 동시 사용자)</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CPU: 4 vCPU
+RAM: 8GB (권장 16GB)
+Storage: 80GB SSD + 백업
+Network: 5TB/월
+Load Balancer: 고려 필요
+예상 비용: $50-100/월
+</code></pre></div></div>
+
+<h4 id="대규모-서비스-200-동시-사용자">대규모 서비스 (200+ 동시 사용자)</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CPU: 8+ vCPU (멀티 서버)
+RAM: 16GB+ per server
+Storage: 분산 스토리지 + CDN
+Database: 전용 DB 서버
+Cache: 전용 Redis 클러스터
+예상 비용: $200+/월
+</code></pre></div></div>
+
+<h3 id="보안-및-안정성-필수-사항">보안 및 안정성 필수 사항</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># SSL 인증서 (필수)</span>
+✅ Let<span class="s1">'s Encrypt (무료) 또는 상용 SSL
+✅ HTTPS 강제 리다이렉트
+✅ HSTS 설정
+
+# 백업 시스템 (필수)
+✅ 데이터베이스 자동 백업 (일 1회 이상)
+✅ 파일 시스템 백업
+✅ 오프사이트 백업 저장
+
+# 모니터링 (권장)
+✅ 서버 리소스 모니터링
+✅ 애플리케이션 성능 모니터링 (APM)
+✅ 에러 로깅 및 알림 시스템
+</span></code></pre></div></div>
+
+<h3 id="성능-벤치마크-기준">성능 벤치마크 기준</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 운영 환경 성능 목표</span>
+평균 응답 시간: &lt; 500ms
+99% 응답 시간: &lt; 2초
+서버 가용률: <span class="o">&gt;</span> 99.9%
+동시 접속자: 목표의 2-3배 여유
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="515-유용한-명령어-모음">5.15 유용한 명령어 모음</h2>
+
+<h3 id="서비스-관리">서비스 관리</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 모든 서비스 재시작</span>
+<span class="nb">sudo </span>systemctl restart mysql redis-server nginx php8.4-fpm
+
+<span class="c"># 모든 서비스 상태 확인</span>
+<span class="nb">sudo </span>systemctl status mysql redis-server nginx php8.4-fpm <span class="nt">--no-pager</span>
+
+<span class="c"># 서비스 로그 확인</span>
+<span class="nb">sudo </span>journalctl <span class="nt">-u</span> nginx <span class="nt">-f</span>
+<span class="nb">sudo </span>journalctl <span class="nt">-u</span> php8.4-fpm <span class="nt">-f</span>
+</code></pre></div></div>
+
+<h3 id="laravel-관리">Laravel 관리</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 모든 캐시 클리어</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan cache:clear
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan config:clear
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan route:clear
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan view:clear
+
+<span class="c"># 캐시 재생성</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan config:cache
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan route:cache
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan view:cache
+
+<span class="c"># 애플리케이션 최적화</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan optimize
+</code></pre></div></div>
+
+<h3 id="로그-확인">로그 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Laravel 로그</span>
+<span class="nb">sudo tail</span> <span class="nt">-f</span> /var/www/jinyerp_demo_01/storage/logs/laravel.log
+
+<span class="c"># Nginx 로그</span>
+<span class="nb">sudo tail</span> <span class="nt">-f</span> /var/log/nginx/demo.jinyerp.com.access.log
+<span class="nb">sudo tail</span> <span class="nt">-f</span> /var/log/nginx/demo.jinyerp.com.error.log
+
+<span class="c"># PHP-FPM 로그</span>
+<span class="nb">sudo tail</span> <span class="nt">-f</span> /var/log/php8.4-fpm.log
+
+<span class="c"># MySQL 로그</span>
+<span class="nb">sudo tail</span> <span class="nt">-f</span> /var/log/mysql/error.log
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-5단계-완료-체크리스트">✅ 5단계 완료 체크리스트</h2>
+
+<p>모든 단계를 완료하셨나요? 최종 체크리스트입니다!</p>
+
+<h3 id="성능-최적화">성능 최적화</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />MySQL 1GB RAM용 최적화 설정</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Redis 메모리 제한 설정</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />PHP-FPM 프로세스 수 조정</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Nginx 워커 설정 최적화</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />스왑 메모리 생성 및 활성화</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Laravel 앱 캐시 최적화</li>
+</ul>
+
+<h3 id="자동화">자동화</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />자동 배포 스크립트 작성</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Laravel 스케줄러 크론잡 설정</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />로그 로테이션 설정</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />데이터베이스 백업 스크립트 작성</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />자동 백업 크론잡 설정</li>
+</ul>
+
+<h3 id="모니터링">모니터링</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />메모리 사용량 모니터링 방법 숙지</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />서비스 상태 확인 방법 숙지</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />로그 확인 방법 숙지</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />모니터링 스크립트 작성</li>
+</ul>
+
+<hr />
+
+<h2 id="-축하합니다-전체-배포-완료">🎉 축하합니다! 전체 배포 완료!</h2>
+
+<p>정말 고생 많으셨어요! 이제 여러분은 Laravel 애플리케이션을 처음부터 끝까지 배포할 수 있는 능력을 갖추게 되었습니다.</p>
+
+<h3 id="지금까지-배운-것들">지금까지 배운 것들</h3>
+
+<p>✅ <strong>1단계</strong>: Vultr 클라우드 서버 생성 및 초기 보안 설정
+✅ <strong>2단계</strong>: PHP 8.4, MySQL 8.4, Redis, Nginx 설치 및 설정
+✅ <strong>3단계</strong>: GitHub에서 Laravel 프로젝트 배포
+✅ <strong>4단계</strong>: 도메인 연결 및 무료 HTTPS 설정
+✅ <strong>5단계</strong>: 성능 최적화 및 자동화 설정</p>
+
+<h3 id="다음-단계는">다음 단계는?</h3>
+
+<p>이제 여러분의 Laravel 애플리케이션이 실제로 운영되고 있어요! 다음과 같은 것들을 고려해보세요:</p>
+
+<ol>
+  <li><strong>기능 개발</strong>: 새로운 기능 추가하기</li>
+  <li><strong>사용자 피드백</strong>: 실제 사용자의 의견 수렴</li>
+  <li><strong>성능 모니터링</strong>: 실제 트래픽에서의 성능 확인</li>
+  <li><strong>서버 업그레이드</strong>: 사용자가 늘어나면 서버 사양 올리기</li>
+  <li><strong>추가 최적화</strong>: CDN, 로드 밸런서 등 고급 기능</li>
+</ol>
+
+<h3 id="추가-학습-자료">추가 학습 자료</h3>
+
+<ul>
+  <li><a href="https://laravel.com/docs">Laravel 공식 문서</a></li>
+  <li><a href="https://laravel-news.com">Laravel News</a></li>
+  <li><a href="https://laraveldaily.com">Laravel Daily</a></li>
+  <li><a href="https://laravel.kr">Laravel 한국 커뮤니티</a></li>
+</ul>
+
+<h3 id="문제가-생겼을-때">문제가 생겼을 때</h3>
+
+<ol>
+  <li><strong>로그 확인</strong>: 항상 로그를 먼저 확인하세요</li>
+  <li><strong>구글 검색</strong>: 에러 메시지를 검색하면 대부분 답이 있어요</li>
+  <li><strong>Stack Overflow</strong>: 영어로 검색하면 더 많은 정보를 얻을 수 있어요</li>
+  <li><strong>커뮤니티 질문</strong>: Laravel 커뮤니티에 질문하기</li>
+</ol>
+
+<hr />
+
+<h2 id="마지막으로">마지막으로</h2>
+
+<p>이 가이드가 도움이 되었나요? 배포는 처음엔 어려워 보이지만, 한 번 해보면 생각보다 어렵지 않다는 걸 느끼셨을 거예요.</p>
+
+<p>여러분의 Laravel 애플리케이션이 많은 사용자들에게 사랑받는 서비스가 되길 바랍니다!</p>
+
+<p>행운을 빕니다! 🍀✨</p>
+
+<hr />
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/03.deploy/04.domain-https.html">← 이전: 도메인/HTTPS 설정</a></td>
+      <td><a href="/03.deploy/">메인으로</a></td>
+    </tr>
+  </tbody>
+</table>
+
+                        </div>
+                    </div>
+
+<!-- Right Advertisement Area -->
+<div class="col-12 col-xl-3">
+    <div class="ad-area">
+        <!-- 메인 광고 (300x600 Large Rectangle) -->
+        <div class="ad-container">
+            <h6>Advertisement</h6>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 중간 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 관련 링크 -->
+        <div class="ad-container mt-4">
+            <h6>관련 링크</h6>
+            <div class="related-links">
+                <a href="https://laravel.com/docs" target="_blank">Laravel 공식 문서</a>
+                <a href="https://php.net/docs.php" target="_blank">PHP 공식 문서</a>
+                <a href="https://getbootstrap.com/" target="_blank">Bootstrap 문서</a>
+                <a href="https://www.mysql.com/documentation/" target="_blank">MySQL 문서</a>
+                <a href="https://git-scm.com/docs" target="_blank">Git 문서</a>
+            </div>
+        </div>
+
+        <!-- 하단 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1122334455" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; 2025 JinyDev. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="/assets/w3schools-script.js"></script>
+</body>
+</html>

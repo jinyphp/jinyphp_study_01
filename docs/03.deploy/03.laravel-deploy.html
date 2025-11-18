@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev</title>
+    <meta name="description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.">
+
+    <!-- SEO Meta Tags -->
+    
+    
+    <meta name="robots" content="index, follow">
+    
+    <meta name="language" content="ko">
+
+    <!-- Open Graph Meta Tags -->
+    
+
+    <!-- Twitter Card Meta Tags -->
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/w3schools-style.css">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+            crossorigin="anonymous"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>JinyDev | JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="JinyDev" />
+<meta name="author" content="JinyPHP Team" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다." />
+<meta property="og:description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다." />
+<link rel="canonical" href="http://localhost:4000/03.deploy/03.laravel-deploy.html" />
+<meta property="og:url" content="http://localhost:4000/03.deploy/03.laravel-deploy.html" />
+<meta property="og:site_name" content="JinyDev" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JinyDev" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"JinyPHP Team"},"description":"JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.","headline":"JinyDev","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"JinyPHP Team"},"url":"http://localhost:4000/03.deploy/03.laravel-deploy.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+<!-- Top Navigation -->
+<nav class="top-nav">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="/">JinyDev</a>
+        </div>
+        <div class="nav-tabs">
+            <a href="/" class="nav-tab active">HOME</a>
+            <a href="laravel.jiny.dev" class="nav-tab">Laravel</a>
+            <a href="php.jiny.dev" class="nav-tab">PHP</a>
+            <a href="linux.jiny.dev" class="nav-tab">Linux</a>
+            <a href="/04.Route/" class="nav-tab">라우팅</a>
+            <a href="/05.view/" class="nav-tab">View</a>
+            <a href="/06.templates/" class="nav-tab">Templates</a>
+            <a href="/04.jinyphp.html" class="nav-tab">JinyPHP</a>
+            <a href="git.jiny.dev" class="nav-tab">Git</a>
+            <a href="mysql.jiny.dev" class="nav-tab">MySQL</a>
+            <a href="html.jiny.dev" class="nav-tab">Html</a>
+            <a href="javascript.jiny.dev" class="nav-tab">Javascript</a>
+        </div>
+        <div class="nav-actions">
+            <button class="menu-btn d-lg-none" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h4>학습 가이드</h4>
+            </div>
+
+            <div class="sidebar-menu">
+                <!-- Laravel 시작하기 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('laravel-start')">
+                        Laravel 시작하기
+                    </div>
+                    <div class="menu-items" id="laravel-start">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('laravel-basics')">
+                                기초 개념
+                            </div>
+                            <div class="category-items" id="laravel-basics">
+                                <a href="/01.Start/" class="menu-item">개요</a>
+                                <a href="/01.Start/01.what-is-laravel.html" class="menu-item">라라벨이란?</a>
+                                <a href="/01.Start/02.php-language.html" class="menu-item">PHP 언어</a>
+                                <a href="/01.Start/03.dependency-issues.html" class="menu-item">의존성 문제</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 개발환경 설정 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('setup')">
+                        개발환경 설정
+                    </div>
+                    <div class="menu-items" id="setup">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-install')">
+                                설치 및 설정
+                            </div>
+                            <div class="category-items" id="setup-install">
+                                <a href="/02.Setup/" class="menu-item">개요</a>
+                                <a href="/02.Setup/01.requirements.html" class="menu-item">사전 요구사항</a>
+                                <a href="/02.Setup/02.laravel-install.html" class="menu-item">Laravel 설치</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-config')">
+                                환경 구성
+                            </div>
+                            <div class="category-items" id="setup-config">
+                                <a href="/02.Setup/03.database.html" class="menu-item">데이터베이스 설정</a>
+                                <a href="/02.Setup/04.local-development.html" class="menu-item">로컬 개발 환경</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 배포 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('deploy')">
+                        서버 배포
+                    </div>
+                    <div class="menu-items" id="deploy">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-setup')">
+                                서버 준비
+                            </div>
+                            <div class="category-items" id="deploy-setup">
+                                <a href="/03.deploy/" class="menu-item">개요</a>
+                                <a href="/03.deploy/01.cloud-setup.html" class="menu-item">클라우드 준비</a>
+                                <a href="/03.deploy/02.server-setup.html" class="menu-item">서버 환경 설정</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-app')">
+                                애플리케이션 배포
+                            </div>
+                            <div class="category-items" id="deploy-app">
+                                <a href="/03.deploy/03.laravel-deploy.html" class="menu-item">Laravel 배포</a>
+                                <a href="/03.deploy/04.domain-https.html" class="menu-item">도메인 HTTPS</a>
+                                <a href="/03.deploy/05.optimization.html" class="menu-item">성능 최적화</a>
+                                <a href="/03.deploy/06.github-deploy.html" class="menu-item">GitHub 배포 자동화</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 백엔드 개발 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('backend')">
+                        백엔드 개발
+                    </div>
+                    <div class="menu-items" id="backend">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('backend-basics')">
+                                기본 개념
+                            </div>
+                            <div class="category-items" id="backend-basics">
+                                <a href="/04.backend.html" class="menu-item">백엔드 개발 가이드</a>
+                                <a href="/04.backend/framework.html" class="menu-item">프레임워크의 이해</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 접속 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('server-access')">
+                        서버 접속
+                    </div>
+                    <div class="menu-items" id="server-access">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('server-concepts')">
+                                서버 기초 이해
+                            </div>
+                            <div class="category-items" id="server-concepts">
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/" class="menu-item">개요</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/%EC%9B%B9%EC%84%9C%EB%B2%84%EB%9E%80.html" class="menu-item">웹서버란?</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/http.html" class="menu-item">HTTP 통신</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 라우팅 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('routing-learning')">
+                        라우팅 학습
+                    </div>
+                    <div class="menu-items" id="routing-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="route-taste-detail">
+                                <a href="/06.route-taste/" class="menu-item">5분 라우팅 체험</a>
+                                <a href="/06.route-taste/%EC%A3%BC%EC%86%8C%EB%9E%80.html" class="menu-item">주소란? URL 체계 이해</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%ED%95%84%EC%9A%94%EC%84%B1.html" class="menu-item">라우트의 필요성</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%EB%8F%99%EC%9E%91.html" class="menu-item">라우트의 동작 원리</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="route-system">
+                                <a href="/04-01.route-taste/" class="menu-item">맛보기 - 5분 라우팅 체험</a>
+                                <a href="/04-02.route-beginner/" class="menu-item">초급 - 라우팅 기초 마스터</a>
+                                <a href="/04-03.route-intermediate/" class="menu-item">중급 - 네임드 라우트와 그룹</a>
+                                <a href="/04-04.route-advanced/" class="menu-item">고급 - 미들웨어와 모델바인딩</a>
+                                <a href="/04-05.route-application/" class="menu-item">응용 - 엔터프라이즈 라우팅</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 뷰 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('view-learning')">
+                        뷰 학습
+                    </div>
+                    <div class="menu-items" id="view-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="view-taste-detail">
+                                <a href="/07.view-taste/" class="menu-item">뷰 맛보기</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="view-system">
+                                <a href="/05-01.view-taste/" class="menu-item">맛보기 - 첫 번째 뷰 만들기</a>
+                                <a href="/05-02.view-beginner/" class="menu-item">초급 - 뷰와 데이터 전달</a>
+                                <a href="/05-03.view-intermediate/" class="menu-item">중급 - HTTP 응답과 리다이렉트</a>
+                                <a href="/05-04.view-advanced/" class="menu-item">고급 - API와 JSON 응답</a>
+                                <a href="/05-05.view-application/" class="menu-item">응용 - 엔터프라이즈 뷰 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 템플릿 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('template-learning')">
+                        템플릿 학습
+                    </div>
+                    <div class="menu-items" id="template-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('template-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="template-system">
+                                <a href="/06-01.template-taste/" class="menu-item">맛보기 - Blade 첫 만남</a>
+                                <a href="/06-02.template-beginner/" class="menu-item">초급 - Blade 기초 마스터</a>
+                                <a href="/06-03.template-intermediate/" class="menu-item">중급 - 컴포넌트와 재사용성</a>
+                                <a href="/06-04.template-advanced/" class="menu-item">고급 - 커스텀 지시어와 최적화</a>
+                                <a href="/06-05.template-application/" class="menu-item">응용 - 엔터프라이즈 템플릿 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JinyPHP 패키지 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('jinyphp')">
+                        JinyPHP 패키지
+                    </div>
+                    <div class="menu-items" id="jinyphp">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('jinyphp-setup')">
+                                패키지 설치
+                            </div>
+                            <div class="category-items" id="jinyphp-setup">
+                                <a href="/04.jinyphp.html" class="menu-item">패키지 설치</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 학습 진도 표시 -->
+                <div class="menu-group mt-4">
+                    <div class="learning-progress">
+                        <h6><i class="fas fa-chart-line me-2"></i>학습 진도</h6>
+                        <div class="progress-items">
+                            <div class="progress-item">
+                                <span class="level-badge level-1">🍯</span>
+                                <span>맛보기 - 5분 체험</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-2">🌱</span>
+                                <span>초급 - 기초 마스터</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-3">🚀</span>
+                                <span>중급 - 실전 활용</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-4">⚡</span>
+                                <span>고급 - 최적화</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-5">🔥</span>
+                                <span>응용 - 엔터프라이즈</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 도움말 -->
+                <div class="menu-group mt-3">
+                    <div class="help-section">
+                        <h6><i class="fas fa-question-circle me-2"></i>학습 가이드</h6>
+                        <div class="help-items">
+                            <div class="help-item">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                <small>단계별로 차근차근 진행하세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-code text-info me-2"></i>
+                                <small>실습 코드를 직접 작성해보세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-bookmark text-success me-2"></i>
+                                <small>중요한 부분은 북마크하세요</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사이드바 하단 정보 -->
+            <div class="sidebar-footer">
+                <div class="version-info">
+                    <small class="text-muted">
+                        <i class="fab fa-laravel me-1"></i>Laravel 12
+                        <br>
+                        <i class="fab fa-php me-1"></i>PHP 8.4+
+                    </small>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Content -->
+                    <div class="col-12 col-xl-9">
+                        <div class="content-wrapper">
+                            <h1 id="3단계-laravel-프로젝트-배포">3단계: Laravel 프로젝트 배포</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/03.deploy/02.server-setup.html">← 이전: 서버 환경 설정</a></td>
+      <td><a href="/03.deploy/">메인으로</a></td>
+      <td><a href="/03.deploy/04.domain-https.html">다음: 도메인/HTTPS 설정 →</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>이제 드디어 Laravel 프로젝트를 서버에 배포할 차례예요! GitHub에서 코드를 가져와서 실제로 동작하도록 만들어봅시다.</p>
+
+<h2 id="이-단계에서-배울-내용">이 단계에서 배울 내용</h2>
+
+<ul>
+  <li>GitHub 저장소 준비 및 접근 설정</li>
+  <li>서버로 프로젝트 클론하기</li>
+  <li>Composer로 의존성 설치</li>
+  <li>.env 파일 설정하기</li>
+  <li>데이터베이스 마이그레이션 실행</li>
+  <li>Laravel 캐시 최적화</li>
+  <li>파일 권한 설정</li>
+  <li>프론트엔드 에셋 빌드</li>
+</ul>
+
+<blockquote>
+  <p><strong>💡 예상 소요 시간</strong>: 30-40분 정도 걸려요.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="31-github-저장소-준비하기">3.1 GitHub 저장소 준비하기</h2>
+
+<h3 id="github에-프로젝트가-있나요">GitHub에 프로젝트가 있나요?</h3>
+
+<p>아직 GitHub에 프로젝트를 올리지 않으셨다면, 먼저 올려주세요. 로컬에서 다음 명령어를 실행하세요:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 로컬 프로젝트 디렉토리에서</span>
+git init
+git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Initial commit"</span>
+git branch <span class="nt">-M</span> main
+git remote add origin https://github.com/your-username/jinyerp_demo_01.git
+git push <span class="nt">-u</span> origin main
+</code></pre></div></div>
+
+<h3 id="저장소-타입-확인">저장소 타입 확인</h3>
+
+<p>저장소가 <strong>공개(Public)</strong>인가요, <strong>비공개(Private)</strong>인가요?</p>
+
+<h4 id="공개-저장소인-경우">공개 저장소인 경우</h4>
+<ul>
+  <li>추가 설정 불필요</li>
+  <li>HTTPS로 바로 클론 가능</li>
+</ul>
+
+<h4 id="비공개-저장소인-경우">비공개 저장소인 경우</h4>
+<ul>
+  <li>Personal Access Token 또는 SSH 키 필요</li>
+  <li>아래 방법 중 하나 선택</li>
+</ul>
+
+<hr />
+
+<h2 id="32-서버에서-github-접근-설정하기">3.2 서버에서 GitHub 접근 설정하기</h2>
+
+<h3 id="방법-1-ssh-키-사용-권장">방법 1: SSH 키 사용 (권장)</h3>
+
+<p>SSH 키를 사용하면 매번 비밀번호를 입력할 필요가 없어요.</p>
+
+<h4 id="1단계-ssh-키-생성">1단계: SSH 키 생성</h4>
+
+<p>서버에서 다음 명령어 실행:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># SSH 키 생성</span>
+ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-b</span> 4096 <span class="nt">-C</span> <span class="s2">"deploy@example.com"</span>
+
+<span class="c"># Enter 키를 3번 누르세요 (기본 경로, 비밀번호 없음)</span>
+</code></pre></div></div>
+
+<h4 id="2단계-공개-키-복사">2단계: 공개 키 복사</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 공개 키 내용 출력</span>
+<span class="nb">cat</span> ~/.ssh/id_rsa.pub
+</code></pre></div></div>
+
+<p>출력된 내용을 전부 복사하세요 (ssh-rsa로 시작하는 긴 문자열)</p>
+
+<h4 id="3단계-github에-ssh-키-등록">3단계: GitHub에 SSH 키 등록</h4>
+
+<ol>
+  <li>GitHub 웹사이트 접속</li>
+  <li><strong>Settings</strong> → <strong>SSH and GPG keys</strong> 메뉴</li>
+  <li><strong>New SSH key</strong> 클릭</li>
+  <li><strong>Title</strong>: “Laravel Server” (알아보기 쉬운 이름)</li>
+  <li><strong>Key</strong>: 복사한 공개 키 붙여넣기</li>
+  <li><strong>Add SSH key</strong> 클릭</li>
+</ol>
+
+<h4 id="4단계-ssh-연결-테스트">4단계: SSH 연결 테스트</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># GitHub SSH 연결 테스트</span>
+ssh <span class="nt">-T</span> git@github.com
+
+<span class="c"># 출력:</span>
+<span class="c"># Hi username! You've successfully authenticated...</span>
+</code></pre></div></div>
+
+<h3 id="방법-2-personal-access-token-간단한-방법">방법 2: Personal Access Token (간단한 방법)</h3>
+
+<h4 id="1단계-token-생성">1단계: Token 생성</h4>
+
+<ol>
+  <li>GitHub <strong>Settings</strong> → <strong>Developer settings</strong> → <strong>Personal access tokens</strong> → <strong>Tokens (classic)</strong></li>
+  <li><strong>Generate new token (classic)</strong> 클릭</li>
+  <li><strong>Note</strong>: “Laravel Deploy Server”</li>
+  <li><strong>Expiration</strong>: 90 days (또는 원하는 기간)</li>
+  <li><strong>Select scopes</strong>: <code class="language-plaintext highlighter-rouge">repo</code> 체크</li>
+  <li><strong>Generate token</strong> 클릭</li>
+  <li><strong>생성된 토큰 복사</strong> (다시 볼 수 없어요!)</li>
+</ol>
+
+<h4 id="2단계-token-저장">2단계: Token 저장</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 토큰을 안전한 곳에 저장</span>
+<span class="nb">echo</span> <span class="s2">"ghp_xxxxxxxxxxxxxxxxxxxx"</span> <span class="o">&gt;</span> ~/.github_token
+<span class="nb">chmod </span>600 ~/.github_token
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="33-프로젝트-클론하기">3.3 프로젝트 클론하기</h2>
+
+<h3 id="웹-루트-디렉토리로-이동">웹 루트 디렉토리로 이동</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 웹 루트 디렉토리로 이동</span>
+<span class="nb">cd</span> /var/www
+
+<span class="c"># 현재 디렉토리 확인</span>
+<span class="nb">ls</span> <span class="nt">-la</span>
+</code></pre></div></div>
+
+<h3 id="github에서-프로젝트-클론">GitHub에서 프로젝트 클론</h3>
+
+<h4 id="ssh-방식-권장">SSH 방식 (권장)</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># SSH로 클론 (비공개/공개 저장소 모두 가능)</span>
+<span class="nb">sudo </span>git clone git@github.com:your-username/jinyerp_demo_01.git
+</code></pre></div></div>
+
+<h4 id="https-방식-공개-저장소">HTTPS 방식 (공개 저장소)</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># HTTPS로 클론 (공개 저장소)</span>
+<span class="nb">sudo </span>git clone https://github.com/your-username/jinyerp_demo_01.git
+</code></pre></div></div>
+
+<h4 id="https--token-방식-비공개-저장소">HTTPS + Token 방식 (비공개 저장소)</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># HTTPS + Token으로 클론 (비공개 저장소)</span>
+<span class="nb">sudo </span>git clone https://ghp_your_token@github.com/your-username/jinyerp_demo_01.git
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>💡 팁</strong>: <code class="language-plaintext highlighter-rouge">your-username</code>과 <code class="language-plaintext highlighter-rouge">jinyerp_demo_01</code>을 실제 저장소 정보로 바꿔주세요!</p>
+</blockquote>
+
+<h3 id="클론-완료-확인">클론 완료 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 클론된 디렉토리 확인</span>
+<span class="nb">ls</span> <span class="nt">-la</span> /var/www/
+
+<span class="c"># 프로젝트 구조 확인</span>
+<span class="nb">ls</span> <span class="nt">-la</span> /var/www/jinyerp_demo_01
+</code></pre></div></div>
+
+<p>Laravel 프로젝트 파일들(app, config, routes 등)이 보이면 성공! 🎉</p>
+
+<hr />
+
+<h2 id="34-파일-소유권-및-권한-설정">3.4 파일 소유권 및 권한 설정</h2>
+
+<h3 id="웹서버-사용자로-소유권-변경">웹서버 사용자로 소유권 변경</h3>
+
+<p>Nginx는 <code class="language-plaintext highlighter-rouge">www-data</code> 사용자로 실행되므로 소유권을 변경해야 해요:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 전체 프로젝트 소유권을 www-data로 변경</span>
+<span class="nb">sudo chown</span> <span class="nt">-R</span> www-data:www-data /var/www/jinyerp_demo_01
+</code></pre></div></div>
+
+<h3 id="기본-권한-설정">기본 권한 설정</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 기본 파일 권한 설정</span>
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> 755 /var/www/jinyerp_demo_01
+</code></pre></div></div>
+
+<h3 id="laravel-특수-디렉토리-권한">Laravel 특수 디렉토리 권한</h3>
+
+<p>Laravel의 storage와 bootstrap/cache 디렉토리는 쓰기 권한이 필요해요:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># storage 디렉토리 쓰기 권한</span>
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> 775 /var/www/jinyerp_demo_01/storage
+
+<span class="c"># bootstrap/cache 디렉토리 쓰기 권한</span>
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> 775 /var/www/jinyerp_demo_01/bootstrap/cache
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="35-composer-의존성-설치">3.5 Composer 의존성 설치</h2>
+
+<h3 id="composerjson-파일-확인">composer.json 파일 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 프로젝트 디렉토리로 이동</span>
+<span class="nb">cd</span> /var/www/jinyerp_demo_01
+
+<span class="c"># composer.json 파일 확인</span>
+<span class="nb">cat </span>composer.json
+</code></pre></div></div>
+
+<h3 id="의존성-설치">의존성 설치</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># www-data 사용자로 Composer 의존성 설치</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data composer <span class="nb">install</span> <span class="nt">--optimize-autoloader</span> <span class="nt">--no-dev</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>💡 옵션 설명</strong>:</p>
+  <ul>
+    <li><code class="language-plaintext highlighter-rouge">--optimize-autoloader</code>: 성능 최적화</li>
+    <li><code class="language-plaintext highlighter-rouge">--no-dev</code>: 개발용 패키지 제외 (프로덕션 환경)</li>
+  </ul>
+</blockquote>
+
+<h3 id="1gb-ram-서버에서-메모리-부족-시">1GB RAM 서버에서 메모리 부족 시</h3>
+
+<p>메모리가 부족하다는 에러가 나오면:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 스크립트 실행 없이 설치</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data composer <span class="nb">install</span> <span class="nt">--optimize-autoloader</span> <span class="nt">--no-dev</span> <span class="nt">--no-scripts</span>
+
+<span class="c"># 스크립트 따로 실행</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data composer run-script post-autoload-dump
+</code></pre></div></div>
+
+<h3 id="설치-확인">설치 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Composer 의존성 확인</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data composer check-platform-reqs
+
+<span class="c"># vendor 디렉토리 확인</span>
+<span class="nb">ls</span> <span class="nt">-la</span> vendor/
+
+<span class="c"># Laravel 명령어 테스트</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>Laravel 버전이 출력되면 성공! 🎉</p>
+
+<hr />
+
+<h2 id="36-환경-설정-파일-구성">3.6 환경 설정 파일 구성</h2>
+
+<h3 id="env-파일-생성">.env 파일 생성</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .env.example에서 .env 생성</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data <span class="nb">cp</span> .env.example .env
+</code></pre></div></div>
+
+<h3 id="env-파일-편집">.env 파일 편집</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .env 파일 편집</span>
+<span class="nb">sudo </span>nano .env
+</code></pre></div></div>
+
+<p>다음 내용을 찾아서 수정해주세요:</p>
+
+<pre><code class="language-env"># 애플리케이션 기본 설정
+APP_NAME="Jiny ERP Demo"
+APP_ENV=production
+APP_DEBUG=false
+APP_KEY=
+APP_TIMEZONE=Asia/Seoul
+APP_URL=http://your-server-ip
+
+# 데이터베이스 설정
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=jinyerp_demo
+DB_USERNAME=jinyerp
+DB_PASSWORD=your_mysql_password_here
+
+# 캐시 설정
+CACHE_STORE=redis
+SESSION_DRIVER=redis
+SESSION_LIFETIME=120
+QUEUE_CONNECTION=redis
+
+# Redis 설정
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=your_redis_password_here
+REDIS_PORT=6379
+REDIS_DB=0
+
+# 로그 설정
+LOG_CHANNEL=stack
+LOG_LEVEL=error
+
+# 파일 시스템
+FILESYSTEM_DISK=local
+
+# 브로드캐스트
+BROADCAST_DRIVER=log
+</code></pre>
+
+<blockquote>
+  <p><strong>🔒 중요</strong>:</p>
+  <ul>
+    <li><code class="language-plaintext highlighter-rouge">DB_PASSWORD</code>: MySQL 사용자 비밀번호 (2단계에서 설정한 것)</li>
+    <li><code class="language-plaintext highlighter-rouge">REDIS_PASSWORD</code>: Redis 비밀번호 (2단계에서 설정한 것)</li>
+    <li><code class="language-plaintext highlighter-rouge">APP_URL</code>: 현재는 IP 주소, 4단계에서 도메인으로 변경</li>
+  </ul>
+</blockquote>
+
+<p>저장하고 종료: <code class="language-plaintext highlighter-rouge">Ctrl + X</code>, <code class="language-plaintext highlighter-rouge">Y</code>, <code class="language-plaintext highlighter-rouge">Enter</code></p>
+
+<h3 id="env-파일-보안-설정">.env 파일 보안 설정</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .env 파일 권한 제한 (중요!)</span>
+<span class="nb">sudo chmod </span>600 /var/www/jinyerp_demo_01/.env
+<span class="nb">sudo chown </span>www-data:www-data /var/www/jinyerp_demo_01/.env
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>🔒 보안</strong>: .env 파일에는 중요한 정보가 들어있어서 읽기 권한을 제한해야 해요.</p>
+</blockquote>
+
+<h3 id="주요-laravel-설정-파일-경로">주요 Laravel 설정 파일 경로</h3>
+
+<p>나중에 필요할 때를 위해:</p>
+
+<ul>
+  <li><strong>환경 설정</strong>: <code class="language-plaintext highlighter-rouge">/var/www/jinyerp_demo_01/.env</code></li>
+  <li><strong>설정 디렉토리</strong>: <code class="language-plaintext highlighter-rouge">/var/www/jinyerp_demo_01/config/</code></li>
+  <li><strong>라우트 파일</strong>: <code class="language-plaintext highlighter-rouge">/var/www/jinyerp_demo_01/routes/web.php</code></li>
+  <li><strong>로그 디렉토리</strong>: <code class="language-plaintext highlighter-rouge">/var/www/jinyerp_demo_01/storage/logs/</code></li>
+</ul>
+
+<hr />
+
+<h2 id="37-laravel-애플리케이션-초기화">3.7 Laravel 애플리케이션 초기화</h2>
+
+<h3 id="애플리케이션-키-생성">애플리케이션 키 생성</h3>
+
+<p>Laravel의 암호화에 사용되는 고유한 키를 생성해요:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 애플리케이션 키 생성</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan key:generate
+
+<span class="c"># 출력:</span>
+<span class="c"># Application key set successfully.</span>
+</code></pre></div></div>
+
+<h3 id="생성된-키-확인">생성된 키 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .env 파일에서 APP_KEY 확인</span>
+<span class="nb">grep </span>APP_KEY /var/www/jinyerp_demo_01/.env
+
+<span class="c"># 출력 예시:</span>
+<span class="c"># APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="38-데이터베이스-마이그레이션">3.8 데이터베이스 마이그레이션</h2>
+
+<h3 id="데이터베이스-연결-테스트">데이터베이스 연결 테스트</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 마이그레이션 상태 확인 (연결 테스트)</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan migrate:status
+</code></pre></div></div>
+
+<p>에러 없이 마이그레이션 목록이 나오면 데이터베이스 연결 성공!</p>
+
+<h3 id="마이그레이션-실행">마이그레이션 실행</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 프로덕션 환경에서 마이그레이션 실행</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan migrate <span class="nt">--force</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>💡 <code class="language-plaintext highlighter-rouge">--force</code> 옵션</strong>: 프로덕션 환경에서는 확인 메시지 없이 실행하기 위해 필요해요.</p>
+</blockquote>
+
+<h3 id="시드-데이터-실행-선택사항">시드 데이터 실행 (선택사항)</h3>
+
+<p>초기 데이터가 있다면:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 모든 시더 실행</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan db:seed <span class="nt">--force</span>
+
+<span class="c"># 또는 특정 시더만 실행</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan db:seed <span class="nt">--class</span><span class="o">=</span>UserSeeder <span class="nt">--force</span>
+</code></pre></div></div>
+
+<h3 id="마이그레이션-확인">마이그레이션 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 다시 상태 확인</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan migrate:status
+
+<span class="c"># 데이터베이스 테이블 확인</span>
+mysql <span class="nt">-u</span> jinyerp <span class="nt">-p</span> jinyerp_demo <span class="nt">-e</span> <span class="s2">"SHOW TABLES;"</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="39-laravel-저장소-및-캐시-설정">3.9 Laravel 저장소 및 캐시 설정</h2>
+
+<h3 id="storage-심볼릭-링크-생성">Storage 심볼릭 링크 생성</h3>
+
+<p>업로드된 파일이 public에서 접근 가능하도록:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># storage를 public으로 링크</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan storage:link
+
+<span class="c"># 출력:</span>
+<span class="c"># The [public/storage] link has been connected to [storage/app/public].</span>
+</code></pre></div></div>
+
+<h3 id="캐시-생성-성능-향상">캐시 생성 (성능 향상)</h3>
+
+<p>Laravel의 설정 파일들을 캐싱하면 성능이 크게 향상돼요:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 설정 캐시 생성</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan config:cache
+
+<span class="c"># 라우트 캐시 생성</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan route:cache
+
+<span class="c"># 뷰 캐시 생성</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan view:cache
+
+<span class="c"># 이벤트 캐시 생성</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan event:cache
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>💡 언제 캐시를 재생성하나요?</strong>
+설정 파일, 라우트, 뷰를 수정한 후에는 해당 캐시를 다시 생성해야 해요.</p>
+</blockquote>
+
+<h3 id="캐시-확인">캐시 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 캐시 파일 확인</span>
+<span class="nb">ls</span> <span class="nt">-la</span> bootstrap/cache/
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">config.php</code>, <code class="language-plaintext highlighter-rouge">routes-v7.php</code> 등의 파일이 보이면 성공!</p>
+
+<hr />
+
+<h2 id="310-파일-권한-최종-설정">3.10 파일 권한 최종 설정</h2>
+
+<h3 id="전체-소유권-재설정">전체 소유권 재설정</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Laravel 전체 디렉토리 소유권</span>
+<span class="nb">sudo chown</span> <span class="nt">-R</span> www-data:www-data /var/www/jinyerp_demo_01
+</code></pre></div></div>
+
+<h3 id="일반-파일-및-디렉토리-권한">일반 파일 및 디렉토리 권한</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 일반 파일 권한 (644)</span>
+<span class="nb">sudo </span>find /var/www/jinyerp_demo_01 <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>644 <span class="o">{}</span> <span class="se">\;</span>
+
+<span class="c"># 디렉토리 권한 (755)</span>
+<span class="nb">sudo </span>find /var/www/jinyerp_demo_01 <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>755 <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div></div>
+
+<h3 id="쓰기-권한-필요한-디렉토리">쓰기 권한 필요한 디렉토리</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># storage 디렉토리 (로그, 세션, 캐시)</span>
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> 775 /var/www/jinyerp_demo_01/storage
+
+<span class="c"># bootstrap/cache 디렉토리</span>
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> 775 /var/www/jinyerp_demo_01/bootstrap/cache
+</code></pre></div></div>
+
+<h3 id="artisan-실행-권한">artisan 실행 권한</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># artisan 명령어 실행 권한</span>
+<span class="nb">sudo chmod </span>755 /var/www/jinyerp_demo_01/artisan
+</code></pre></div></div>
+
+<h3 id="권한-설정-확인">권한 설정 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 주요 디렉토리 권한 확인</span>
+<span class="nb">ls</span> <span class="nt">-la</span> /var/www/jinyerp_demo_01/ | <span class="nb">grep</span> <span class="nt">-E</span> <span class="s2">"storage|bootstrap"</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="311-프론트엔드-빌드-선택사항">3.11 프론트엔드 빌드 (선택사항)</h2>
+
+<p>Laravel 프로젝트에 프론트엔드 에셋이 있다면 빌드해야 해요.</p>
+
+<h3 id="packagejson-확인">package.json 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># package.json 파일 확인</span>
+<span class="nb">cat</span> /var/www/jinyerp_demo_01/package.json
+</code></pre></div></div>
+
+<p>package.json이 없다면 이 단계를 건너뛰세요.</p>
+
+<h3 id="nodejs-의존성-설치">Node.js 의존성 설치</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 프로젝트 디렉토리로 이동</span>
+<span class="nb">cd</span> /var/www/jinyerp_demo_01
+
+<span class="c"># Node.js 의존성 설치 (1GB RAM 환경)</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data <span class="nb">env </span><span class="nv">NODE_OPTIONS</span><span class="o">=</span><span class="s2">"--max-old-space-size=512"</span> npm ci
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>💡 <code class="language-plaintext highlighter-rouge">npm ci</code>가 뭔가요?</strong>
+<code class="language-plaintext highlighter-rouge">npm install</code>보다 빠르고 클린한 설치 방법이에요. CI/CD 환경에 최적화되어 있습니다.</p>
+</blockquote>
+
+<h3 id="프론트엔드-빌드">프론트엔드 빌드</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 프로덕션 빌드</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data npm run build
+</code></pre></div></div>
+
+<p>빌드가 완료될 때까지 기다려주세요 (3-5분 소요)</p>
+
+<h3 id="빌드-결과-확인">빌드 결과 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 빌드된 파일 확인</span>
+<span class="nb">ls</span> <span class="nt">-la</span> public/build/
+</code></pre></div></div>
+
+<p>manifest.json과 assets 디렉토리가 있으면 성공!</p>
+
+<hr />
+
+<h2 id="312-laravel-설정-검증">3.12 Laravel 설정 검증</h2>
+
+<h3 id="애플리케이션-상태-확인">애플리케이션 상태 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Laravel 버전 확인</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan <span class="nt">--version</span>
+
+<span class="c"># 환경 정보 확인</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan <span class="nb">env</span>
+
+<span class="c"># 라우트 목록 확인</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan route:list
+</code></pre></div></div>
+
+<h3 id="데이터베이스-연결-테스트-1">데이터베이스 연결 테스트</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 마이그레이션 상태 재확인</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan migrate:status
+
+<span class="c"># Tinker로 데이터베이스 테스트</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan tinker
+</code></pre></div></div>
+
+<p>Tinker가 실행되면:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 데이터베이스 연결 테스트</span>
+<span class="no">DB</span><span class="o">::</span><span class="nf">connection</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getPdo</span><span class="p">();</span>
+
+<span class="c1">// 테이블 확인</span>
+<span class="no">DB</span><span class="o">::</span><span class="nf">select</span><span class="p">(</span><span class="s1">'SHOW TABLES'</span><span class="p">);</span>
+
+<span class="c1">// 종료</span>
+<span class="k">exit</span>
+</code></pre></div></div>
+
+<h3 id="로그-확인">로그 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Laravel 로그 디렉토리 확인</span>
+<span class="nb">ls</span> <span class="nt">-la</span> /var/www/jinyerp_demo_01/storage/logs/
+
+<span class="c"># 현재 로그 확인 (실시간)</span>
+<span class="nb">sudo tail</span> <span class="nt">-f</span> /var/www/jinyerp_demo_01/storage/logs/laravel.log
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Ctrl + C</code>로 종료</p>
+
+<hr />
+
+<h2 id="-3단계-완료-체크리스트">✅ 3단계 완료 체크리스트</h2>
+
+<p>모든 단계를 완료하셨나요? 체크리스트로 확인해봅시다!</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />GitHub 저장소 접근 설정 (SSH 키 또는 Token)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />프로젝트 정상 클론</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />파일 소유권 www-data로 변경</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Composer 의존성 설치 완료</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />.env 파일 생성 및 설정</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />.env 파일 보안 권한 설정</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />애플리케이션 키 생성</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />데이터베이스 마이그레이션 완료</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Storage 심볼릭 링크 생성</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Laravel 캐시 설정 (config, route, view)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />파일 권한 최종 설정</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />프론트엔드 빌드 (선택사항)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />애플리케이션 상태 검증</li>
+</ul>
+
+<h3 id="최종-확인-명령어">최종 확인 명령어</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 모든 설정 한 번에 확인</span>
+<span class="nb">echo</span> <span class="s2">"=== Laravel Version ==="</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan <span class="nt">--version</span>
+<span class="nb">echo</span> <span class="s2">"=== Database ==="</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan migrate:status
+<span class="nb">echo</span> <span class="s2">"=== Storage Link ==="</span> <span class="o">&amp;&amp;</span> <span class="nb">ls</span> <span class="nt">-la</span> public/ | <span class="nb">grep </span>storage
+<span class="nb">echo</span> <span class="s2">"=== Permissions ==="</span> <span class="o">&amp;&amp;</span> <span class="nb">ls</span> <span class="nt">-la</span> storage/ | <span class="nb">head</span> <span class="nt">-3</span>
+<span class="nb">echo</span> <span class="s2">"=== Cache ==="</span> <span class="o">&amp;&amp;</span> <span class="nb">ls</span> <span class="nt">-la</span> bootstrap/cache/ | <span class="nb">grep</span> <span class="nt">-E</span> <span class="s2">"config|routes"</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="문제-해결">문제 해결</h2>
+
+<h3 id="문제-1-composer-install-실패-메모리-부족">문제 1: Composer install 실패 (메모리 부족)</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Allowed memory size exhausted
+</code></pre></div></div>
+
+<p><strong>해결 방법</strong>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 스왑 파일 생성 (아직 안 만들었다면)</span>
+<span class="nb">sudo </span>fallocate <span class="nt">-l</span> 2G /swapfile
+<span class="nb">sudo chmod </span>600 /swapfile
+<span class="nb">sudo </span>mkswap /swapfile
+<span class="nb">sudo </span>swapon /swapfile
+
+<span class="c"># 다시 설치</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data composer <span class="nb">install</span> <span class="nt">--no-scripts</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data composer run-script post-autoload-dump
+</code></pre></div></div>
+
+<h3 id="문제-2-데이터베이스-연결-실패">문제 2: 데이터베이스 연결 실패</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SQLSTATE[HY000] [1045] Access denied
+</code></pre></div></div>
+
+<p><strong>해결 방법</strong>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .env 파일 확인</span>
+<span class="nb">cat</span> .env | <span class="nb">grep</span> <span class="nt">-E</span> <span class="s2">"DB_"</span>
+
+<span class="c"># MySQL 사용자 권한 재확인</span>
+mysql <span class="nt">-u</span> root <span class="nt">-p</span> <span class="nt">-e</span> <span class="s2">"SHOW GRANTS FOR 'jinyerp'@'localhost';"</span>
+
+<span class="c"># 비밀번호가 틀렸다면 재설정</span>
+mysql <span class="nt">-u</span> root <span class="nt">-p</span> <span class="nt">-e</span> <span class="s2">"ALTER USER 'jinyerp'@'localhost' IDENTIFIED BY 'new_password';"</span>
+</code></pre></div></div>
+
+<h3 id="문제-3-권한-문제">문제 3: 권한 문제</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>failed to open stream: Permission denied
+</code></pre></div></div>
+
+<p><strong>해결 방법</strong>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 소유권 재설정</span>
+<span class="nb">sudo chown</span> <span class="nt">-R</span> www-data:www-data /var/www/jinyerp_demo_01
+
+<span class="c"># storage 권한 재설정</span>
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> 775 /var/www/jinyerp_demo_01/storage
+<span class="nb">sudo chmod</span> <span class="nt">-R</span> 775 /var/www/jinyerp_demo_01/bootstrap/cache
+</code></pre></div></div>
+
+<h3 id="문제-4-캐시-문제">문제 4: 캐시 문제</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Configuration cache file does not exist
+</code></pre></div></div>
+
+<p><strong>해결 방법</strong>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 모든 캐시 삭제</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan cache:clear
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan config:clear
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan route:clear
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan view:clear
+
+<span class="c"># 캐시 재생성</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan config:cache
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan route:cache
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan view:cache
+</code></pre></div></div>
+
+<h3 id="문제-5-storage-링크-에러">문제 5: Storage 링크 에러</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>symlink(): File exists
+</code></pre></div></div>
+
+<p><strong>해결 방법</strong>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 기존 링크 삭제</span>
+<span class="nb">sudo rm</span> /var/www/jinyerp_demo_01/public/storage
+
+<span class="c"># 링크 재생성</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan storage:link
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="다음-단계">다음 단계</h2>
+
+<p>축하합니다! 3단계를 완료하셨어요! 🎉</p>
+
+<p>Laravel 애플리케이션이 서버에 배포되었어요. 이제 도메인을 연결하고 HTTPS를 설정할 차례입니다!</p>
+
+<div style="text-align: center; margin: 40px 0;">
+  <a href="./04.domain-https.md" style="display: inline-block; padding: 15px 40px; background-color: #3490dc; color: white; text-decoration: none; border-radius: 5px; font-size: 18px;">
+    🔒 4단계: 도메인 및 HTTPS 설정 시작하기 →
+  </a>
+</div>
+
+<hr />
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/03.deploy/02.server-setup.html">← 이전: 서버 환경 설정</a></td>
+      <td><a href="/03.deploy/">메인으로</a></td>
+      <td><a href="/03.deploy/04.domain-https.html">다음: 도메인/HTTPS 설정 →</a></td>
+    </tr>
+  </tbody>
+</table>
+
+                        </div>
+                    </div>
+
+<!-- Right Advertisement Area -->
+<div class="col-12 col-xl-3">
+    <div class="ad-area">
+        <!-- 메인 광고 (300x600 Large Rectangle) -->
+        <div class="ad-container">
+            <h6>Advertisement</h6>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 중간 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 관련 링크 -->
+        <div class="ad-container mt-4">
+            <h6>관련 링크</h6>
+            <div class="related-links">
+                <a href="https://laravel.com/docs" target="_blank">Laravel 공식 문서</a>
+                <a href="https://php.net/docs.php" target="_blank">PHP 공식 문서</a>
+                <a href="https://getbootstrap.com/" target="_blank">Bootstrap 문서</a>
+                <a href="https://www.mysql.com/documentation/" target="_blank">MySQL 문서</a>
+                <a href="https://git-scm.com/docs" target="_blank">Git 문서</a>
+            </div>
+        </div>
+
+        <!-- 하단 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1122334455" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; 2025 JinyDev. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="/assets/w3schools-script.js"></script>
+</body>
+</html>

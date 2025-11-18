@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev</title>
+    <meta name="description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.">
+
+    <!-- SEO Meta Tags -->
+    
+    
+    <meta name="robots" content="index, follow">
+    
+    <meta name="language" content="ko">
+
+    <!-- Open Graph Meta Tags -->
+    
+
+    <!-- Twitter Card Meta Tags -->
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/w3schools-style.css">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+            crossorigin="anonymous"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>JinyDev | JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="JinyDev" />
+<meta name="author" content="JinyPHP Team" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다." />
+<meta property="og:description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다." />
+<link rel="canonical" href="http://localhost:4000/02.Setup/01.requirements.html" />
+<meta property="og:url" content="http://localhost:4000/02.Setup/01.requirements.html" />
+<meta property="og:site_name" content="JinyDev" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JinyDev" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"JinyPHP Team"},"description":"JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.","headline":"JinyDev","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"JinyPHP Team"},"url":"http://localhost:4000/02.Setup/01.requirements.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+<!-- Top Navigation -->
+<nav class="top-nav">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="/">JinyDev</a>
+        </div>
+        <div class="nav-tabs">
+            <a href="/" class="nav-tab active">HOME</a>
+            <a href="laravel.jiny.dev" class="nav-tab">Laravel</a>
+            <a href="php.jiny.dev" class="nav-tab">PHP</a>
+            <a href="linux.jiny.dev" class="nav-tab">Linux</a>
+            <a href="/04.Route/" class="nav-tab">라우팅</a>
+            <a href="/05.view/" class="nav-tab">View</a>
+            <a href="/06.templates/" class="nav-tab">Templates</a>
+            <a href="/04.jinyphp.html" class="nav-tab">JinyPHP</a>
+            <a href="git.jiny.dev" class="nav-tab">Git</a>
+            <a href="mysql.jiny.dev" class="nav-tab">MySQL</a>
+            <a href="html.jiny.dev" class="nav-tab">Html</a>
+            <a href="javascript.jiny.dev" class="nav-tab">Javascript</a>
+        </div>
+        <div class="nav-actions">
+            <button class="menu-btn d-lg-none" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h4>학습 가이드</h4>
+            </div>
+
+            <div class="sidebar-menu">
+                <!-- Laravel 시작하기 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('laravel-start')">
+                        Laravel 시작하기
+                    </div>
+                    <div class="menu-items" id="laravel-start">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('laravel-basics')">
+                                기초 개념
+                            </div>
+                            <div class="category-items" id="laravel-basics">
+                                <a href="/01.Start/" class="menu-item">개요</a>
+                                <a href="/01.Start/01.what-is-laravel.html" class="menu-item">라라벨이란?</a>
+                                <a href="/01.Start/02.php-language.html" class="menu-item">PHP 언어</a>
+                                <a href="/01.Start/03.dependency-issues.html" class="menu-item">의존성 문제</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 개발환경 설정 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('setup')">
+                        개발환경 설정
+                    </div>
+                    <div class="menu-items" id="setup">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-install')">
+                                설치 및 설정
+                            </div>
+                            <div class="category-items" id="setup-install">
+                                <a href="/02.Setup/" class="menu-item">개요</a>
+                                <a href="/02.Setup/01.requirements.html" class="menu-item">사전 요구사항</a>
+                                <a href="/02.Setup/02.laravel-install.html" class="menu-item">Laravel 설치</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-config')">
+                                환경 구성
+                            </div>
+                            <div class="category-items" id="setup-config">
+                                <a href="/02.Setup/03.database.html" class="menu-item">데이터베이스 설정</a>
+                                <a href="/02.Setup/04.local-development.html" class="menu-item">로컬 개발 환경</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 배포 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('deploy')">
+                        서버 배포
+                    </div>
+                    <div class="menu-items" id="deploy">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-setup')">
+                                서버 준비
+                            </div>
+                            <div class="category-items" id="deploy-setup">
+                                <a href="/03.deploy/" class="menu-item">개요</a>
+                                <a href="/03.deploy/01.cloud-setup.html" class="menu-item">클라우드 준비</a>
+                                <a href="/03.deploy/02.server-setup.html" class="menu-item">서버 환경 설정</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-app')">
+                                애플리케이션 배포
+                            </div>
+                            <div class="category-items" id="deploy-app">
+                                <a href="/03.deploy/03.laravel-deploy.html" class="menu-item">Laravel 배포</a>
+                                <a href="/03.deploy/04.domain-https.html" class="menu-item">도메인 HTTPS</a>
+                                <a href="/03.deploy/05.optimization.html" class="menu-item">성능 최적화</a>
+                                <a href="/03.deploy/06.github-deploy.html" class="menu-item">GitHub 배포 자동화</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 백엔드 개발 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('backend')">
+                        백엔드 개발
+                    </div>
+                    <div class="menu-items" id="backend">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('backend-basics')">
+                                기본 개념
+                            </div>
+                            <div class="category-items" id="backend-basics">
+                                <a href="/04.backend.html" class="menu-item">백엔드 개발 가이드</a>
+                                <a href="/04.backend/framework.html" class="menu-item">프레임워크의 이해</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 접속 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('server-access')">
+                        서버 접속
+                    </div>
+                    <div class="menu-items" id="server-access">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('server-concepts')">
+                                서버 기초 이해
+                            </div>
+                            <div class="category-items" id="server-concepts">
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/" class="menu-item">개요</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/%EC%9B%B9%EC%84%9C%EB%B2%84%EB%9E%80.html" class="menu-item">웹서버란?</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/http.html" class="menu-item">HTTP 통신</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 라우팅 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('routing-learning')">
+                        라우팅 학습
+                    </div>
+                    <div class="menu-items" id="routing-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="route-taste-detail">
+                                <a href="/06.route-taste/" class="menu-item">5분 라우팅 체험</a>
+                                <a href="/06.route-taste/%EC%A3%BC%EC%86%8C%EB%9E%80.html" class="menu-item">주소란? URL 체계 이해</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%ED%95%84%EC%9A%94%EC%84%B1.html" class="menu-item">라우트의 필요성</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%EB%8F%99%EC%9E%91.html" class="menu-item">라우트의 동작 원리</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="route-system">
+                                <a href="/04-01.route-taste/" class="menu-item">맛보기 - 5분 라우팅 체험</a>
+                                <a href="/04-02.route-beginner/" class="menu-item">초급 - 라우팅 기초 마스터</a>
+                                <a href="/04-03.route-intermediate/" class="menu-item">중급 - 네임드 라우트와 그룹</a>
+                                <a href="/04-04.route-advanced/" class="menu-item">고급 - 미들웨어와 모델바인딩</a>
+                                <a href="/04-05.route-application/" class="menu-item">응용 - 엔터프라이즈 라우팅</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 뷰 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('view-learning')">
+                        뷰 학습
+                    </div>
+                    <div class="menu-items" id="view-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="view-taste-detail">
+                                <a href="/07.view-taste/" class="menu-item">뷰 맛보기</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="view-system">
+                                <a href="/05-01.view-taste/" class="menu-item">맛보기 - 첫 번째 뷰 만들기</a>
+                                <a href="/05-02.view-beginner/" class="menu-item">초급 - 뷰와 데이터 전달</a>
+                                <a href="/05-03.view-intermediate/" class="menu-item">중급 - HTTP 응답과 리다이렉트</a>
+                                <a href="/05-04.view-advanced/" class="menu-item">고급 - API와 JSON 응답</a>
+                                <a href="/05-05.view-application/" class="menu-item">응용 - 엔터프라이즈 뷰 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 템플릿 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('template-learning')">
+                        템플릿 학습
+                    </div>
+                    <div class="menu-items" id="template-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('template-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="template-system">
+                                <a href="/06-01.template-taste/" class="menu-item">맛보기 - Blade 첫 만남</a>
+                                <a href="/06-02.template-beginner/" class="menu-item">초급 - Blade 기초 마스터</a>
+                                <a href="/06-03.template-intermediate/" class="menu-item">중급 - 컴포넌트와 재사용성</a>
+                                <a href="/06-04.template-advanced/" class="menu-item">고급 - 커스텀 지시어와 최적화</a>
+                                <a href="/06-05.template-application/" class="menu-item">응용 - 엔터프라이즈 템플릿 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JinyPHP 패키지 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('jinyphp')">
+                        JinyPHP 패키지
+                    </div>
+                    <div class="menu-items" id="jinyphp">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('jinyphp-setup')">
+                                패키지 설치
+                            </div>
+                            <div class="category-items" id="jinyphp-setup">
+                                <a href="/04.jinyphp.html" class="menu-item">패키지 설치</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 학습 진도 표시 -->
+                <div class="menu-group mt-4">
+                    <div class="learning-progress">
+                        <h6><i class="fas fa-chart-line me-2"></i>학습 진도</h6>
+                        <div class="progress-items">
+                            <div class="progress-item">
+                                <span class="level-badge level-1">🍯</span>
+                                <span>맛보기 - 5분 체험</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-2">🌱</span>
+                                <span>초급 - 기초 마스터</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-3">🚀</span>
+                                <span>중급 - 실전 활용</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-4">⚡</span>
+                                <span>고급 - 최적화</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-5">🔥</span>
+                                <span>응용 - 엔터프라이즈</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 도움말 -->
+                <div class="menu-group mt-3">
+                    <div class="help-section">
+                        <h6><i class="fas fa-question-circle me-2"></i>학습 가이드</h6>
+                        <div class="help-items">
+                            <div class="help-item">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                <small>단계별로 차근차근 진행하세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-code text-info me-2"></i>
+                                <small>실습 코드를 직접 작성해보세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-bookmark text-success me-2"></i>
+                                <small>중요한 부분은 북마크하세요</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사이드바 하단 정보 -->
+            <div class="sidebar-footer">
+                <div class="version-info">
+                    <small class="text-muted">
+                        <i class="fab fa-laravel me-1"></i>Laravel 12
+                        <br>
+                        <i class="fab fa-php me-1"></i>PHP 8.4+
+                    </small>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Content -->
+                    <div class="col-12 col-xl-9">
+                        <div class="content-wrapper">
+                            <h1 id="사전-요구사항">사전 요구사항</h1>
+
+<p>안녕하세요! Laravel과 JinyERP로 개발하기 전에 먼저 컴퓨터에 필요한 프로그램들을 설치해야 합니다. 마치 요리를 하기 전에 재료를 준비하는 것과 같다고 생각하시면 됩니다.</p>
+
+<blockquote>
+  <p><strong>💡 강의 노트</strong>: 개발 환경 설정은 처음에만 복잡해 보이지만, 한 번 제대로 설정해두면 계속 사용할 수 있어요. 차근차근 따라하시면 됩니다!</p>
+</blockquote>
+
+<h2 id="-필수-소프트웨어">🔧 필수 소프트웨어</h2>
+
+<p><strong>이제 필요한 프로그램들을 하나씩 설치해보겠습니다.</strong></p>
+
+<h3 id="php-84-설치">PHP 8.4+ 설치</h3>
+
+<p><strong>PHP는 Laravel의 심장과 같은 존재입니다.</strong> Laravel은 PHP로 만들어진 프레임워크이기 때문에 반드시 PHP가 설치되어 있어야 합니다. 최신 버전인 8.4를 설치하는 이유는 성능이 더 좋고 보안도 강화되었기 때문입니다.</p>
+
+<blockquote>
+  <p><strong>🎯 실습 팁</strong>: 아래 명령어를 터미널(명령 프롬프트)에서 실행해주세요. macOS와 Windows/Linux에 따라 방법이 다릅니다.</p>
+</blockquote>
+
+<h4 id="macos-homebrew">macOS (Homebrew)</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># PHP 8.4 설치</span>
+brew <span class="nb">install </span>php@8.4
+
+<span class="c"># PHP 버전 확인</span>
+php <span class="nt">--version</span>
+
+<span class="c"># PHP 확장 모듈 확인</span>
+php <span class="nt">-m</span> | <span class="nb">grep</span> <span class="nt">-E</span> <span class="s2">"(pdo|mbstring|openssl|tokenizer|xml|curl)"</span>
+</code></pre></div></div>
+
+<h4 id="ubuntudebian">Ubuntu/Debian</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># PHP 8.4 저장소 추가</span>
+<span class="nb">sudo </span>add-apt-repository ppa:ondrej/php
+<span class="nb">sudo </span>apt update
+
+<span class="c"># PHP 8.4 및 필수 확장 설치</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>php8.4-cli php8.4-fpm php8.4-mysql php8.4-pgsql php8.4-xml php8.4-curl php8.4-zip php8.4-mbstring php8.4-bcmath php8.4-tokenizer php8.4-sqlite3 php8.4-gd php8.4-intl php8.4-redis
+
+<span class="c"># PHP 버전 확인</span>
+php <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p><strong>📁 PHP 관련 설정 파일 경로:</strong></p>
+<ul>
+  <li><strong>macOS 설정</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/etc/php/8.4/php.ini</code></li>
+  <li><strong>Ubuntu 설정</strong>: <code class="language-plaintext highlighter-rouge">/etc/php/8.4/cli/php.ini</code></li>
+  <li><strong>PHP-FPM 설정</strong>: <code class="language-plaintext highlighter-rouge">/etc/php/8.4/fpm/php.ini</code></li>
+</ul>
+
+<h3 id="composer-25-설치">Composer 2.5+ 설치</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Composer 설치 (전역)</span>
+curl <span class="nt">-sS</span> https://getcomposer.org/installer | php
+<span class="nb">sudo mv </span>composer.phar /usr/local/bin/composer
+
+<span class="c"># 또는 Homebrew (macOS)</span>
+brew <span class="nb">install </span>composer
+
+<span class="c"># 버전 확인</span>
+composer <span class="nt">--version</span>
+
+<span class="c"># 최신 버전으로 업데이트</span>
+composer self-update
+</code></pre></div></div>
+
+<p><strong>📁 Composer 관련 파일 경로:</strong></p>
+<ul>
+  <li><strong>전역 설정</strong>: <code class="language-plaintext highlighter-rouge">~/.composer/config.json</code></li>
+  <li><strong>캐시 디렉토리</strong>: <code class="language-plaintext highlighter-rouge">~/.composer/cache/</code></li>
+  <li><strong>전역 패키지</strong>: <code class="language-plaintext highlighter-rouge">~/.composer/vendor/</code></li>
+</ul>
+
+<h3 id="nodejs-20x-lts-설치">Node.js 20.x LTS 설치</h3>
+
+<h4 id="macos">macOS</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Node.js 20.x LTS 설치</span>
+brew <span class="nb">install </span>node@20
+
+<span class="c"># 또는 nvm 사용</span>
+curl <span class="nt">-o-</span> https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+nvm <span class="nb">install </span>20
+nvm use 20
+
+<span class="c"># 버전 확인</span>
+node <span class="nt">--version</span>
+npm <span class="nt">--version</span>
+</code></pre></div></div>
+
+<h4 id="ubuntudebian-1">Ubuntu/Debian</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Node.js 20.x 저장소 추가</span>
+curl <span class="nt">-fsSL</span> https://deb.nodesource.com/setup_20.x | <span class="nb">sudo</span> <span class="nt">-E</span> bash -
+
+<span class="c"># Node.js 설치</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>nodejs
+
+<span class="c"># 버전 확인</span>
+node <span class="nt">--version</span>
+npm <span class="nt">--version</span>
+
+<span class="c"># npm 업데이트</span>
+npm <span class="nb">install</span> <span class="nt">-g</span> npm@latest
+</code></pre></div></div>
+
+<p><strong>📁 Node.js 관련 파일 경로:</strong></p>
+<ul>
+  <li><strong>Node.js 설치</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/bin/node</code></li>
+  <li><strong>npm 캐시</strong>: <code class="language-plaintext highlighter-rouge">~/.npm/</code></li>
+  <li><strong>전역 패키지</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/lib/node_modules/</code></li>
+</ul>
+
+<h3 id="git-최신-버전-설치">Git 최신 버전 설치</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># macOS</span>
+brew <span class="nb">install </span>git
+
+<span class="c"># Ubuntu/Debian</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>git
+
+<span class="c"># 버전 확인</span>
+git <span class="nt">--version</span>
+
+<span class="c"># Git 전역 설정</span>
+git config <span class="nt">--global</span> user.name <span class="s2">"Your Name"</span>
+git config <span class="nt">--global</span> user.email <span class="s2">"your.email@example.com"</span>
+</code></pre></div></div>
+
+<p><strong>📁 Git 관련 설정 파일:</strong></p>
+<ul>
+  <li><strong>전역 설정</strong>: <code class="language-plaintext highlighter-rouge">~/.gitconfig</code></li>
+  <li><strong>프로젝트 설정</strong>: <code class="language-plaintext highlighter-rouge">./.git/config</code></li>
+  <li><strong>전역 ignore</strong>: <code class="language-plaintext highlighter-rouge">~/.gitignore_global</code></li>
+</ul>
+
+<hr />
+
+<h2 id="️-데이터베이스-시스템">🗄️ 데이터베이스 시스템</h2>
+
+<h3 id="postgresql-15-권장">PostgreSQL 15+ (권장)</h3>
+
+<h4 id="macos-1">macOS</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># PostgreSQL 설치</span>
+brew <span class="nb">install </span>postgresql@15
+
+<span class="c"># 서비스 시작</span>
+brew services start postgresql@15
+
+<span class="c"># PostgreSQL 접속 테스트</span>
+psql postgres
+</code></pre></div></div>
+
+<h4 id="ubuntudebian-2">Ubuntu/Debian</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># PostgreSQL 설치</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>postgresql-15 postgresql-contrib-15
+
+<span class="c"># 서비스 시작 및 활성화</span>
+<span class="nb">sudo </span>systemctl start postgresql
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>postgresql
+
+<span class="c"># PostgreSQL 접속 테스트</span>
+<span class="nb">sudo</span> <span class="nt">-u</span> postgres psql
+</code></pre></div></div>
+
+<p><strong>📁 PostgreSQL 관련 파일 경로:</strong></p>
+<ul>
+  <li><strong>메인 설정</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/var/postgres/postgresql.conf</code> (macOS)</li>
+  <li><strong>Ubuntu 설정</strong>: <code class="language-plaintext highlighter-rouge">/etc/postgresql/15/main/postgresql.conf</code></li>
+  <li><strong>데이터 디렉토리</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/var/postgres/</code> (macOS)</li>
+  <li><strong>로그 파일</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/var/log/postgres.log</code></li>
+  <li><strong>접속 설정</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/var/postgres/pg_hba.conf</code></li>
+</ul>
+
+<h3 id="mysql-80-대안">MySQL 8.0+ (대안)</h3>
+
+<h4 id="macos-2">macOS</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># MySQL 설치</span>
+brew <span class="nb">install </span>mysql@8.0
+
+<span class="c"># 서비스 시작</span>
+brew services start mysql@8.0
+
+<span class="c"># 보안 설정</span>
+mysql_secure_installation
+</code></pre></div></div>
+
+<h4 id="ubuntudebian-3">Ubuntu/Debian</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># MySQL 설치</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>mysql-server-8.0
+
+<span class="c"># 서비스 시작</span>
+<span class="nb">sudo </span>systemctl start mysql
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>mysql
+
+<span class="c"># 보안 설정</span>
+<span class="nb">sudo </span>mysql_secure_installation
+</code></pre></div></div>
+
+<p><strong>📁 MySQL 관련 파일 경로:</strong></p>
+<ul>
+  <li><strong>메인 설정</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/etc/my.cnf</code> (macOS)</li>
+  <li><strong>Ubuntu 설정</strong>: <code class="language-plaintext highlighter-rouge">/etc/mysql/mysql.conf.d/mysqld.cnf</code></li>
+  <li><strong>데이터 디렉토리</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/var/mysql/</code></li>
+  <li><strong>로그 파일</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/var/mysql/*.err</code></li>
+</ul>
+
+<h3 id="redis-선택사항">Redis (선택사항)</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># macOS</span>
+brew <span class="nb">install </span>redis
+brew services start redis
+
+<span class="c"># Ubuntu/Debian</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>redis-server
+<span class="nb">sudo </span>systemctl start redis-server
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>redis-server
+
+<span class="c"># Redis 연결 테스트</span>
+redis-cli ping
+</code></pre></div></div>
+
+<p><strong>📁 Redis 관련 파일 경로:</strong></p>
+<ul>
+  <li><strong>설정 파일</strong>: <code class="language-plaintext highlighter-rouge">/usr/local/etc/redis.conf</code> (macOS)</li>
+  <li><strong>Ubuntu 설정</strong>: <code class="language-plaintext highlighter-rouge">/etc/redis/redis.conf</code></li>
+  <li><strong>로그 파일</strong>: <code class="language-plaintext highlighter-rouge">/var/log/redis/redis-server.log</code></li>
+</ul>
+
+<hr />
+
+<h2 id="️-권장-개발-도구">🛠️ 권장 개발 도구</h2>
+
+<h3 id="php-ide">PHP IDE</h3>
+
+<h4 id="phpstorm-유료-추천">PHPStorm (유료, 추천)</h4>
+<ul>
+  <li><strong>다운로드</strong>: <a href="https://www.jetbrains.com/phpstorm/">JetBrains PHPStorm</a></li>
+  <li><strong>Laravel 플러그인</strong> 포함</li>
+  <li><strong>데이터베이스 도구</strong> 통합</li>
+</ul>
+
+<h4 id="vs-code-무료">VS Code (무료)</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># VS Code 설치 (macOS)</span>
+brew <span class="nb">install</span> <span class="nt">--cask</span> visual-studio-code
+
+<span class="c"># 필수 확장 설치</span>
+code <span class="nt">--install-extension</span> bmewburn.vscode-intelephense-client
+code <span class="nt">--install-extension</span> bradlc.vscode-tailwindcss
+code <span class="nt">--install-extension</span> onecentlin.laravel-blade
+code <span class="nt">--install-extension</span> ms-vscode.vscode-json
+</code></pre></div></div>
+
+<p><strong>VS Code 권장 확장:</strong></p>
+<ul>
+  <li><strong>PHP Intelephense</strong> - PHP 언어 서버</li>
+  <li><strong>Laravel Blade Syntax</strong> - Blade 템플릿 지원</li>
+  <li><strong>Tailwind CSS IntelliSense</strong> - Tailwind CSS 자동완성</li>
+  <li><strong>GitLens</strong> - Git 기능 확장</li>
+</ul>
+
+<h3 id="데이터베이스-도구">데이터베이스 도구</h3>
+
+<h4 id="tableplus-macoswindows-유료">TablePlus (macOS/Windows, 유료)</h4>
+<ul>
+  <li><strong>다운로드</strong>: <a href="https://tableplus.com/">TablePlus</a></li>
+  <li><strong>PostgreSQL, MySQL</strong> 모두 지원</li>
+  <li><strong>직관적인 GUI</strong></li>
+</ul>
+
+<h4 id="phpmyadmin-mysql-무료">phpMyAdmin (MySQL, 무료)</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Homebrew로 설치 (macOS)</span>
+brew <span class="nb">install </span>phpmyadmin
+
+<span class="c"># Ubuntu에서 설치</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>phpmyadmin
+</code></pre></div></div>
+
+<h4 id="sequel-pro-macos-무료">Sequel Pro (macOS, 무료)</h4>
+<ul>
+  <li><strong>다운로드</strong>: <a href="https://sequelpro.com/">Sequel Pro</a></li>
+  <li><strong>MySQL 전용</strong></li>
+</ul>
+
+<h3 id="api-테스트-도구">API 테스트 도구</h3>
+
+<h4 id="postman">Postman</h4>
+<ul>
+  <li><strong>다운로드</strong>: <a href="https://www.postman.com/">Postman</a></li>
+  <li><strong>API 개발 및 테스트</strong></li>
+</ul>
+
+<h4 id="insomnia">Insomnia</h4>
+<ul>
+  <li><strong>다운로드</strong>: <a href="https://insomnia.rest/">Insomnia</a></li>
+  <li><strong>가벼운 REST 클라이언트</strong></li>
+</ul>
+
+<hr />
+
+<h2 id="-설치-확인-체크리스트">✅ 설치 확인 체크리스트</h2>
+
+<h3 id="필수-소프트웨어">필수 소프트웨어</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># PHP 8.4+ 확인</span>
+php <span class="nt">--version</span>
+<span class="c"># PHP 8.4.x (cli) 출력 확인</span>
+
+<span class="c"># Composer 2.5+ 확인</span>
+composer <span class="nt">--version</span>
+<span class="c"># Composer version 2.5.x 출력 확인</span>
+
+<span class="c"># Node.js 20.x 확인</span>
+node <span class="nt">--version</span>
+<span class="c"># v20.x.x 출력 확인</span>
+
+<span class="c"># npm 확인</span>
+npm <span class="nt">--version</span>
+<span class="c"># 10.x.x 출력 확인</span>
+
+<span class="c"># Git 확인</span>
+git <span class="nt">--version</span>
+<span class="c"># git version 2.x.x 출력 확인</span>
+</code></pre></div></div>
+
+<h3 id="데이터베이스-연결-확인">데이터베이스 연결 확인</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># PostgreSQL 연결 테스트</span>
+psql <span class="nt">-h</span> localhost <span class="nt">-U</span> postgres <span class="nt">-c</span> <span class="s2">"SELECT version();"</span>
+
+<span class="c"># MySQL 연결 테스트</span>
+mysql <span class="nt">-u</span> root <span class="nt">-p</span> <span class="nt">-e</span> <span class="s2">"SELECT VERSION();"</span>
+
+<span class="c"># Redis 연결 테스트 (선택사항)</span>
+redis-cli ping
+<span class="c"># PONG 응답 확인</span>
+</code></pre></div></div>
+
+<h3 id="개발-도구-확인">개발 도구 확인</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>PHP IDE</strong> 설치 (PHPStorm 또는 VS Code)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>데이터베이스 GUI</strong> 도구 설치</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>API 테스트</strong> 도구 설치</li>
+</ul>
+
+<hr />
+
+<h2 id="-다음-단계">🔗 다음 단계</h2>
+
+<p>사전 요구사항 설치가 완료되었으면:</p>
+
+<ol>
+  <li><strong>Laravel 프로젝트 설치</strong> → <a href="/02.Setup/02.laravel-install.html"><code class="language-plaintext highlighter-rouge">02.laravel-install.md</code></a></li>
+  <li><strong>데이터베이스 설정</strong> → <a href="/02.Setup/03.database.html"><code class="language-plaintext highlighter-rouge">03.database.md</code></a></li>
+  <li><strong>GitHub 배포 준비</strong> → <a href="/02.Setup/04.github-deploy.html"><code class="language-plaintext highlighter-rouge">04.github-deploy.md</code></a></li>
+</ol>
+
+<hr />
+
+<h2 id="-문제-해결">❓ 문제 해결</h2>
+
+<h3 id="php-설치-이슈">PHP 설치 이슈</h3>
+<ul>
+  <li><strong>macOS PHP 충돌</strong>: <code class="language-plaintext highlighter-rouge">brew unlink php</code> 후 <code class="language-plaintext highlighter-rouge">brew link php@8.4</code></li>
+  <li><strong>Ubuntu 확장 누락</strong>: <code class="language-plaintext highlighter-rouge">sudo apt install php8.4-{extension}</code></li>
+  <li><strong>권한 문제</strong>: <code class="language-plaintext highlighter-rouge">sudo</code> 없이 명령어 실행 시도</li>
+</ul>
+
+<h3 id="composer-이슈">Composer 이슈</h3>
+<ul>
+  <li><strong>느린 다운로드</strong>: <code class="language-plaintext highlighter-rouge">composer config --global repo.packagist composer https://packagist.org</code></li>
+  <li><strong>메모리 부족</strong>: <code class="language-plaintext highlighter-rouge">php -d memory_limit=-1 $(which composer) install</code></li>
+</ul>
+
+<h3 id="nodejs-버전-관리">Node.js 버전 관리</h3>
+<ul>
+  <li><strong>여러 버전 사용</strong>: <code class="language-plaintext highlighter-rouge">nvm</code> 또는 <code class="language-plaintext highlighter-rouge">n</code> 패키지 관리자 활용</li>
+  <li><strong>권한 문제</strong>: <code class="language-plaintext highlighter-rouge">sudo</code>를 사용하지 말고 사용자 권한으로 설치</li>
+</ul>
+
+<hr />
+
+<p><em>이 문서는 Laravel JinyERP 개발을 위한 기본 환경 설정을 다룹니다.</em></p>
+
+                        </div>
+                    </div>
+
+<!-- Right Advertisement Area -->
+<div class="col-12 col-xl-3">
+    <div class="ad-area">
+        <!-- 메인 광고 (300x600 Large Rectangle) -->
+        <div class="ad-container">
+            <h6>Advertisement</h6>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 중간 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 관련 링크 -->
+        <div class="ad-container mt-4">
+            <h6>관련 링크</h6>
+            <div class="related-links">
+                <a href="https://laravel.com/docs" target="_blank">Laravel 공식 문서</a>
+                <a href="https://php.net/docs.php" target="_blank">PHP 공식 문서</a>
+                <a href="https://getbootstrap.com/" target="_blank">Bootstrap 문서</a>
+                <a href="https://www.mysql.com/documentation/" target="_blank">MySQL 문서</a>
+                <a href="https://git-scm.com/docs" target="_blank">Git 문서</a>
+            </div>
+        </div>
+
+        <!-- 하단 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1122334455" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; 2025 JinyDev. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="/assets/w3schools-script.js"></script>
+</body>
+</html>

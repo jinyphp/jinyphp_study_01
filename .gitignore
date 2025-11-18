@@ -1,0 +1,51 @@
+# Jekyll 관련 파일
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+
+# Ruby 관련 파일
+Gemfile.lock
+
+# 시스템 파일
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 에디터 관련
+*.swp
+*.swo
+*~
+
+# 로그 파일
+*.log
+
+# 임시 파일
+tmp/
+temp/
+
+# Node.js (있는 경우)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDE 관련
+.vscode/
+.idea/
+*.sublime-*
+
+# Jekyll 빌드 결과
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+
+# Bundle 관련
+vendor
+.bundle

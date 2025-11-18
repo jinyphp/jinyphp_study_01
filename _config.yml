@@ -1,0 +1,136 @@
+# Jekyll 사이트 설정
+
+# 사이트 기본 정보
+title: JinyDev
+email: your-email@example.com
+description: >- # 여러 줄 텍스트
+  JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다.
+  초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.
+baseurl: "" # 하위 경로 (예: /blog)
+url: "http://localhost:4000" # 사이트 URL
+
+# 저작자 정보
+author:
+  name: JinyPHP Team
+  email: your-email@example.com
+
+# 빌드 설정
+source: src
+destination: docs
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Kramdown 설정
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# Jekyll 플러그인
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-relative-links
+
+# 상대 링크 플러그인 설정
+relative_links:
+  enabled: true
+  collections: false
+
+# 파일 제외 설정
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .DS_Store
+  - README.md
+
+# 포함할 파일 설정
+include:
+  - _pages
+  - .htaccess
+
+# 컬렉션 설정
+collections:
+  start:
+    output: true
+    permalink: /start/:name/
+  setup:
+    output: true
+    permalink: /setup/:name/
+  deploy:
+    output: true
+    permalink: /deploy/:name/
+
+# 기본값 설정
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "JinyPHP Team"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "start"
+    values:
+      layout: "page"
+      category: "Laravel 시작하기"
+  - scope:
+      path: ""
+      type: "setup"
+    values:
+      layout: "page"
+      category: "개발환경 설정"
+  - scope:
+      path: ""
+      type: "deploy"
+    values:
+      layout: "page"
+      category: "서버 배포"
+
+# 페이지네이션
+paginate: 10
+paginate_path: "/page:num/"
+
+# SEO 설정
+google_analytics: # Google Analytics ID를 여기에 입력
+facebook_app_id: # Facebook App ID를 여기에 입력
+
+# 소셜 미디어 링크
+github_username: jinyphp
+twitter_username: jinyphp
+
+# 날짜 형식
+date_format: "%Y년 %m월 %d일"
+
+# 타임존
+timezone: Asia/Seoul
+
+# 언어 설정
+lang: ko
+
+# 사이트 로고
+logo: /assets/images/logo.png
+
+# 네비게이션 메뉴
+header_pages:
+  - index.md
+  - 01.Start/index.md
+  - 02.Setup/index.md
+  - 03.deploy/index.md
+  - 04.jinyphp.md

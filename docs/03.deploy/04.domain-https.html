@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev</title>
+    <meta name="description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.">
+
+    <!-- SEO Meta Tags -->
+    
+    
+    <meta name="robots" content="index, follow">
+    
+    <meta name="language" content="ko">
+
+    <!-- Open Graph Meta Tags -->
+    
+
+    <!-- Twitter Card Meta Tags -->
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/w3schools-style.css">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+            crossorigin="anonymous"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>JinyDev | JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="JinyDev" />
+<meta name="author" content="JinyPHP Team" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다." />
+<meta property="og:description" content="JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다." />
+<link rel="canonical" href="http://localhost:4000/03.deploy/04.domain-https.html" />
+<meta property="og:url" content="http://localhost:4000/03.deploy/04.domain-https.html" />
+<meta property="og:site_name" content="JinyDev" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JinyDev" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"JinyPHP Team"},"description":"JinyDev - Laravel과 JinyPHP를 활용한 현대적인 웹 개발 학습 플랫폼입니다. 초보자부터 실전 배포까지 체계적인 개발 교육을 제공합니다.","headline":"JinyDev","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"JinyPHP Team"},"url":"http://localhost:4000/03.deploy/04.domain-https.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+<!-- Top Navigation -->
+<nav class="top-nav">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="/">JinyDev</a>
+        </div>
+        <div class="nav-tabs">
+            <a href="/" class="nav-tab active">HOME</a>
+            <a href="laravel.jiny.dev" class="nav-tab">Laravel</a>
+            <a href="php.jiny.dev" class="nav-tab">PHP</a>
+            <a href="linux.jiny.dev" class="nav-tab">Linux</a>
+            <a href="/04.Route/" class="nav-tab">라우팅</a>
+            <a href="/05.view/" class="nav-tab">View</a>
+            <a href="/06.templates/" class="nav-tab">Templates</a>
+            <a href="/04.jinyphp.html" class="nav-tab">JinyPHP</a>
+            <a href="git.jiny.dev" class="nav-tab">Git</a>
+            <a href="mysql.jiny.dev" class="nav-tab">MySQL</a>
+            <a href="html.jiny.dev" class="nav-tab">Html</a>
+            <a href="javascript.jiny.dev" class="nav-tab">Javascript</a>
+        </div>
+        <div class="nav-actions">
+            <button class="menu-btn d-lg-none" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h4>학습 가이드</h4>
+            </div>
+
+            <div class="sidebar-menu">
+                <!-- Laravel 시작하기 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('laravel-start')">
+                        Laravel 시작하기
+                    </div>
+                    <div class="menu-items" id="laravel-start">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('laravel-basics')">
+                                기초 개념
+                            </div>
+                            <div class="category-items" id="laravel-basics">
+                                <a href="/01.Start/" class="menu-item">개요</a>
+                                <a href="/01.Start/01.what-is-laravel.html" class="menu-item">라라벨이란?</a>
+                                <a href="/01.Start/02.php-language.html" class="menu-item">PHP 언어</a>
+                                <a href="/01.Start/03.dependency-issues.html" class="menu-item">의존성 문제</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 개발환경 설정 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('setup')">
+                        개발환경 설정
+                    </div>
+                    <div class="menu-items" id="setup">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-install')">
+                                설치 및 설정
+                            </div>
+                            <div class="category-items" id="setup-install">
+                                <a href="/02.Setup/" class="menu-item">개요</a>
+                                <a href="/02.Setup/01.requirements.html" class="menu-item">사전 요구사항</a>
+                                <a href="/02.Setup/02.laravel-install.html" class="menu-item">Laravel 설치</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-config')">
+                                환경 구성
+                            </div>
+                            <div class="category-items" id="setup-config">
+                                <a href="/02.Setup/03.database.html" class="menu-item">데이터베이스 설정</a>
+                                <a href="/02.Setup/04.local-development.html" class="menu-item">로컬 개발 환경</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 배포 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('deploy')">
+                        서버 배포
+                    </div>
+                    <div class="menu-items" id="deploy">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-setup')">
+                                서버 준비
+                            </div>
+                            <div class="category-items" id="deploy-setup">
+                                <a href="/03.deploy/" class="menu-item">개요</a>
+                                <a href="/03.deploy/01.cloud-setup.html" class="menu-item">클라우드 준비</a>
+                                <a href="/03.deploy/02.server-setup.html" class="menu-item">서버 환경 설정</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-app')">
+                                애플리케이션 배포
+                            </div>
+                            <div class="category-items" id="deploy-app">
+                                <a href="/03.deploy/03.laravel-deploy.html" class="menu-item">Laravel 배포</a>
+                                <a href="/03.deploy/04.domain-https.html" class="menu-item">도메인 HTTPS</a>
+                                <a href="/03.deploy/05.optimization.html" class="menu-item">성능 최적화</a>
+                                <a href="/03.deploy/06.github-deploy.html" class="menu-item">GitHub 배포 자동화</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 백엔드 개발 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('backend')">
+                        백엔드 개발
+                    </div>
+                    <div class="menu-items" id="backend">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('backend-basics')">
+                                기본 개념
+                            </div>
+                            <div class="category-items" id="backend-basics">
+                                <a href="/04.backend.html" class="menu-item">백엔드 개발 가이드</a>
+                                <a href="/04.backend/framework.html" class="menu-item">프레임워크의 이해</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 접속 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('server-access')">
+                        서버 접속
+                    </div>
+                    <div class="menu-items" id="server-access">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('server-concepts')">
+                                서버 기초 이해
+                            </div>
+                            <div class="category-items" id="server-concepts">
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/" class="menu-item">개요</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/%EC%9B%B9%EC%84%9C%EB%B2%84%EB%9E%80.html" class="menu-item">웹서버란?</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/http.html" class="menu-item">HTTP 통신</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 라우팅 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('routing-learning')">
+                        라우팅 학습
+                    </div>
+                    <div class="menu-items" id="routing-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="route-taste-detail">
+                                <a href="/06.route-taste/" class="menu-item">5분 라우팅 체험</a>
+                                <a href="/06.route-taste/%EC%A3%BC%EC%86%8C%EB%9E%80.html" class="menu-item">주소란? URL 체계 이해</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%ED%95%84%EC%9A%94%EC%84%B1.html" class="menu-item">라우트의 필요성</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%EB%8F%99%EC%9E%91.html" class="menu-item">라우트의 동작 원리</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="route-system">
+                                <a href="/04-01.route-taste/" class="menu-item">맛보기 - 5분 라우팅 체험</a>
+                                <a href="/04-02.route-beginner/" class="menu-item">초급 - 라우팅 기초 마스터</a>
+                                <a href="/04-03.route-intermediate/" class="menu-item">중급 - 네임드 라우트와 그룹</a>
+                                <a href="/04-04.route-advanced/" class="menu-item">고급 - 미들웨어와 모델바인딩</a>
+                                <a href="/04-05.route-application/" class="menu-item">응용 - 엔터프라이즈 라우팅</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 뷰 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('view-learning')">
+                        뷰 학습
+                    </div>
+                    <div class="menu-items" id="view-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="view-taste-detail">
+                                <a href="/07.view-taste/" class="menu-item">뷰 맛보기</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="view-system">
+                                <a href="/05-01.view-taste/" class="menu-item">맛보기 - 첫 번째 뷰 만들기</a>
+                                <a href="/05-02.view-beginner/" class="menu-item">초급 - 뷰와 데이터 전달</a>
+                                <a href="/05-03.view-intermediate/" class="menu-item">중급 - HTTP 응답과 리다이렉트</a>
+                                <a href="/05-04.view-advanced/" class="menu-item">고급 - API와 JSON 응답</a>
+                                <a href="/05-05.view-application/" class="menu-item">응용 - 엔터프라이즈 뷰 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 템플릿 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('template-learning')">
+                        템플릿 학습
+                    </div>
+                    <div class="menu-items" id="template-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('template-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="template-system">
+                                <a href="/06-01.template-taste/" class="menu-item">맛보기 - Blade 첫 만남</a>
+                                <a href="/06-02.template-beginner/" class="menu-item">초급 - Blade 기초 마스터</a>
+                                <a href="/06-03.template-intermediate/" class="menu-item">중급 - 컴포넌트와 재사용성</a>
+                                <a href="/06-04.template-advanced/" class="menu-item">고급 - 커스텀 지시어와 최적화</a>
+                                <a href="/06-05.template-application/" class="menu-item">응용 - 엔터프라이즈 템플릿 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JinyPHP 패키지 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('jinyphp')">
+                        JinyPHP 패키지
+                    </div>
+                    <div class="menu-items" id="jinyphp">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('jinyphp-setup')">
+                                패키지 설치
+                            </div>
+                            <div class="category-items" id="jinyphp-setup">
+                                <a href="/04.jinyphp.html" class="menu-item">패키지 설치</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 학습 진도 표시 -->
+                <div class="menu-group mt-4">
+                    <div class="learning-progress">
+                        <h6><i class="fas fa-chart-line me-2"></i>학습 진도</h6>
+                        <div class="progress-items">
+                            <div class="progress-item">
+                                <span class="level-badge level-1">🍯</span>
+                                <span>맛보기 - 5분 체험</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-2">🌱</span>
+                                <span>초급 - 기초 마스터</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-3">🚀</span>
+                                <span>중급 - 실전 활용</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-4">⚡</span>
+                                <span>고급 - 최적화</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-5">🔥</span>
+                                <span>응용 - 엔터프라이즈</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 도움말 -->
+                <div class="menu-group mt-3">
+                    <div class="help-section">
+                        <h6><i class="fas fa-question-circle me-2"></i>학습 가이드</h6>
+                        <div class="help-items">
+                            <div class="help-item">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                <small>단계별로 차근차근 진행하세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-code text-info me-2"></i>
+                                <small>실습 코드를 직접 작성해보세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-bookmark text-success me-2"></i>
+                                <small>중요한 부분은 북마크하세요</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사이드바 하단 정보 -->
+            <div class="sidebar-footer">
+                <div class="version-info">
+                    <small class="text-muted">
+                        <i class="fab fa-laravel me-1"></i>Laravel 12
+                        <br>
+                        <i class="fab fa-php me-1"></i>PHP 8.4+
+                    </small>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Content -->
+                    <div class="col-12 col-xl-9">
+                        <div class="content-wrapper">
+                            <h1 id="4단계-도메인-설정-및-https">4단계: 도메인 설정 및 HTTPS</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/03.deploy/03.laravel-deploy.html">← 이전: Laravel 배포</a></td>
+      <td><a href="/03.deploy/">메인으로</a></td>
+      <td><a href="/03.deploy/05.optimization.html">다음: 성능 최적화 →</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>이제 도메인을 연결하고 무료 SSL 인증서를 설치해서 HTTPS를 적용해봅시다! demo.jinyerp.com 같은 멋진 주소로 여러분의 Laravel 앱에 접속할 수 있게 될 거예요.</p>
+
+<h2 id="이-단계에서-배울-내용">이 단계에서 배울 내용</h2>
+
+<ul>
+  <li>도메인 DNS 설정하기</li>
+  <li>Nginx 가상 호스트 구성</li>
+  <li>HTTP로 기본 접속 테스트</li>
+  <li>Let’s Encrypt SSL 인증서 발급 (무료!)</li>
+  <li>HTTPS 적용 및 자동 리다이렉트 설정</li>
+  <li>SSL 보안 강화</li>
+  <li>방화벽 최종 설정</li>
+</ul>
+
+<blockquote>
+  <p><strong>💡 예상 소요 시간</strong>: 20-30분 정도 걸려요.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>⚠️ 도메인이 없다면?</strong>: IP 주소로도 테스트할 수 있지만, SSL 인증서는 도메인이 필요해요. 무료 도메인(Freenom 등)이나 저렴한 도메인(.xyz 등)을 고려해보세요.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="41-도메인-dns-설정하기">4.1 도메인 DNS 설정하기</h2>
+
+<h3 id="서버-ip-주소-확인">서버 IP 주소 확인</h3>
+
+<p>먼저 서버의 공인 IP 주소를 확인해요:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 서버 IP 주소 확인</span>
+curl ifconfig.me
+
+<span class="c"># 또는</span>
+curl icanhazip.com
+
+<span class="c"># 출력 예시: 123.456.78.90</span>
+</code></pre></div></div>
+
+<p>이 IP 주소를 어딘가에 메모해두세요!</p>
+
+<h3 id="dns-설정이란">DNS 설정이란?</h3>
+
+<p>DNS는 도메인 이름(demo.jinyerp.com)을 서버 IP 주소(123.456.78.90)로 변환해주는 서비스예요. 마치 주소록 같은 거죠!</p>
+
+<h3 id="도메인-업체에서-dns-설정하기">도메인 업체에서 DNS 설정하기</h3>
+
+<h4 id="일반적인-도메인-업체-가비아-후이즈-godaddy-등">일반적인 도메인 업체 (가비아, 후이즈, GoDaddy 등)</h4>
+
+<ol>
+  <li>도메인 업체 웹사이트 로그인</li>
+  <li><strong>DNS 관리</strong> 또는 <strong>네임서버 관리</strong> 메뉴 찾기</li>
+  <li><strong>A 레코드</strong> 추가:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Type: A
+Host: demo (또는 @, subdomain)
+Value: 123.456.78.90 (서버 IP)
+TTL: 300 (5분) 또는 기본값
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h4 id="cloudflare를-사용하는-경우">CloudFlare를 사용하는 경우</h4>
+
+<p>CloudFlare는 무료이면서 추가 기능이 많아요:</p>
+
+<ol>
+  <li>CloudFlare Dashboard 접속</li>
+  <li>도메인 선택</li>
+  <li><strong>DNS</strong> 탭 클릭</li>
+  <li><strong>Add record</strong> 클릭:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Type: A
+Name: demo
+IPv4 address: 123.456.78.90
+TTL: Auto
+Proxy status: DNS only (회색 구름 - 중요!)
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<blockquote>
+  <p><strong>💡 왜 Proxy를 끄나요?</strong>
+SSL 인증서를 발급받으려면 Let’s Encrypt가 직접 서버에 접근해야 해서 CloudFlare Proxy를 꺼야 해요.</p>
+</blockquote>
+
+<h4 id="예시-설정">예시 설정</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>레코드 타입</th>
+      <th>호스트명</th>
+      <th>값 (IP)</th>
+      <th>TTL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A</td>
+      <td>demo</td>
+      <td>123.456.78.90</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>www.demo</td>
+      <td>123.456.78.90</td>
+      <td>300</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dns-전파-확인">DNS 전파 확인</h3>
+
+<p>DNS 설정 후 전파되는데 시간이 걸려요 (보통 5-30분):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># DNS 설정 확인</span>
+nslookup demo.jinyerp.com
+
+<span class="c"># 또는 dig 명령어</span>
+dig demo.jinyerp.com A
+
+<span class="c"># 결과 예시:</span>
+<span class="c"># demo.jinyerp.com.    300    IN    A    123.456.78.90</span>
+</code></pre></div></div>
+
+<p>IP 주소가 제대로 나오면 DNS 전파 완료! 🎉</p>
+
+<blockquote>
+  <p><strong>⏰ 기다리는 동안</strong>: DNS가 전파되는 동안 Nginx 설정을 먼저 준비할 수 있어요.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="42-nginx-가상-호스트-설정하기">4.2 Nginx 가상 호스트 설정하기</h2>
+
+<h3 id="가상-호스트가-뭔가요">가상 호스트가 뭔가요?</h3>
+
+<p>하나의 서버에서 여러 도메인을 호스팅할 수 있게 해주는 기능이에요.</p>
+
+<h3 id="nginx-사이트-설정-파일-생성">Nginx 사이트 설정 파일 생성</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Nginx 사이트 설정 파일 생성</span>
+<span class="nb">sudo </span>nano /etc/nginx/sites-available/demo.jinyerp.com
+</code></pre></div></div>
+
+<h3 id="초기-http-설정-작성">초기 HTTP 설정 작성</h3>
+
+<p>먼저 HTTP(80번 포트)로만 설정해요. SSL 인증서는 나중에 추가할게요:</p>
+
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># /etc/nginx/sites-available/demo.jinyerp.com</span>
+<span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="kn">listen</span> <span class="s">[::]:80</span><span class="p">;</span>
+
+    <span class="kn">server_name</span> <span class="s">demo.jinyerp.com</span> <span class="s">www.demo.jinyerp.com</span><span class="p">;</span>
+    <span class="kn">root</span> <span class="n">/var/www/jinyerp_demo_01/public</span><span class="p">;</span>
+
+    <span class="c1"># Laravel 인덱스 파일 설정</span>
+    <span class="kn">index</span> <span class="s">index.php</span> <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
+
+    <span class="c1"># 문자 인코딩</span>
+    <span class="kn">charset</span> <span class="s">utf-8</span><span class="p">;</span>
+
+    <span class="c1"># Laravel 라우팅 설정</span>
+    <span class="kn">location</span> <span class="n">/</span> <span class="p">{</span>
+        <span class="kn">try_files</span> <span class="nv">$uri</span> <span class="nv">$uri</span><span class="n">/</span> <span class="n">/index.php?</span><span class="nv">$query_string</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># PHP 파일 처리</span>
+    <span class="kn">location</span> <span class="p">~</span> <span class="sr">\.php$</span> <span class="p">{</span>
+        <span class="kn">include</span> <span class="nc">snippets/fastcgi-php</span><span class="s">.conf</span><span class="p">;</span>
+        <span class="kn">fastcgi_pass</span> <span class="s">unix:/var/run/php/php8.4-fpm.sock</span><span class="p">;</span>
+        <span class="kn">fastcgi_param</span> <span class="s">SCRIPT_FILENAME</span> <span class="nv">$realpath_root$fastcgi_script_name</span><span class="p">;</span>
+        <span class="kn">include</span> <span class="s">fastcgi_params</span><span class="p">;</span>
+
+        <span class="c1"># PHP-FPM 타임아웃 설정</span>
+        <span class="kn">fastcgi_connect_timeout</span> <span class="mi">300</span><span class="p">;</span>
+        <span class="kn">fastcgi_send_timeout</span> <span class="mi">300</span><span class="p">;</span>
+        <span class="kn">fastcgi_read_timeout</span> <span class="mi">300</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># 정적 파일 최적화</span>
+    <span class="kn">location</span> <span class="p">~</span><span class="sr">*</span> <span class="err">\</span><span class="s">.(css|js|png|jpg|jpeg|gif|ico|svg|webp|woff|woff2|ttf|eot)</span>$ <span class="p">{</span>
+        <span class="kn">expires</span> <span class="s">1y</span><span class="p">;</span>
+        <span class="kn">add_header</span> <span class="s">Cache-Control</span> <span class="s">"public,</span> <span class="s">immutable"</span><span class="p">;</span>
+        <span class="kn">add_header</span> <span class="s">Vary</span> <span class="s">Accept-Encoding</span><span class="p">;</span>
+        <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># 숨김 파일 보호</span>
+    <span class="kn">location</span> <span class="p">~</span> <span class="sr">/\.(?!well-known).*</span> <span class="p">{</span>
+        <span class="kn">deny</span> <span class="s">all</span><span class="p">;</span>
+        <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span>
+        <span class="kn">log_not_found</span> <span class="no">off</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># 파비콘, robots.txt 로그 제외</span>
+    <span class="kn">location</span> <span class="p">=</span> <span class="n">/favicon.ico</span> <span class="p">{</span>
+        <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span>
+        <span class="kn">log_not_found</span> <span class="no">off</span><span class="p">;</span>
+        <span class="kn">expires</span> <span class="s">1y</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kn">location</span> <span class="p">=</span> <span class="n">/robots.txt</span>  <span class="p">{</span>
+        <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span>
+        <span class="kn">log_not_found</span> <span class="no">off</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># 보안 헤더</span>
+    <span class="kn">add_header</span> <span class="s">X-Frame-Options</span> <span class="s">"SAMEORIGIN"</span> <span class="s">always</span><span class="p">;</span>
+    <span class="kn">add_header</span> <span class="s">X-Content-Type-Options</span> <span class="s">"nosniff"</span> <span class="s">always</span><span class="p">;</span>
+    <span class="kn">add_header</span> <span class="s">X-XSS-Protection</span> <span class="s">"1</span><span class="p">;</span> <span class="kn">mode=block"</span> <span class="s">always</span><span class="p">;</span>
+    <span class="kn">add_header</span> <span class="s">Referrer-Policy</span> <span class="s">"no-referrer-when-downgrade"</span> <span class="s">always</span><span class="p">;</span>
+
+    <span class="c1"># 404 에러를 Laravel로 전달</span>
+    <span class="kn">error_page</span> <span class="mi">404</span> <span class="n">/index.php</span><span class="p">;</span>
+
+    <span class="c1"># 로그 설정</span>
+    <span class="kn">access_log</span> <span class="n">/var/log/nginx/demo.jinyerp.com.access.log</span><span class="p">;</span>
+    <span class="kn">error_log</span> <span class="n">/var/log/nginx/demo.jinyerp.com.error.log</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>💡 설정 설명</strong>:</p>
+  <ul>
+    <li><code class="language-plaintext highlighter-rouge">server_name</code>: 여러분의 도메인으로 변경하세요</li>
+    <li><code class="language-plaintext highlighter-rouge">root</code>: Laravel의 public 디렉토리</li>
+    <li><code class="language-plaintext highlighter-rouge">try_files</code>: Laravel 라우팅 지원</li>
+    <li><code class="language-plaintext highlighter-rouge">fastcgi_pass</code>: PHP-FPM 연결</li>
+  </ul>
+</blockquote>
+
+<p>저장하고 종료: <code class="language-plaintext highlighter-rouge">Ctrl + X</code>, <code class="language-plaintext highlighter-rouge">Y</code>, <code class="language-plaintext highlighter-rouge">Enter</code></p>
+
+<h3 id="nginx-메인-설정-최적화-1gb-ram용">Nginx 메인 설정 최적화 (1GB RAM용)</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Nginx 메인 설정 편집</span>
+<span class="nb">sudo </span>nano /etc/nginx/nginx.conf
+</code></pre></div></div>
+
+<p>다음 설정들을 확인하거나 추가해주세요:</p>
+
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># http 블록 안에 추가</span>
+<span class="k">http</span> <span class="p">{</span>
+    <span class="c1"># 작업자 프로세스 수</span>
+    <span class="kn">worker_processes</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1"># 1GB RAM에서는 1개</span>
+
+    <span class="c1"># 이벤트 설정</span>
+    <span class="kn">events</span> <span class="p">{</span>
+        <span class="kn">worker_connections</span> <span class="mi">512</span><span class="p">;</span>
+        <span class="kn">use</span> <span class="s">epoll</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># 기본 설정</span>
+    <span class="kn">sendfile</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">tcp_nopush</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">tcp_nodelay</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">keepalive_timeout</span> <span class="mi">15</span><span class="p">;</span>
+    <span class="kn">types_hash_max_size</span> <span class="mi">2048</span><span class="p">;</span>
+
+    <span class="c1"># 서버 토큰 숨기기</span>
+    <span class="kn">server_tokens</span> <span class="no">off</span><span class="p">;</span>
+
+    <span class="c1"># Gzip 압축</span>
+    <span class="kn">gzip</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">gzip_vary</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">gzip_proxied</span> <span class="s">any</span><span class="p">;</span>
+    <span class="kn">gzip_comp_level</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="kn">gzip_min_length</span> <span class="mi">1000</span><span class="p">;</span>
+    <span class="kn">gzip_types</span>
+        <span class="nc">application/javascript</span>
+        <span class="nc">application/json</span>
+        <span class="nc">application/xml</span>
+        <span class="nc">text/css</span>
+        <span class="nc">text/plain</span>
+        <span class="nc">text/xml</span><span class="p">;</span>
+
+    <span class="c1"># 클라이언트 요청 제한</span>
+    <span class="kn">client_max_body_size</span> <span class="mi">64M</span><span class="p">;</span>
+    <span class="kn">client_body_buffer_size</span> <span class="mi">1K</span><span class="p">;</span>
+    <span class="kn">client_header_buffer_size</span> <span class="mi">1k</span><span class="p">;</span>
+    <span class="kn">large_client_header_buffers</span> <span class="mi">2</span> <span class="mi">1k</span><span class="p">;</span>
+
+    <span class="c1"># 기존 설정 포함</span>
+    <span class="kn">include</span> <span class="n">/etc/nginx/mime.types</span><span class="p">;</span>
+    <span class="kn">include</span> <span class="n">/etc/nginx/conf.d/*.conf</span><span class="p">;</span>
+    <span class="kn">include</span> <span class="n">/etc/nginx/sites-enabled/*</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>저장하고 종료: <code class="language-plaintext highlighter-rouge">Ctrl + X</code>, <code class="language-plaintext highlighter-rouge">Y</code>, <code class="language-plaintext highlighter-rouge">Enter</code></p>
+
+<hr />
+
+<h2 id="43-사이트-활성화-및-http-테스트">4.3 사이트 활성화 및 HTTP 테스트</h2>
+
+<h3 id="사이트-활성화">사이트 활성화</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 심볼릭 링크 생성 (사이트 활성화)</span>
+<span class="nb">sudo ln</span> <span class="nt">-s</span> /etc/nginx/sites-available/demo.jinyerp.com /etc/nginx/sites-enabled/
+
+<span class="c"># 기본 사이트 비활성화 (포트 충돌 방지)</span>
+<span class="nb">sudo rm</span> <span class="nt">-f</span> /etc/nginx/sites-enabled/default
+</code></pre></div></div>
+
+<h3 id="nginx-설정-검증">Nginx 설정 검증</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Nginx 설정 문법 검사</span>
+<span class="nb">sudo </span>nginx <span class="nt">-t</span>
+
+<span class="c"># 출력 예시:</span>
+<span class="c"># nginx: the configuration file /etc/nginx/nginx.conf syntax is ok</span>
+<span class="c"># nginx: configuration file /etc/nginx/nginx.conf test is successful</span>
+</code></pre></div></div>
+
+<p>에러가 없으면 계속 진행!</p>
+
+<h3 id="nginx-서비스-재시작">Nginx 서비스 재시작</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Nginx 설정 다시 로드</span>
+<span class="nb">sudo </span>systemctl reload nginx
+
+<span class="c"># 또는 재시작</span>
+<span class="nb">sudo </span>systemctl restart nginx
+
+<span class="c"># 서비스 상태 확인</span>
+<span class="nb">sudo </span>systemctl status nginx
+</code></pre></div></div>
+
+<h3 id="http-접속-테스트">HTTP 접속 테스트</h3>
+
+<h4 id="로컬에서-테스트">로컬에서 테스트</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 서버에서 자체 테스트</span>
+curl <span class="nt">-H</span> <span class="s2">"Host: demo.jinyerp.com"</span> http://localhost
+
+<span class="c"># 또는 실제 도메인으로 (DNS 전파 후)</span>
+curl <span class="nt">-I</span> http://demo.jinyerp.com
+</code></pre></div></div>
+
+<h4 id="브라우저에서-테스트">브라우저에서 테스트</h4>
+
+<p>웹 브라우저를 열고 접속해보세요:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://demo.jinyerp.com
+</code></pre></div></div>
+
+<p>Laravel 페이지가 보이면 성공! 🎉</p>
+
+<blockquote>
+  <p><strong>⚠️ 아직 HTTPS가 아니에요</strong>: 주소창에 “안전하지 않음” 경고가 나오는 건 정상이에요. 이제 SSL을 설정할 거예요.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="44-lets-encrypt-ssl-인증서-설치">4.4 Let’s Encrypt SSL 인증서 설치</h2>
+
+<h3 id="lets-encrypt가-뭔가요">Let’s Encrypt가 뭔가요?</h3>
+
+<p>무료 SSL 인증서를 제공하는 서비스예요! 자동으로 갱신되고, 믿을 수 있는 인증 기관입니다.</p>
+
+<h3 id="certbot-설치">Certbot 설치</h3>
+
+<p>Ubuntu 25.10에서는 snap을 통해 설치해요:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Snapd 상태 확인</span>
+<span class="nb">sudo </span>systemctl status snapd
+
+<span class="c"># Certbot 설치</span>
+<span class="nb">sudo </span>snap <span class="nb">install </span>core
+<span class="nb">sudo </span>snap refresh core
+<span class="nb">sudo </span>snap <span class="nb">install</span> <span class="nt">--classic</span> certbot
+
+<span class="c"># Certbot 명령어 링크 생성</span>
+<span class="nb">sudo ln</span> <span class="nt">-s</span> /snap/bin/certbot /usr/bin/certbot
+
+<span class="c"># 설치 확인</span>
+certbot <span class="nt">--version</span>
+</code></pre></div></div>
+
+<h3 id="ssl-인증서-발급">SSL 인증서 발급</h3>
+
+<p>DNS가 완전히 전파된 후 실행하세요 (보통 10-30분):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Nginx 자동 설정으로 SSL 인증서 발급</span>
+<span class="nb">sudo </span>certbot <span class="nt">--nginx</span> <span class="nt">-d</span> demo.jinyerp.com <span class="nt">-d</span> www.demo.jinyerp.com
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>💡 <code class="language-plaintext highlighter-rouge">-d</code> 옵션</strong>: 인증서에 포함할 도메인을 지정해요. 여러 개 추가 가능합니다.</p>
+</blockquote>
+
+<h3 id="certbot-설정-과정">Certbot 설정 과정</h3>
+
+<p>차례대로 나오는 질문에 답해주세요:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. Enter email address (for urgent renewal and security notices)
+   → your-email@example.com 입력
+
+2. Please read the Terms of Service
+   → Y (동의)
+
+3. Would you be willing to share your email address?
+   → N (선택사항)
+
+4. Select the appropriate number [1-2] then [enter]
+   1: No redirect
+   2: Redirect (HTTP to HTTPS)
+   → 2 선택 (HTTPS로 자동 리다이렉트)
+</code></pre></div></div>
+
+<h3 id="발급-완료">발급 완료!</h3>
+
+<p>성공 메시지가 나타나요:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Successfully received certificate.
+Certificate is saved at: /etc/letsencrypt/live/demo.jinyerp.com/fullchain.pem
+Key is saved at: /etc/letsencrypt/live/demo.jinyerp.com/privkey.pem
+</code></pre></div></div>
+
+<h3 id="ssl-인증서-확인">SSL 인증서 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 인증서 상태 확인</span>
+<span class="nb">sudo </span>certbot certificates
+
+<span class="c"># Nginx 설정 파일 확인 (자동 수정됨)</span>
+<span class="nb">cat</span> /etc/nginx/sites-available/demo.jinyerp.com
+</code></pre></div></div>
+
+<p>Certbot이 자동으로 HTTPS 설정을 추가해줬어요!</p>
+
+<hr />
+
+<h2 id="45-https-설정-확인-및-최적화">4.5 HTTPS 설정 확인 및 최적화</h2>
+
+<h3 id="https-접속-테스트">HTTPS 접속 테스트</h3>
+
+<h4 id="명령어로-테스트">명령어로 테스트</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># HTTP → HTTPS 리다이렉트 확인</span>
+curl <span class="nt">-I</span> http://demo.jinyerp.com
+
+<span class="c"># HTTPS 직접 접속 확인</span>
+curl <span class="nt">-I</span> https://demo.jinyerp.com
+
+<span class="c"># SSL 인증서 정보 확인</span>
+openssl s_client <span class="nt">-connect</span> demo.jinyerp.com:443 <span class="nt">-servername</span> demo.jinyerp.com &lt; /dev/null
+</code></pre></div></div>
+
+<h4 id="브라우저로-테스트">브라우저로 테스트</h4>
+
+<p>웹 브라우저를 열고:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://demo.jinyerp.com
+</code></pre></div></div>
+
+<p>주소창에 자물쇠 🔒 아이콘이 보이면 성공!</p>
+
+<h3 id="ssl-설정-강화">SSL 설정 강화</h3>
+
+<p>더 강력한 보안을 위해 SSL 설정을 최적화해요:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># SSL 설정 파일 생성</span>
+<span class="nb">sudo </span>nano /etc/nginx/conf.d/ssl.conf
+</code></pre></div></div>
+
+<p>다음 내용을 추가:</p>
+
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># /etc/nginx/conf.d/ssl.conf</span>
+
+<span class="c1"># SSL 프로토콜 설정 (TLS 1.2, 1.3만 허용)</span>
+<span class="k">ssl_protocols</span> <span class="s">TLSv1.2</span> <span class="s">TLSv1.3</span><span class="p">;</span>
+<span class="k">ssl_ciphers</span> <span class="s">ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384</span><span class="p">;</span>
+<span class="k">ssl_prefer_server_ciphers</span> <span class="no">off</span><span class="p">;</span>
+
+<span class="c1"># SSL 세션 설정</span>
+<span class="k">ssl_session_cache</span> <span class="s">shared:SSL:10m</span><span class="p">;</span>
+<span class="k">ssl_session_timeout</span> <span class="mi">10m</span><span class="p">;</span>
+
+<span class="c1"># SSL 스테이플링 (OCSP)</span>
+<span class="k">ssl_stapling</span> <span class="no">on</span><span class="p">;</span>
+<span class="k">ssl_stapling_verify</span> <span class="no">on</span><span class="p">;</span>
+
+<span class="c1"># 보안 헤더 - HSTS (엄격한 전송 보안)</span>
+<span class="k">add_header</span> <span class="s">Strict-Transport-Security</span> <span class="s">"max-age=31536000</span><span class="p">;</span> <span class="k">includeSubDomains</span><span class="p">;</span> <span class="k">preload"</span> <span class="s">always</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>저장하고 종료: <code class="language-plaintext highlighter-rouge">Ctrl + X</code>, <code class="language-plaintext highlighter-rouge">Y</code>, <code class="language-plaintext highlighter-rouge">Enter</code></p>
+
+<h3 id="nginx-재시작">Nginx 재시작</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 설정 문법 확인</span>
+<span class="nb">sudo </span>nginx <span class="nt">-t</span>
+
+<span class="c"># Nginx 재시작</span>
+<span class="nb">sudo </span>systemctl reload nginx
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="46-laravel-https-설정-업데이트">4.6 Laravel HTTPS 설정 업데이트</h2>
+
+<h3 id="env-파일-업데이트">.env 파일 업데이트</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .env 파일 편집</span>
+<span class="nb">sudo </span>nano /var/www/jinyerp_demo_01/.env
+</code></pre></div></div>
+
+<p>다음 줄을 찾아서 수정:</p>
+
+<pre><code class="language-env"># HTTPS URL로 변경
+APP_URL=https://demo.jinyerp.com
+
+# 세션 도메인 설정
+SESSION_DOMAIN=demo.jinyerp.com
+
+# Sanctum 도메인 설정 (API 사용 시)
+SANCTUM_STATEFUL_DOMAINS=demo.jinyerp.com
+</code></pre>
+
+<p>저장하고 종료: <code class="language-plaintext highlighter-rouge">Ctrl + X</code>, <code class="language-plaintext highlighter-rouge">Y</code>, <code class="language-plaintext highlighter-rouge">Enter</code></p>
+
+<h3 id="laravel-캐시-재생성">Laravel 캐시 재생성</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 설정 캐시 재생성</span>
+<span class="nb">cd</span> /var/www/jinyerp_demo_01
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan config:clear
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan config:cache
+<span class="nb">sudo</span> <span class="nt">-u</span> www-data php artisan route:cache
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="47-자동-인증서-갱신-설정">4.7 자동 인증서 갱신 설정</h2>
+
+<h3 id="lets-encrypt-인증서는-90일마다-만료돼요">Let’s Encrypt 인증서는 90일마다 만료돼요</h3>
+
+<p>자동 갱신이 설정되어 있는지 확인해봅시다:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 자동 갱신 테스트 (실제 갱신은 안 함)</span>
+<span class="nb">sudo </span>certbot renew <span class="nt">--dry-run</span>
+</code></pre></div></div>
+
+<p>에러 없이 완료되면 자동 갱신 준비 완료!</p>
+
+<h3 id="자동-갱신-타이머-확인">자동 갱신 타이머 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Certbot 갱신 타이머 상태 확인</span>
+<span class="nb">sudo </span>systemctl status snap.certbot.renew.timer
+
+<span class="c"># 타이머 활성화 (보통 자동으로 됨)</span>
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>snap.certbot.renew.timer
+</code></pre></div></div>
+
+<h3 id="수동-갱신-크론잡-추가-선택사항">수동 갱신 크론잡 추가 (선택사항)</h3>
+
+<p>더 확실하게 하려면 크론잡을 추가할 수 있어요:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 크론탭 편집</span>
+<span class="nb">sudo </span>crontab <span class="nt">-e</span>
+</code></pre></div></div>
+
+<p>다음 줄 추가:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 매일 새벽 2시에 인증서 갱신 시도</span>
+0 2 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /usr/bin/certbot renew <span class="nt">--quiet</span>
+</code></pre></div></div>
+
+<p>저장하고 종료</p>
+
+<hr />
+
+<h2 id="48-방화벽-최종-설정">4.8 방화벽 최종 설정</h2>
+
+<h3 id="ufw-규칙-정리">UFW 규칙 정리</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 현재 방화벽 상태 확인</span>
+<span class="nb">sudo </span>ufw status verbose
+</code></pre></div></div>
+
+<h3 id="nginx-full-프로파일-허용">Nginx Full 프로파일 허용</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Nginx Full 프로파일 허용 (HTTP + HTTPS)</span>
+<span class="nb">sudo </span>ufw allow <span class="s1">'Nginx Full'</span>
+
+<span class="c"># 기존 HTTP만 허용하는 규칙 제거 (있다면)</span>
+<span class="nb">sudo </span>ufw status numbered
+<span class="nb">sudo </span>ufw delete <span class="o">[</span>번호]  <span class="c"># HTTP만 허용하는 규칙 번호</span>
+
+<span class="c"># 또는 직접 삭제</span>
+<span class="nb">sudo </span>ufw delete allow 80
+</code></pre></div></div>
+
+<h3 id="최종-방화벽-상태-확인">최종 방화벽 상태 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 최종 방화벽 규칙 확인</span>
+<span class="nb">sudo </span>ufw status numbered
+</code></pre></div></div>
+
+<p>출력 예시:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Status: active
+
+     To                         Action      From
+     --                         ------      ----
+[ 1] 22/tcp                     ALLOW IN    Anywhere
+[ 2] Nginx Full                 ALLOW IN    Anywhere
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="49-종합-테스트-및-검증">4.9 종합 테스트 및 검증</h2>
+
+<h3 id="모든-서비스-상태-확인">모든 서비스 상태 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 모든 관련 서비스 상태 확인</span>
+<span class="nb">sudo </span>systemctl status nginx php8.4-fpm mysql redis-server <span class="nt">--no-pager</span>
+</code></pre></div></div>
+
+<h3 id="포트-사용-상황-확인">포트 사용 상황 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 사용 중인 포트 확인</span>
+<span class="nb">sudo </span>netstat <span class="nt">-tlnp</span> | <span class="nb">grep</span> <span class="nt">-E</span> <span class="s1">':80|:443|:3306|:6379'</span>
+</code></pre></div></div>
+
+<h3 id="웹사이트-접속-테스트">웹사이트 접속 테스트</h3>
+
+<h4 id="1-http--https-리다이렉트-테스트">1. HTTP → HTTPS 리다이렉트 테스트</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-I</span> http://demo.jinyerp.com
+<span class="c"># 301 Moved Permanently 확인</span>
+</code></pre></div></div>
+
+<h4 id="2-https-직접-접속">2. HTTPS 직접 접속</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-I</span> https://demo.jinyerp.com
+<span class="c"># 200 OK 확인</span>
+</code></pre></div></div>
+
+<h4 id="3-ssl-등급-테스트">3. SSL 등급 테스트</h4>
+
+<p>온라인 SSL 테스트 도구 사용:</p>
+<ul>
+  <li><a href="https://www.ssllabs.com/ssltest/">SSL Labs</a>에 접속</li>
+  <li>도메인 입력: <code class="language-plaintext highlighter-rouge">demo.jinyerp.com</code></li>
+  <li><strong>A</strong> 또는 <strong>A+</strong> 등급이 나오면 완벽!</li>
+</ul>
+
+<h3 id="laravel-로그-확인">Laravel 로그 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Laravel 로그 실시간 확인</span>
+<span class="nb">sudo tail</span> <span class="nt">-f</span> /var/www/jinyerp_demo_01/storage/logs/laravel.log
+
+<span class="c"># Nginx 로그 확인</span>
+<span class="nb">sudo tail</span> <span class="nt">-f</span> /var/log/nginx/demo.jinyerp.com.access.log
+<span class="nb">sudo tail</span> <span class="nt">-f</span> /var/log/nginx/demo.jinyerp.com.error.log
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Ctrl + C</code>로 종료</p>
+
+<h3 id="브라우저-종합-테스트">브라우저 종합 테스트</h3>
+
+<ol>
+  <li><strong>https://demo.jinyerp.com</strong> 접속</li>
+  <li><strong>SSL 인증서 확인</strong> (주소창 자물쇠 클릭)</li>
+  <li><strong>HTTP → HTTPS 자동 리다이렉트</strong> 확인</li>
+  <li><strong>Laravel 페이지 정상 작동</strong> 확인</li>
+  <li><strong>로그인/회원가입</strong> 테스트 (세션이 제대로 작동하는지)</li>
+</ol>
+
+<hr />
+
+<h2 id="-4단계-완료-체크리스트">✅ 4단계 완료 체크리스트</h2>
+
+<p>모든 단계를 완료하셨나요? 체크리스트로 확인해봅시다!</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />서버 IP 주소 확인</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />도메인 DNS A 레코드 설정</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />DNS 전파 확인 (nslookup)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Nginx 가상 호스트 설정 파일 작성</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Nginx 사이트 활성화</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />HTTP 기본 접속 테스트</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Certbot 설치</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />SSL 인증서 발급 (Let’s Encrypt)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />HTTPS 접속 확인</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />HTTP → HTTPS 자동 리다이렉트 확인</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Laravel .env 파일 APP_URL 업데이트</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Laravel 캐시 재생성</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />SSL 자동 갱신 설정 확인</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />방화벽 최종 설정</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />브라우저 종합 테스트</li>
+</ul>
+
+<hr />
+
+<h2 id="문제-해결">문제 해결</h2>
+
+<h3 id="문제-1-dns가-전파-안-돼요">문제 1: DNS가 전파 안 돼요</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nslookup: can't resolve 'demo.jinyerp.com'
+</code></pre></div></div>
+
+<p><strong>해결 방법</strong>:</p>
+<ul>
+  <li>DNS 설정 재확인 (도메인 업체)</li>
+  <li>더 기다리기 (최대 24-48시간)</li>
+  <li>다른 DNS 서버로 테스트: <code class="language-plaintext highlighter-rouge">nslookup demo.jinyerp.com 8.8.8.8</code></li>
+  <li>로컬 hosts 파일 임시 설정 (테스트용)</li>
+</ul>
+
+<h3 id="문제-2-certbot-ssl-발급-실패">문제 2: Certbot SSL 발급 실패</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Failed authorization procedure
+</code></pre></div></div>
+
+<p><strong>해결 방법</strong>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># DNS 전파 재확인</span>
+nslookup demo.jinyerp.com
+
+<span class="c"># Nginx가 80번 포트에서 응답하는지 확인</span>
+curl <span class="nt">-I</span> http://demo.jinyerp.com
+
+<span class="c"># 방화벽에서 80번 포트 열려있는지 확인</span>
+<span class="nb">sudo </span>ufw status | <span class="nb">grep </span>80
+
+<span class="c"># CloudFlare Proxy 꺼져있는지 확인 (회색 구름)</span>
+</code></pre></div></div>
+
+<h3 id="문제-3-https는-되는데-http가-리다이렉트-안-돼요">문제 3: HTTPS는 되는데 HTTP가 리다이렉트 안 돼요</h3>
+
+<p><strong>해결 방법</strong>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Nginx 설정 파일 확인</span>
+<span class="nb">cat</span> /etc/nginx/sites-available/demo.jinyerp.com
+
+<span class="c"># Certbot이 자동으로 추가한 리다이렉트 확인</span>
+<span class="c"># 다음 줄이 있어야 함:</span>
+<span class="c"># return 301 https://$server_name$request_uri;</span>
+
+<span class="c"># Nginx 재시작</span>
+<span class="nb">sudo </span>systemctl reload nginx
+</code></pre></div></div>
+
+<h3 id="문제-4-502-bad-gateway-에러">문제 4: 502 Bad Gateway 에러</h3>
+
+<p><strong>해결 방법</strong>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># PHP-FPM 상태 확인</span>
+<span class="nb">sudo </span>systemctl status php8.4-fpm
+
+<span class="c"># PHP-FPM 재시작</span>
+<span class="nb">sudo </span>systemctl restart php8.4-fpm
+
+<span class="c"># Nginx 에러 로그 확인</span>
+<span class="nb">sudo tail</span> <span class="nt">-f</span> /var/log/nginx/demo.jinyerp.com.error.log
+
+<span class="c"># PHP-FPM 소켓 파일 확인</span>
+<span class="nb">ls</span> <span class="nt">-la</span> /var/run/php/php8.4-fpm.sock
+</code></pre></div></div>
+
+<h3 id="문제-5-mixed-content-경고">문제 5: Mixed Content 경고</h3>
+
+<p>브라우저 콘솔에 “Mixed Content” 경고가 나타나요.</p>
+
+<p><strong>해결 방법</strong>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .env 파일 확인</span>
+<span class="nb">cat</span> .env | <span class="nb">grep </span>APP_URL
+<span class="c"># https://로 시작하는지 확인</span>
+
+<span class="c"># Laravel 캐시 재생성</span>
+php artisan config:clear
+php artisan config:cache
+
+<span class="c"># 하드코딩된 http:// URL 찾기</span>
+<span class="nb">grep</span> <span class="nt">-r</span> <span class="s2">"http://"</span> resources/views/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="다음-단계">다음 단계</h2>
+
+<p>축하합니다! 4단계를 완료하셨어요! 🎉</p>
+
+<p>이제 여러분의 Laravel 앱이 HTTPS로 안전하게 접속 가능해요! 마지막으로 성능 최적화와 모니터링 방법을 배워봅시다.</p>
+
+<div style="text-align: center; margin: 40px 0;">
+  <a href="./05.optimization.md" style="display: inline-block; padding: 15px 40px; background-color: #3490dc; color: white; text-decoration: none; border-radius: 5px; font-size: 18px;">
+    ⚡ 5단계: 성능 최적화 및 관리 시작하기 →
+  </a>
+</div>
+
+<hr />
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/03.deploy/03.laravel-deploy.html">← 이전: Laravel 배포</a></td>
+      <td><a href="/03.deploy/">메인으로</a></td>
+      <td><a href="/03.deploy/05.optimization.html">다음: 성능 최적화 →</a></td>
+    </tr>
+  </tbody>
+</table>
+
+                        </div>
+                    </div>
+
+<!-- Right Advertisement Area -->
+<div class="col-12 col-xl-3">
+    <div class="ad-area">
+        <!-- 메인 광고 (300x600 Large Rectangle) -->
+        <div class="ad-container">
+            <h6>Advertisement</h6>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 중간 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 관련 링크 -->
+        <div class="ad-container mt-4">
+            <h6>관련 링크</h6>
+            <div class="related-links">
+                <a href="https://laravel.com/docs" target="_blank">Laravel 공식 문서</a>
+                <a href="https://php.net/docs.php" target="_blank">PHP 공식 문서</a>
+                <a href="https://getbootstrap.com/" target="_blank">Bootstrap 문서</a>
+                <a href="https://www.mysql.com/documentation/" target="_blank">MySQL 문서</a>
+                <a href="https://git-scm.com/docs" target="_blank">Git 문서</a>
+            </div>
+        </div>
+
+        <!-- 하단 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1122334455" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; 2025 JinyDev. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="/assets/w3schools-script.js"></script>
+</body>
+</html>

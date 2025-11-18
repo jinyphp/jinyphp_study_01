@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹서버란? 완전 정복</title>
+    <meta name="description" content="웹서버의 개념부터 종류, 설정까지 완전 마스터">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="웹서버, Apache, Nginx, PHP-FPM, 서버 종류">
+    
+    <meta name="robots" content="index, follow">
+    
+    <meta name="language" content="ko">
+
+    <!-- Open Graph Meta Tags -->
+    
+
+    <!-- Twitter Card Meta Tags -->
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/w3schools-style.css">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+            crossorigin="anonymous"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>웹서버란? 완전 정복 | JinyDev</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="웹서버란? 완전 정복" />
+<meta name="author" content="JinyPHP Team" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="웹서버의 개념부터 종류, 설정까지 완전 마스터" />
+<meta property="og:description" content="웹서버의 개념부터 종류, 설정까지 완전 마스터" />
+<link rel="canonical" href="http://localhost:4000/05.server-access/web-server.html" />
+<meta property="og:url" content="http://localhost:4000/05.server-access/web-server.html" />
+<meta property="og:site_name" content="JinyDev" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="웹서버란? 완전 정복" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"JinyPHP Team"},"description":"웹서버의 개념부터 종류, 설정까지 완전 마스터","headline":"웹서버란? 완전 정복","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"JinyPHP Team"},"url":"http://localhost:4000/05.server-access/web-server.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+<!-- Top Navigation -->
+<nav class="top-nav">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="/">JinyDev</a>
+        </div>
+        <div class="nav-tabs">
+            <a href="/" class="nav-tab active">HOME</a>
+            <a href="laravel.jiny.dev" class="nav-tab">Laravel</a>
+            <a href="php.jiny.dev" class="nav-tab">PHP</a>
+            <a href="linux.jiny.dev" class="nav-tab">Linux</a>
+            <a href="/04.Route/" class="nav-tab">라우팅</a>
+            <a href="/05.view/" class="nav-tab">View</a>
+            <a href="/06.templates/" class="nav-tab">Templates</a>
+            <a href="/04.jinyphp.html" class="nav-tab">JinyPHP</a>
+            <a href="git.jiny.dev" class="nav-tab">Git</a>
+            <a href="mysql.jiny.dev" class="nav-tab">MySQL</a>
+            <a href="html.jiny.dev" class="nav-tab">Html</a>
+            <a href="javascript.jiny.dev" class="nav-tab">Javascript</a>
+        </div>
+        <div class="nav-actions">
+            <button class="menu-btn d-lg-none" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h4>학습 가이드</h4>
+            </div>
+
+            <div class="sidebar-menu">
+                <!-- Laravel 시작하기 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('laravel-start')">
+                        Laravel 시작하기
+                    </div>
+                    <div class="menu-items" id="laravel-start">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('laravel-basics')">
+                                기초 개념
+                            </div>
+                            <div class="category-items" id="laravel-basics">
+                                <a href="/01.Start/" class="menu-item">개요</a>
+                                <a href="/01.Start/01.what-is-laravel.html" class="menu-item">라라벨이란?</a>
+                                <a href="/01.Start/02.php-language.html" class="menu-item">PHP 언어</a>
+                                <a href="/01.Start/03.dependency-issues.html" class="menu-item">의존성 문제</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 개발환경 설정 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('setup')">
+                        개발환경 설정
+                    </div>
+                    <div class="menu-items" id="setup">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-install')">
+                                설치 및 설정
+                            </div>
+                            <div class="category-items" id="setup-install">
+                                <a href="/02.Setup/" class="menu-item">개요</a>
+                                <a href="/02.Setup/01.requirements.html" class="menu-item">사전 요구사항</a>
+                                <a href="/02.Setup/02.laravel-install.html" class="menu-item">Laravel 설치</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-config')">
+                                환경 구성
+                            </div>
+                            <div class="category-items" id="setup-config">
+                                <a href="/02.Setup/03.database.html" class="menu-item">데이터베이스 설정</a>
+                                <a href="/02.Setup/04.local-development.html" class="menu-item">로컬 개발 환경</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 배포 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('deploy')">
+                        서버 배포
+                    </div>
+                    <div class="menu-items" id="deploy">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-setup')">
+                                서버 준비
+                            </div>
+                            <div class="category-items" id="deploy-setup">
+                                <a href="/03.deploy/" class="menu-item">개요</a>
+                                <a href="/03.deploy/01.cloud-setup.html" class="menu-item">클라우드 준비</a>
+                                <a href="/03.deploy/02.server-setup.html" class="menu-item">서버 환경 설정</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-app')">
+                                애플리케이션 배포
+                            </div>
+                            <div class="category-items" id="deploy-app">
+                                <a href="/03.deploy/03.laravel-deploy.html" class="menu-item">Laravel 배포</a>
+                                <a href="/03.deploy/04.domain-https.html" class="menu-item">도메인 HTTPS</a>
+                                <a href="/03.deploy/05.optimization.html" class="menu-item">성능 최적화</a>
+                                <a href="/03.deploy/06.github-deploy.html" class="menu-item">GitHub 배포 자동화</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 백엔드 개발 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('backend')">
+                        백엔드 개발
+                    </div>
+                    <div class="menu-items" id="backend">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('backend-basics')">
+                                기본 개념
+                            </div>
+                            <div class="category-items" id="backend-basics">
+                                <a href="/04.backend.html" class="menu-item">백엔드 개발 가이드</a>
+                                <a href="/04.backend/framework.html" class="menu-item">프레임워크의 이해</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 접속 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('server-access')">
+                        서버 접속
+                    </div>
+                    <div class="menu-items" id="server-access">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('server-concepts')">
+                                서버 기초 이해
+                            </div>
+                            <div class="category-items" id="server-concepts">
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/" class="menu-item">개요</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/%EC%9B%B9%EC%84%9C%EB%B2%84%EB%9E%80.html" class="menu-item">웹서버란?</a>
+                                <a href="/05.%EC%84%9C%EB%B2%84%20%EC%A0%91%EC%86%8D/http.html" class="menu-item">HTTP 통신</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 라우팅 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('routing-learning')">
+                        라우팅 학습
+                    </div>
+                    <div class="menu-items" id="routing-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="route-taste-detail">
+                                <a href="/06.route-taste/" class="menu-item">5분 라우팅 체험</a>
+                                <a href="/06.route-taste/%EC%A3%BC%EC%86%8C%EB%9E%80.html" class="menu-item">주소란? URL 체계 이해</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%ED%95%84%EC%9A%94%EC%84%B1.html" class="menu-item">라우트의 필요성</a>
+                                <a href="/06.route-taste/%EB%9D%BC%EC%9A%B0%ED%8A%B8%EC%9D%98%EB%8F%99%EC%9E%91.html" class="menu-item">라우트의 동작 원리</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="route-system">
+                                <a href="/04-01.route-taste/" class="menu-item">맛보기 - 5분 라우팅 체험</a>
+                                <a href="/04-02.route-beginner/" class="menu-item">초급 - 라우팅 기초 마스터</a>
+                                <a href="/04-03.route-intermediate/" class="menu-item">중급 - 네임드 라우트와 그룹</a>
+                                <a href="/04-04.route-advanced/" class="menu-item">고급 - 미들웨어와 모델바인딩</a>
+                                <a href="/04-05.route-application/" class="menu-item">응용 - 엔터프라이즈 라우팅</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 뷰 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('view-learning')">
+                        뷰 학습
+                    </div>
+                    <div class="menu-items" id="view-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="view-taste-detail">
+                                <a href="/07.view-taste/" class="menu-item">뷰 맛보기</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="view-system">
+                                <a href="/05-01.view-taste/" class="menu-item">맛보기 - 첫 번째 뷰 만들기</a>
+                                <a href="/05-02.view-beginner/" class="menu-item">초급 - 뷰와 데이터 전달</a>
+                                <a href="/05-03.view-intermediate/" class="menu-item">중급 - HTTP 응답과 리다이렉트</a>
+                                <a href="/05-04.view-advanced/" class="menu-item">고급 - API와 JSON 응답</a>
+                                <a href="/05-05.view-application/" class="menu-item">응용 - 엔터프라이즈 뷰 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 템플릿 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('template-learning')">
+                        템플릿 학습
+                    </div>
+                    <div class="menu-items" id="template-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('template-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="template-system">
+                                <a href="/06-01.template-taste/" class="menu-item">맛보기 - Blade 첫 만남</a>
+                                <a href="/06-02.template-beginner/" class="menu-item">초급 - Blade 기초 마스터</a>
+                                <a href="/06-03.template-intermediate/" class="menu-item">중급 - 컴포넌트와 재사용성</a>
+                                <a href="/06-04.template-advanced/" class="menu-item">고급 - 커스텀 지시어와 최적화</a>
+                                <a href="/06-05.template-application/" class="menu-item">응용 - 엔터프라이즈 템플릿 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JinyPHP 패키지 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('jinyphp')">
+                        JinyPHP 패키지
+                    </div>
+                    <div class="menu-items" id="jinyphp">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('jinyphp-setup')">
+                                패키지 설치
+                            </div>
+                            <div class="category-items" id="jinyphp-setup">
+                                <a href="/04.jinyphp.html" class="menu-item">패키지 설치</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 학습 진도 표시 -->
+                <div class="menu-group mt-4">
+                    <div class="learning-progress">
+                        <h6><i class="fas fa-chart-line me-2"></i>학습 진도</h6>
+                        <div class="progress-items">
+                            <div class="progress-item">
+                                <span class="level-badge level-1">🍯</span>
+                                <span>맛보기 - 5분 체험</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-2">🌱</span>
+                                <span>초급 - 기초 마스터</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-3">🚀</span>
+                                <span>중급 - 실전 활용</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-4">⚡</span>
+                                <span>고급 - 최적화</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-5">🔥</span>
+                                <span>응용 - 엔터프라이즈</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 도움말 -->
+                <div class="menu-group mt-3">
+                    <div class="help-section">
+                        <h6><i class="fas fa-question-circle me-2"></i>학습 가이드</h6>
+                        <div class="help-items">
+                            <div class="help-item">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                <small>단계별로 차근차근 진행하세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-code text-info me-2"></i>
+                                <small>실습 코드를 직접 작성해보세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-bookmark text-success me-2"></i>
+                                <small>중요한 부분은 북마크하세요</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사이드바 하단 정보 -->
+            <div class="sidebar-footer">
+                <div class="version-info">
+                    <small class="text-muted">
+                        <i class="fab fa-laravel me-1"></i>Laravel 12
+                        <br>
+                        <i class="fab fa-php me-1"></i>PHP 8.4+
+                    </small>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Content -->
+                    <div class="col-12 col-xl-9">
+                        <div class="content-wrapper">
+                            <h1 id="️-웹서버란-완전-정복">🖥️ 웹서버란? 완전 정복</h1>
+
+<p><strong>목표</strong>: 웹서버가 무엇인지 이해하고, 종류별 특징과 설정 방법 마스터</p>
+
+<h2 id="-웹서버의-정의">🤔 웹서버의 정의</h2>
+
+<h3 id="웹서버란">웹서버란?</h3>
+
+<p><strong>웹서버</strong>는 인터넷을 통해 웹페이지를 제공하는 컴퓨터 프로그램입니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🏪 웹서버 = 인터넷 상점
+├── 📋 메뉴판 (웹페이지)를 준비하고
+├── 🛎️ 고객 주문(HTTP 요청)을 받아서
+├── 👨‍🍳 요리사(PHP/Laravel)에게 요리를 시키고
+└── 🍽️ 완성된 요리(HTML)를 고객에게 서빙
+</code></pre></div></div>
+
+<h3 id="웹서버가-하는-일">웹서버가 하는 일</h3>
+
+<ol>
+  <li><strong>🔍 요청 받기</strong>: 브라우저에서 보낸 HTTP 요청 수신</li>
+  <li><strong>📄 파일 찾기</strong>: 요청된 웹페이지나 파일 위치 확인</li>
+  <li><strong>⚙️ 프로그램 실행</strong>: PHP/Laravel 코드 실행 (필요한 경우)</li>
+  <li><strong>📤 응답 보내기</strong>: HTML, CSS, JS 등을 브라우저로 전송</li>
+</ol>
+
+<h2 id="-웹서버의-종류">🌐 웹서버의 종류</h2>
+
+<h3 id="주요-웹서버-소프트웨어">주요 웹서버 소프트웨어</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🌐 주요 웹서버들
+├── 🟠 Apache HTTP Server
+│   ├── 가장 오래되고 안정적
+│   ├── 설정이 쉬움 (.htaccess)
+│   └── PHP와 완벽 호환
+│
+├── 🟢 Nginx (엔진엑스)
+│   ├── 빠른 성능, 적은 메모리 사용
+│   ├── 대용량 트래픽 처리 우수
+│   └── 역방향 프록시로도 사용
+│
+├── ⚡ LiteSpeed
+│   ├── Apache 호환 + 빠른 성능
+│   └── 상용 라이선스
+│
+└── 🔷 Microsoft IIS
+    ├── Windows 전용
+    └── ASP.NET과 최적화
+</code></pre></div></div>
+
+<h3 id="apache-vs-nginx-비교">Apache vs Nginx 비교</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>특징</th>
+      <th>Apache</th>
+      <th>Nginx</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>성능</strong></td>
+      <td>중간</td>
+      <td>높음</td>
+    </tr>
+    <tr>
+      <td><strong>메모리 사용</strong></td>
+      <td>많음</td>
+      <td>적음</td>
+    </tr>
+    <tr>
+      <td><strong>설정 난이도</strong></td>
+      <td>쉬움</td>
+      <td>보통</td>
+    </tr>
+    <tr>
+      <td><strong>모듈 시스템</strong></td>
+      <td>풍부함</td>
+      <td>제한적</td>
+    </tr>
+    <tr>
+      <td><strong>PHP 연동</strong></td>
+      <td>mod_php 내장</td>
+      <td>FastCGI 필수</td>
+    </tr>
+    <tr>
+      <td><strong>.htaccess</strong></td>
+      <td>지원</td>
+      <td>미지원</td>
+    </tr>
+    <tr>
+      <td><strong>대용량 트래픽</strong></td>
+      <td>제한적</td>
+      <td>우수</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="-정적-파일-vs-동적-파일">📄 정적 파일 vs 동적 파일</h2>
+
+<h3 id="정적-파일-static-files">정적 파일 (Static Files)</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- index.html - 항상 같은 내용 --&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>정적 페이지<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>안녕하세요!<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>이 내용은 항상 같아요<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li>✅ 빠른 속도</li>
+  <li>✅ 서버 부하 적음</li>
+  <li>❌ 상호작용 불가</li>
+  <li>❌ 개인화 불가</li>
+</ul>
+
+<h3 id="동적-파일-dynamic-files">동적 파일 (Dynamic Files)</h3>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- index.php - 실행할 때마다 다른 내용 --&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>동적 페이지<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>안녕하세요!<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>현재 시간: <span class="cp">&lt;?=</span> <span class="nb">date</span><span class="p">(</span><span class="s1">'Y-m-d H:i:s'</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>랜덤 숫자: <span class="cp">&lt;?=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p><strong>특징:</strong></p>
+<ul>
+  <li>✅ 실시간 데이터</li>
+  <li>✅ 사용자 맞춤 콘텐츠</li>
+  <li>❌ 서버 부하 증가</li>
+  <li>❌ 처리 시간 필요</li>
+</ul>
+
+<h2 id="-웹서버와-php의-협업">🔗 웹서버와 PHP의 협업</h2>
+
+<h3 id="기본-동작-과정">기본 동작 과정</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🤝 웹서버와 PHP의 협업
+1. 브라우저: "index.php 파일 요청"
+2. 웹서버: "PHP 파일이네? PHP 인터프리터야!"
+3. PHP: "코드 실행해서 HTML 생성"
+4. 웹서버: "생성된 HTML을 브라우저에게 전송"
+</code></pre></div></div>
+
+<h3 id="php-실행-방식들">PHP 실행 방식들</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>📡 PHP 실행 방식들
+
+1. mod_php (Apache 모듈)
+   ├── Apache와 PHP가 하나로 합쳐짐
+   ├── 빠른 시작
+   └── 메모리 사용량 큼
+
+2. PHP-FPM (FastCGI Process Manager)
+   ├── PHP가 별도 프로세스로 실행
+   ├── 안정성 높음
+   ├── 메모리 효율적
+   └── Nginx와 완벽 호환
+
+3. CGI (Common Gateway Interface)
+   ├── 요청마다 새 프로세스 생성
+   ├── 매우 느림
+   └── 현재는 거의 사용 안함
+</code></pre></div></div>
+
+<h3 id="php-fpm의-장점">PHP-FPM의 장점</h3>
+
+<p><strong>🚀 PHP-FPM (FastCGI Process Manager)</strong></p>
+<ul>
+  <li><strong>성능</strong>: 미리 실행된 프로세스 재사용으로 빠른 응답</li>
+  <li><strong>안정성</strong>: PHP 오류가 웹서버 전체에 영향 안줌</li>
+  <li><strong>확장성</strong>: 프로세스 수 동적 조절 가능</li>
+  <li><strong>모니터링</strong>: 상태 확인 및 관리 기능 제공</li>
+</ul>
+
+<h2 id="-운영환경-웹서버-설정">🌍 운영환경 웹서버 설정</h2>
+
+<h3 id="apache--php-설정">Apache + PHP 설정</h3>
+
+<p><strong>1. Apache 가상호스트 설정</strong></p>
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># /etc/apache2/sites-available/laravel.conf</span>
+<span class="p">&lt;</span><span class="nl">VirtualHost</span><span class="sr"> *:80</span><span class="p">&gt;
+</span>    <span class="nc">ServerName</span> example.com
+    <span class="nc">DocumentRoot</span> /var/www/laravel/public
+
+    <span class="p">&lt;</span><span class="nl">Directory</span><span class="sr"> /var/www/laravel/public</span><span class="p">&gt;
+</span>        <span class="nc">AllowOverride</span> <span class="ss">All</span>
+        <span class="nc">Require</span> <span class="ss">all</span> granted
+    <span class="p">&lt;/</span><span class="nl">Directory</span><span class="p">&gt;
+</span>
+    <span class="nc">ErrorLog</span> ${APACHE_LOG_DIR}/laravel_error.log
+    <span class="nc">CustomLog</span> ${APACHE_LOG_DIR}/laravel_access.log combined
+<span class="p">&lt;/</span><span class="nl">VirtualHost</span><span class="p">&gt;
+</span></code></pre></div></div>
+
+<p><strong>2. .htaccess 파일 (public 폴더)</strong></p>
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nl">IfModule</span><span class="sr"> mod_rewrite.c</span><span class="p">&gt;
+</span>    <span class="nc">RewriteEngine</span> <span class="ss">On</span>
+
+    <span class="c"># Laravel 프론트 컨트롤러로 모든 요청 전달</span>
+    <span class="nc">RewriteRule</span> ^(.*)$ index.php [QSA,L]
+<span class="p">&lt;/</span><span class="nl">IfModule</span><span class="p">&gt;
+</span></code></pre></div></div>
+
+<p><strong>3. Apache 설정 활성화</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 사이트 활성화</span>
+<span class="nb">sudo </span>a2ensite laravel.conf
+
+<span class="c"># 모드 활성화</span>
+<span class="nb">sudo </span>a2enmod rewrite
+
+<span class="c"># Apache 재시작</span>
+<span class="nb">sudo </span>systemctl restart apache2
+</code></pre></div></div>
+
+<h3 id="nginx--php-fpm-설정">Nginx + PHP-FPM 설정</h3>
+
+<p><strong>1. Nginx 설정 파일</strong></p>
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># /etc/nginx/sites-available/laravel</span>
+<span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="kn">server_name</span> <span class="s">example.com</span><span class="p">;</span>
+    <span class="kn">root</span> <span class="n">/var/www/laravel/public</span><span class="p">;</span>
+    <span class="kn">index</span> <span class="s">index.php</span><span class="p">;</span>
+
+    <span class="c1"># Gzip 압축</span>
+    <span class="kn">gzip</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">gzip_types</span> <span class="nc">text/css</span> <span class="nc">application/javascript</span> <span class="nc">text/plain</span> <span class="nc">application/xml</span><span class="p">;</span>
+
+    <span class="c1"># 정적 파일 캐싱</span>
+    <span class="kn">location</span> <span class="p">~</span><span class="sr">*</span> <span class="err">\</span><span class="s">.(css|js|png|jpg|jpeg|gif|ico|svg)</span>$ <span class="p">{</span>
+        <span class="kn">expires</span> <span class="mi">1M</span><span class="p">;</span>
+        <span class="kn">add_header</span> <span class="s">Cache-Control</span> <span class="s">"public,</span> <span class="s">immutable"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Laravel 라우팅</span>
+    <span class="kn">location</span> <span class="n">/</span> <span class="p">{</span>
+        <span class="kn">try_files</span> <span class="nv">$uri</span> <span class="nv">$uri</span><span class="n">/</span> <span class="n">/index.php?</span><span class="nv">$query_string</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># PHP 처리</span>
+    <span class="kn">location</span> <span class="p">~</span> <span class="sr">\.php$</span> <span class="p">{</span>
+        <span class="kn">fastcgi_pass</span> <span class="s">unix:/var/run/php/php8.2-fpm.sock</span><span class="p">;</span>
+        <span class="kn">fastcgi_index</span> <span class="s">index.php</span><span class="p">;</span>
+        <span class="kn">fastcgi_param</span> <span class="s">SCRIPT_FILENAME</span> <span class="nv">$realpath_root$fastcgi_script_name</span><span class="p">;</span>
+        <span class="kn">include</span> <span class="s">fastcgi_params</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># 숨김 파일 접근 차단</span>
+    <span class="kn">location</span> <span class="p">~</span> <span class="sr">/\.</span> <span class="p">{</span>
+        <span class="kn">deny</span> <span class="s">all</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>2. Nginx 설정 활성화</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 심링크 생성</span>
+<span class="nb">sudo ln</span> <span class="nt">-s</span> /etc/nginx/sites-available/laravel /etc/nginx/sites-enabled/
+
+<span class="c"># 설정 테스트</span>
+<span class="nb">sudo </span>nginx <span class="nt">-t</span>
+
+<span class="c"># Nginx 재시작</span>
+<span class="nb">sudo </span>systemctl restart nginx
+</code></pre></div></div>
+
+<h2 id="-웹서버-성능-최적화">🔧 웹서버 성능 최적화</h2>
+
+<h3 id="apache-최적화">Apache 최적화</h3>
+
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># /etc/apache2/mods-enabled/mpm_prefork.conf</span>
+<span class="p">&lt;</span><span class="nl">IfModule</span><span class="sr"> mpm_prefork_module</span><span class="p">&gt;
+</span>    <span class="nc">StartServers</span>          8
+    <span class="nc">MinSpareServers</span>       5
+    <span class="nc">MaxSpareServers</span>      20
+    <span class="nc">ServerLimit</span>         256
+    <span class="nc">MaxRequestWorkers</span>   256
+    <span class="nc">MaxConnectionsPerChild</span> 10000
+<span class="p">&lt;/</span><span class="nl">IfModule</span><span class="p">&gt;
+</span></code></pre></div></div>
+
+<h3 id="nginx-최적화">Nginx 최적화</h3>
+
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># /etc/nginx/nginx.conf</span>
+<span class="k">worker_processes</span> <span class="s">auto</span><span class="p">;</span>
+<span class="k">worker_connections</span> <span class="mi">1024</span><span class="p">;</span>
+
+<span class="k">http</span> <span class="p">{</span>
+    <span class="c1"># 버퍼 크기 최적화</span>
+    <span class="kn">client_max_body_size</span> <span class="mi">20M</span><span class="p">;</span>
+    <span class="kn">client_body_buffer_size</span> <span class="mi">128k</span><span class="p">;</span>
+
+    <span class="c1"># Keepalive 설정</span>
+    <span class="kn">keepalive_timeout</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="kn">keepalive_requests</span> <span class="mi">100</span><span class="p">;</span>
+
+    <span class="c1"># 압축 설정</span>
+    <span class="kn">gzip</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">gzip_comp_level</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="kn">gzip_min_length</span> <span class="mi">1000</span><span class="p">;</span>
+    <span class="kn">gzip_types</span> <span class="nc">text/plain</span> <span class="nc">text/css</span> <span class="nc">application/json</span> <span class="nc">application/javascript</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="php-fpm-최적화">PHP-FPM 최적화</h3>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">; /etc/php/8.2/fpm/pool.d/www.conf
+</span><span class="nn">[www]</span><span class="w">
+</span><span class="py">pm</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">dynamic</span>
+<span class="py">pm.max_children</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">50</span>
+<span class="py">pm.start_servers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">5</span>
+<span class="py">pm.min_spare_servers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">5</span>
+<span class="py">pm.max_spare_servers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">35</span>
+<span class="py">pm.max_requests</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">500</span>
+<span class="w">
+</span><span class="c">; 메모리 제한
+</span><span class="na">php_admin_value</span><span class="nn">[memory_limit]</span><span class="w"> </span><span class="na">=</span><span class="w"> </span><span class="na">256M</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="️-보안-설정">🛡️ 보안 설정</h2>
+
+<h3 id="apache-보안">Apache 보안</h3>
+
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 서버 정보 숨기기</span>
+<span class="nc">ServerTokens</span> Prod
+<span class="nc">ServerSignature</span> <span class="ss">Off</span>
+
+<span class="c"># 디렉토리 리스팅 비활성화</span>
+<span class="nc">Options</span> -Indexes
+
+<span class="c"># 위험한 파일 접근 차단</span>
+<span class="p">&lt;</span><span class="nl">Files</span><span class="sr"> ~ "^\."</span><span class="p">&gt;
+</span>    <span class="nc">Require</span> <span class="ss">all</span> denied
+<span class="p">&lt;/</span><span class="nl">Files</span><span class="p">&gt;
+</span></code></pre></div></div>
+
+<h3 id="nginx-보안">Nginx 보안</h3>
+
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 서버 정보 숨기기</span>
+<span class="k">server_tokens</span> <span class="no">off</span><span class="p">;</span>
+
+<span class="c1"># 위험한 파일 접근 차단</span>
+<span class="k">location</span> <span class="p">~</span> <span class="sr">/\.(ht|git|env)</span> <span class="p">{</span>
+    <span class="kn">deny</span> <span class="s">all</span><span class="p">;</span>
+    <span class="kn">return</span> <span class="mi">404</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1"># Rate Limiting</span>
+<span class="k">limit_req_zone</span> <span class="nv">$binary_remote_addr</span> <span class="s">zone=login:10m</span> <span class="s">rate=1r/s</span><span class="p">;</span>
+<span class="k">location</span> <span class="n">/login</span> <span class="p">{</span>
+    <span class="kn">limit_req</span> <span class="s">zone=login</span> <span class="s">burst=5</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="-웹서버-모니터링">📊 웹서버 모니터링</h2>
+
+<h3 id="apache-상태-확인">Apache 상태 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Apache 프로세스 확인</span>
+<span class="nb">sudo </span>systemctl status apache2
+
+<span class="c"># 실시간 로그 확인</span>
+<span class="nb">sudo tail</span> <span class="nt">-f</span> /var/log/apache2/access.log
+
+<span class="c"># 설정 테스트</span>
+<span class="nb">sudo </span>apache2ctl configtest
+</code></pre></div></div>
+
+<h3 id="nginx-상태-확인">Nginx 상태 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Nginx 프로세스 확인</span>
+<span class="nb">sudo </span>systemctl status nginx
+
+<span class="c"># 실시간 로그 확인</span>
+<span class="nb">sudo tail</span> <span class="nt">-f</span> /var/log/nginx/access.log
+
+<span class="c"># 설정 테스트</span>
+<span class="nb">sudo </span>nginx <span class="nt">-t</span>
+</code></pre></div></div>
+
+<h3 id="성능-측정-도구">성능 측정 도구</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Apache Bench (ab)</span>
+ab <span class="nt">-n</span> 1000 <span class="nt">-c</span> 10 http://example.com/
+
+<span class="c"># Siege</span>
+siege <span class="nt">-c</span> 10 <span class="nt">-t</span> 30s http://example.com/
+
+<span class="c"># wrk (고성능 테스트)</span>
+wrk <span class="nt">-t</span> 4 <span class="nt">-c</span> 100 <span class="nt">-d</span> 30s http://example.com/
+</code></pre></div></div>
+
+<h2 id="-웹서버-선택-가이드">🎯 웹서버 선택 가이드</h2>
+
+<h3 id="상황별-추천">상황별 추천</h3>
+
+<p><strong>📊 중소 규모 사이트</strong></p>
+<ul>
+  <li><strong>Apache</strong>: 설정 간편, 문서 풍부</li>
+  <li><strong>장점</strong>: .htaccess 지원, 모듈 다양</li>
+  <li><strong>단점</strong>: 메모리 사용량 높음</li>
+</ul>
+
+<p><strong>🚀 대용량 트래픽 사이트</strong></p>
+<ul>
+  <li><strong>Nginx</strong>: 고성능, 저메모리</li>
+  <li><strong>장점</strong>: 동시 접속 처리 우수</li>
+  <li><strong>단점</strong>: 설정 복잡, 모듈 제한</li>
+</ul>
+
+<p><strong>💰 상용 서비스</strong></p>
+<ul>
+  <li><strong>LiteSpeed</strong>: Apache 호환 + 고성능</li>
+  <li><strong>장점</strong>: 둘의 장점 결합</li>
+  <li><strong>단점</strong>: 라이선스 비용</li>
+</ul>
+
+<h2 id="-다음-단계">🚀 다음 단계</h2>
+
+<p>웹서버를 이해했다면:</p>
+
+<ol>
+  <li><strong><a href="http.html">HTTP 통신 이해하기</a></strong> - 브라우저와 서버의 대화법</li>
+  <li><strong><a href="../04-01.route-taste/index.html">🍯 라우팅 맛보기</a></strong> - URL과 페이지 연결</li>
+  <li><strong><a href="../02.Setup/index.html">Laravel 개발 환경</a></strong> - 실제 개발환경 구축</li>
+</ol>
+
+<h2 id="-정리하며">🎉 정리하며…</h2>
+
+<p><strong>웹서버의 핵심:</strong></p>
+<ul>
+  <li>🖥️ <strong>정의</strong>: 웹페이지를 제공하는 소프트웨어</li>
+  <li>⚙️ <strong>역할</strong>: HTTP 요청 처리하고 응답 생성</li>
+  <li>🔧 <strong>종류</strong>: Apache(안정), Nginx(고성능), IIS(윈도우)</li>
+  <li>📄 <strong>처리</strong>: 정적 파일 직접 제공, 동적 파일은 PHP와 협업</li>
+</ul>
+
+<p><strong>선택 기준:</strong></p>
+<ul>
+  <li>🏠 <strong>개발/소규모</strong>: Apache (설정 간편)</li>
+  <li>🏢 <strong>운영/대규모</strong>: Nginx + PHP-FPM (고성능)</li>
+  <li>💻 <strong>윈도우 환경</strong>: IIS (.NET 최적화)</li>
+</ul>
+
+<p>이제 웹서버가 <strong>어떻게 동작하는지</strong>, <strong>어떤 종류가 있는지</strong>, <strong>어떻게 설정하는지</strong> 완전히 이해했습니다! 🔥</p>
+
+<hr />
+
+<p>💡 <strong>꿀팁</strong>: 개발시에는 <code class="language-plaintext highlighter-rouge">php artisan serve</code>로 시작하고, 운영시에는 Nginx + PHP-FPM 조합을 추천합니다!</p>
+
+                        </div>
+                    </div>
+
+<!-- Right Advertisement Area -->
+<div class="col-12 col-xl-3">
+    <div class="ad-area">
+        <!-- 메인 광고 (300x600 Large Rectangle) -->
+        <div class="ad-container">
+            <h6>Advertisement</h6>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 중간 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 관련 링크 -->
+        <div class="ad-container mt-4">
+            <h6>관련 링크</h6>
+            <div class="related-links">
+                <a href="https://laravel.com/docs" target="_blank">Laravel 공식 문서</a>
+                <a href="https://php.net/docs.php" target="_blank">PHP 공식 문서</a>
+                <a href="https://getbootstrap.com/" target="_blank">Bootstrap 문서</a>
+                <a href="https://www.mysql.com/documentation/" target="_blank">MySQL 문서</a>
+                <a href="https://git-scm.com/docs" target="_blank">Git 문서</a>
+            </div>
+        </div>
+
+        <!-- 하단 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1122334455" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; 2025 JinyDev. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="/assets/w3schools-script.js"></script>
+</body>
+</html>
