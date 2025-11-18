@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laravel 백엔드 개발 완전 가이드</title>
+    <meta name="description" content="Laravel을 활용한 백엔드 개발의 모든 것 - 기초부터 고급까지">
+
+    <!-- SEO Meta Tags -->
+    
+    
+    <meta name="robots" content="index, follow">
+    
+    <meta name="language" content="ko">
+
+    <!-- Open Graph Meta Tags -->
+    
+
+    <!-- Twitter Card Meta Tags -->
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/w3schools-style.css">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+            crossorigin="anonymous"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Laravel 백엔드 개발 완전 가이드 | JinyDev</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Laravel 백엔드 개발 완전 가이드" />
+<meta name="author" content="JinyPHP Team" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="Laravel을 활용한 백엔드 개발의 모든 것 - 기초부터 고급까지" />
+<meta property="og:description" content="Laravel을 활용한 백엔드 개발의 모든 것 - 기초부터 고급까지" />
+<link rel="canonical" href="http://localhost:4000/04.backend.html" />
+<meta property="og:url" content="http://localhost:4000/04.backend.html" />
+<meta property="og:site_name" content="JinyDev" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Laravel 백엔드 개발 완전 가이드" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"JinyPHP Team"},"description":"Laravel을 활용한 백엔드 개발의 모든 것 - 기초부터 고급까지","headline":"Laravel 백엔드 개발 완전 가이드","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"JinyPHP Team"},"url":"http://localhost:4000/04.backend.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+<!-- Top Navigation -->
+<nav class="top-nav">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="/">JinyDev</a>
+        </div>
+        <div class="nav-tabs">
+            <a href="/" class="nav-tab active">HOME</a>
+            <a href="laravel.jiny.dev" class="nav-tab">Laravel</a>
+            <a href="php.jiny.dev" class="nav-tab">PHP</a>
+            <a href="linux.jiny.dev" class="nav-tab">Linux</a>
+            <a href="/04.Route/" class="nav-tab">라우팅</a>
+            <a href="/05.view/" class="nav-tab">View</a>
+            <a href="/06.templates/" class="nav-tab">Templates</a>
+            <a href="/04.jinyphp.html" class="nav-tab">JinyPHP</a>
+            <a href="git.jiny.dev" class="nav-tab">Git</a>
+            <a href="mysql.jiny.dev" class="nav-tab">MySQL</a>
+            <a href="html.jiny.dev" class="nav-tab">Html</a>
+            <a href="javascript.jiny.dev" class="nav-tab">Javascript</a>
+        </div>
+        <div class="nav-actions">
+            <button class="menu-btn d-lg-none" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h4>백엔드 개발</h4>
+            </div>
+
+            <div class="sidebar-menu">
+                <!-- Laravel 시작하기 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('laravel-start')">
+                        Laravel 시작하기
+                    </div>
+                    <div class="menu-items" id="laravel-start">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('laravel-basics')">
+                                기초 개념
+                            </div>
+                            <div class="category-items" id="laravel-basics">
+                                <a href="/01.Start/" class="menu-item">개요</a>
+                                <a href="/01.Start/01.what-is-laravel.html" class="menu-item">라라벨이란?</a>
+                                <a href="/01.Start/02.php-language.html" class="menu-item">PHP 언어</a>
+                                <a href="/01.Start/03.dependency-issues.html" class="menu-item">의존성 문제</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 개발환경 설정 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('setup')">
+                        개발환경 설정
+                    </div>
+                    <div class="menu-items" id="setup">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-install')">
+                                설치 및 설정
+                            </div>
+                            <div class="category-items" id="setup-install">
+                                <a href="/02.Setup/" class="menu-item">개요</a>
+                                <a href="/02.Setup/01.requirements.html" class="menu-item">사전 요구사항</a>
+                                <a href="/02.Setup/02.laravel-install.html" class="menu-item">Laravel 설치</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('setup-config')">
+                                환경 구성
+                            </div>
+                            <div class="category-items" id="setup-config">
+                                <a href="/02.Setup/03.database.html" class="menu-item">데이터베이스 설정</a>
+                                <a href="/02.Setup/04.local-development.html" class="menu-item">로컬 개발 환경</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 배포 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('deploy')">
+                        서버 배포
+                    </div>
+                    <div class="menu-items" id="deploy">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-setup')">
+                                서버 준비
+                            </div>
+                            <div class="category-items" id="deploy-setup">
+                                <a href="/03.deploy/" class="menu-item">개요</a>
+                                <a href="/03.deploy/01.cloud-setup.html" class="menu-item">클라우드 준비</a>
+                                <a href="/03.deploy/02.server-setup.html" class="menu-item">서버 환경 설정</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('deploy-app')">
+                                애플리케이션 배포
+                            </div>
+                            <div class="category-items" id="deploy-app">
+                                <a href="/03.deploy/03.laravel-deploy.html" class="menu-item">Laravel 배포</a>
+                                <a href="/03.deploy/04.domain-https.html" class="menu-item">도메인 HTTPS</a>
+                                <a href="/03.deploy/05.optimization.html" class="menu-item">성능 최적화</a>
+                                <a href="/03.deploy/06.github-deploy.html" class="menu-item">GitHub 배포 자동화</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 백엔드 개발 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('backend')">
+                        백엔드 개발
+                    </div>
+                    <div class="menu-items" id="backend">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('backend-basics')">
+                                기본 개념
+                            </div>
+                            <div class="category-items" id="backend-basics">
+                                <a href="/04.backend.html" class="menu-item">백엔드 개발 가이드</a>
+                                <a href="/04.backend/framework.html" class="menu-item">프레임워크의 이해</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서버 접속 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('server-access')">
+                        서버 접속
+                    </div>
+                    <div class="menu-items" id="server-access">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('server-concepts')">
+                                서버 기초 이해
+                            </div>
+                            <div class="category-items" id="server-concepts">
+                                <a href="/05.server-access/" class="menu-item">개요</a>
+                                <a href="/05.server-access/web-server.html" class="menu-item">웹서버란?</a>
+                                <a href="/05.server-access/http.html" class="menu-item">HTTP 통신</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 라우팅 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('routing-learning')">
+                        라우팅 학습
+                    </div>
+                    <div class="menu-items" id="routing-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="route-taste-detail">
+                                <a href="/06.route-taste/" class="menu-item">5분 라우팅 체험</a>
+                                <a href="/06.route-taste/what-is-url.html" class="menu-item">주소란? URL 체계 이해</a>
+                                <a href="/06.route-taste/why-routing-needed.html" class="menu-item">라우트의 필요성</a>
+                                <a href="/06.route-taste/how-routing-works.html" class="menu-item">라우트의 동작 원리</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('route-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="route-system">
+                                <a href="/04-01.route-taste/" class="menu-item">맛보기 - 5분 라우팅 체험</a>
+                                <a href="/04-02.route-beginner/" class="menu-item">초급 - 라우팅 기초 마스터</a>
+                                <a href="/04-03.route-intermediate/" class="menu-item">중급 - 네임드 라우트와 그룹</a>
+                                <a href="/04-04.route-advanced/" class="menu-item">고급 - 미들웨어와 모델바인딩</a>
+                                <a href="/04-05.route-application/" class="menu-item">응용 - 엔터프라이즈 라우팅</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 뷰 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('view-learning')">
+                        뷰 학습
+                    </div>
+                    <div class="menu-items" id="view-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-taste-detail')">
+                                맛보기 체험
+                            </div>
+                            <div class="category-items" id="view-taste-detail">
+                                <a href="/07.view-taste/" class="menu-item">뷰 맛보기</a>
+                            </div>
+                        </div>
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('view-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="view-system">
+                                <a href="/05-01.view-taste/" class="menu-item">맛보기 - 첫 번째 뷰 만들기</a>
+                                <a href="/05-02.view-beginner/" class="menu-item">초급 - 뷰와 데이터 전달</a>
+                                <a href="/05-03.view-intermediate/" class="menu-item">중급 - HTTP 응답과 리다이렉트</a>
+                                <a href="/05-04.view-advanced/" class="menu-item">고급 - API와 JSON 응답</a>
+                                <a href="/05-05.view-application/" class="menu-item">응용 - 엔터프라이즈 뷰 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 템플릿 학습 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('template-learning')">
+                        템플릿 학습
+                    </div>
+                    <div class="menu-items" id="template-learning">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('template-system')">
+                                체계적 학습
+                            </div>
+                            <div class="category-items" id="template-system">
+                                <a href="/06-01.template-taste/" class="menu-item">맛보기 - Blade 첫 만남</a>
+                                <a href="/06-02.template-beginner/" class="menu-item">초급 - Blade 기초 마스터</a>
+                                <a href="/06-03.template-intermediate/" class="menu-item">중급 - 컴포넌트와 재사용성</a>
+                                <a href="/06-04.template-advanced/" class="menu-item">고급 - 커스텀 지시어와 최적화</a>
+                                <a href="/06-05.template-application/" class="menu-item">응용 - 엔터프라이즈 템플릿 시스템</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JinyPHP 패키지 -->
+                <div class="menu-group">
+                    <div class="menu-title" onclick="toggleMenu('jinyphp')">
+                        JinyPHP 패키지
+                    </div>
+                    <div class="menu-items" id="jinyphp">
+                        <div class="menu-category">
+                            <div class="category-title" onclick="toggleMenu('jinyphp-setup')">
+                                패키지 설치
+                            </div>
+                            <div class="category-items" id="jinyphp-setup">
+                                <a href="/04.jinyphp.html" class="menu-item">패키지 설치</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 학습 진도 표시 -->
+                <div class="menu-group mt-4">
+                    <div class="learning-progress">
+                        <h6><i class="fas fa-chart-line me-2"></i>학습 진도</h6>
+                        <div class="progress-items">
+                            <div class="progress-item">
+                                <span class="level-badge level-1">🍯</span>
+                                <span>맛보기 - 5분 체험</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-2">🌱</span>
+                                <span>초급 - 기초 마스터</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-3">🚀</span>
+                                <span>중급 - 실전 활용</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-4">⚡</span>
+                                <span>고급 - 최적화</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="level-badge level-5">🔥</span>
+                                <span>응용 - 엔터프라이즈</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 도움말 -->
+                <div class="menu-group mt-3">
+                    <div class="help-section">
+                        <h6><i class="fas fa-question-circle me-2"></i>학습 가이드</h6>
+                        <div class="help-items">
+                            <div class="help-item">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                <small>단계별로 차근차근 진행하세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-code text-info me-2"></i>
+                                <small>실습 코드를 직접 작성해보세요</small>
+                            </div>
+                            <div class="help-item">
+                                <i class="fas fa-bookmark text-success me-2"></i>
+                                <small>중요한 부분은 북마크하세요</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사이드바 하단 정보 -->
+            <div class="sidebar-footer">
+                <div class="version-info">
+                    <small class="text-muted">
+                        <i class="fab fa-laravel me-1"></i>Laravel 12
+                        <br>
+                        <i class="fab fa-php me-1"></i>PHP 8.4+
+                    </small>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Content -->
+                    <div class="col-12 col-xl-9">
+                        <div class="content-wrapper">
+                            <h1 id="laravel-백엔드-개발-완전-가이드">Laravel 백엔드 개발 완전 가이드</h1>
+
+<p>Laravel을 활용한 <strong>현대적인 백엔드 개발의 모든 것</strong>을 다룹니다. 기초 개념부터 실전 프로젝트까지 체계적으로 학습할 수 있습니다.</p>
+
+<h2 id="-학습-로드맵">📚 학습 로드맵</h2>
+
+<h3 id="-기초-이해">🌟 기초 이해</h3>
+<ul>
+  <li><strong><a href="./04.backend/framework.html">프레임워크의 이해</a></strong> - Laravel 프레임워크 핵심 개념</li>
+  <li><strong><a href="./04.backend/mvc-pattern.html">MVC 패턴</a></strong> - Model-View-Controller 아키텍처</li>
+  <li><strong><a href="./04.backend/dependency-injection.html">의존성 주입</a></strong> - Laravel의 IoC 컨테이너</li>
+</ul>
+
+<h3 id="-핵심-기능">🚀 핵심 기능</h3>
+<ul>
+  <li><strong><a href="../04-01.route-taste/">라우팅 시스템</a></strong> - URL과 컨트롤러 연결</li>
+  <li><strong><a href="../05-01.view-taste/">뷰 시스템</a></strong> - 프레젠테이션 레이어</li>
+  <li><strong><a href="../06-01.template-taste/">템플릿 엔진</a></strong> - Blade 템플릿 활용</li>
+</ul>
+
+<h3 id="️-데이터-관리">🗄️ 데이터 관리</h3>
+<ul>
+  <li><strong>Eloquent ORM</strong> - 데이터베이스 모델링</li>
+  <li><strong>마이그레이션</strong> - 스키마 버전 관리</li>
+  <li><strong>시더와 팩토리</strong> - 테스트 데이터 생성</li>
+</ul>
+
+<h3 id="-보안-및-인증">🔐 보안 및 인증</h3>
+<ul>
+  <li><strong>사용자 인증</strong> - 로그인/회원가입 시스템</li>
+  <li><strong>권한 관리</strong> - Role &amp; Permission</li>
+  <li><strong>API 보안</strong> - JWT, OAuth 2.0</li>
+</ul>
+
+<h2 id="-실전-프로젝트">🎯 실전 프로젝트</h2>
+
+<h3 id="-블로그-시스템">📝 블로그 시스템</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. 프로젝트 생성</span>
+composer create-project laravel/laravel blog-system
+<span class="nb">cd </span>blog-system
+
+<span class="c"># 2. 기본 모델 생성</span>
+php artisan make:model Post <span class="nt">-m</span>
+php artisan make:model Category <span class="nt">-m</span>
+php artisan make:model Tag <span class="nt">-m</span>
+
+<span class="c"># 3. 컨트롤러 생성</span>
+php artisan make:controller PostController <span class="nt">--resource</span>
+</code></pre></div></div>
+
+<h3 id="-이커머스-api">🛒 이커머스 API</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># REST API 백엔드</span>
+php artisan make:controller Api/ProductController <span class="nt">--api</span>
+php artisan make:resource ProductResource
+php artisan make:request StoreProductRequest
+</code></pre></div></div>
+
+<h3 id="-관리자-대시보드">📊 관리자 대시보드</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 관리자 시스템</span>
+php artisan make:controller Admin/DashboardController
+php artisan make:middleware AdminAuth
+</code></pre></div></div>
+
+<h2 id="️-아키텍처-패턴">🏗️ 아키텍처 패턴</h2>
+
+<h3 id="repository-패턴">Repository 패턴</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Repository 인터페이스</span>
+<span class="kd">interface</span> <span class="nc">PostRepositoryInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getAllPosts</span><span class="p">();</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getPostById</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">createPost</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$data</span><span class="p">);</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">updatePost</span><span class="p">(</span><span class="nv">$id</span><span class="p">,</span> <span class="kt">array</span> <span class="nv">$data</span><span class="p">);</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">deletePost</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Repository 구현</span>
+<span class="kd">class</span> <span class="nc">PostRepository</span> <span class="kd">implements</span> <span class="nc">PostRepositoryInterface</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$model</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">Post</span> <span class="nv">$post</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">model</span> <span class="o">=</span> <span class="nv">$post</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getAllPosts</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">model</span><span class="o">-&gt;</span><span class="nf">paginate</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ... 기타 메서드</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="service-패턴">Service 패턴</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">PostService</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$postRepository</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$imageService</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+        <span class="kt">PostRepositoryInterface</span> <span class="nv">$postRepository</span><span class="p">,</span>
+        <span class="kt">ImageService</span> <span class="nv">$imageService</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">postRepository</span> <span class="o">=</span> <span class="nv">$postRepository</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">imageService</span> <span class="o">=</span> <span class="nv">$imageService</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">createPost</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$data</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// 비즈니스 로직</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'image'</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="nv">$data</span><span class="p">[</span><span class="s1">'image_path'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">imageService</span><span class="o">-&gt;</span><span class="nf">upload</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'image'</span><span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">postRepository</span><span class="o">-&gt;</span><span class="nf">createPost</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="-개발-도구-및-패키지">🔧 개발 도구 및 패키지</h2>
+
+<h3 id="필수-패키지">필수 패키지</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 개발 도구</span>
+composer require <span class="nt">--dev</span> barryvdh/laravel-debugbar
+composer require <span class="nt">--dev</span> laravel/telescope
+
+<span class="c"># API 개발</span>
+composer require laravel/sanctum
+composer require spatie/laravel-permission
+
+<span class="c"># 유틸리티</span>
+composer require spatie/laravel-backup
+composer require intervention/image
+</code></pre></div></div>
+
+<h3 id="코드-품질">코드 품질</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 코드 스타일</span>
+composer require <span class="nt">--dev</span> friendsofphp/php-cs-fixer
+
+<span class="c"># 정적 분석</span>
+composer require <span class="nt">--dev</span> phpstan/phpstan
+composer require <span class="nt">--dev</span> larastan/larastan
+</code></pre></div></div>
+
+<h2 id="-성능-최적화">📊 성능 최적화</h2>
+
+<h3 id="데이터베이스-최적화">데이터베이스 최적화</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// N+1 문제 해결</span>
+<span class="nv">$posts</span> <span class="o">=</span> <span class="nc">Post</span><span class="o">::</span><span class="nf">with</span><span class="p">([</span><span class="s1">'author'</span><span class="p">,</span> <span class="s1">'categories'</span><span class="p">])</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">();</span>
+
+<span class="c1">// 쿼리 최적화</span>
+<span class="nv">$posts</span> <span class="o">=</span> <span class="nc">Post</span><span class="o">::</span><span class="nf">select</span><span class="p">([</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'title'</span><span class="p">,</span> <span class="s1">'slug'</span><span class="p">])</span>
+    <span class="o">-&gt;</span><span class="nf">where</span><span class="p">(</span><span class="s1">'published_at'</span><span class="p">,</span> <span class="s1">'&lt;='</span><span class="p">,</span> <span class="nf">now</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="nf">orderBy</span><span class="p">(</span><span class="s1">'published_at'</span><span class="p">,</span> <span class="s1">'desc'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="nf">paginate</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+<span class="c1">// 인덱스 활용</span>
+<span class="nc">Schema</span><span class="o">::</span><span class="nf">table</span><span class="p">(</span><span class="s1">'posts'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="kt">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$table</span><span class="o">-&gt;</span><span class="nf">index</span><span class="p">([</span><span class="s1">'published_at'</span><span class="p">,</span> <span class="s1">'featured'</span><span class="p">]);</span>
+    <span class="nv">$table</span><span class="o">-&gt;</span><span class="nf">index</span><span class="p">(</span><span class="s1">'slug'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="캐싱-전략">캐싱 전략</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 모델 캐싱</span>
+<span class="kd">class</span> <span class="nc">Post</span> <span class="kd">extends</span> <span class="nc">Model</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getRouteKeyName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">'slug'</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">findBySlug</span><span class="p">(</span><span class="nv">$slug</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nc">Cache</span><span class="o">::</span><span class="nf">remember</span><span class="p">(</span><span class="s2">"post.</span><span class="si">{</span><span class="nv">$slug</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="mi">3600</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$slug</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">static</span><span class="o">::</span><span class="nf">where</span><span class="p">(</span><span class="s1">'slug'</span><span class="p">,</span> <span class="nv">$slug</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">firstOrFail</span><span class="p">();</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="-테스팅">🧪 테스팅</h2>
+
+<h3 id="단위-테스트">단위 테스트</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">PostTest</span> <span class="kd">extends</span> <span class="nc">TestCase</span>
+<span class="p">{</span>
+    <span class="kn">use</span> <span class="nc">RefreshDatabase</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">test_can_create_post</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="nc">User</span><span class="o">::</span><span class="nf">factory</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">();</span>
+
+        <span class="nv">$postData</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="s1">'Test Post'</span><span class="p">,</span>
+            <span class="s1">'content'</span> <span class="o">=&gt;</span> <span class="s1">'This is a test post.'</span><span class="p">,</span>
+            <span class="s1">'user_id'</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">,</span>
+        <span class="p">];</span>
+
+        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">actingAs</span><span class="p">(</span><span class="nv">$user</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="nf">post</span><span class="p">(</span><span class="s1">'/posts'</span><span class="p">,</span> <span class="nv">$postData</span><span class="p">);</span>
+
+        <span class="nv">$response</span><span class="o">-&gt;</span><span class="nf">assertStatus</span><span class="p">(</span><span class="mi">201</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">assertDatabaseHas</span><span class="p">(</span><span class="s1">'posts'</span><span class="p">,</span> <span class="nv">$postData</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="api-테스트">API 테스트</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">PostApiTest</span> <span class="kd">extends</span> <span class="nc">TestCase</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">test_can_get_posts_via_api</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nc">Post</span><span class="o">::</span><span class="nf">factory</span><span class="p">()</span><span class="o">-&gt;</span><span class="nb">count</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">();</span>
+
+        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getJson</span><span class="p">(</span><span class="s1">'/api/posts'</span><span class="p">);</span>
+
+        <span class="nv">$response</span><span class="o">-&gt;</span><span class="nf">assertStatus</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="nf">assertJsonStructure</span><span class="p">([</span>
+                <span class="s1">'data'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="s1">'*'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'title'</span><span class="p">,</span> <span class="s1">'content'</span><span class="p">,</span> <span class="s1">'created_at'</span><span class="p">]</span>
+                <span class="p">]</span>
+            <span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="-배포-및-운영">🚀 배포 및 운영</h2>
+
+<h3 id="환경-설정">환경 설정</h3>
+<pre><code class="language-env"># 프로덕션 설정
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://yourdomain.com
+
+# 성능 최적화
+QUEUE_CONNECTION=redis
+CACHE_DRIVER=redis
+SESSION_DRIVER=redis
+
+# 로깅
+LOG_CHANNEL=stack
+LOG_LEVEL=warning
+</code></pre>
+
+<h3 id="배포-스크립트">배포 스크립트</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># deploy.sh</span>
+
+<span class="nb">echo</span> <span class="s2">"Starting deployment..."</span>
+
+<span class="c"># 의존성 업데이트</span>
+composer <span class="nb">install</span> <span class="nt">--no-dev</span> <span class="nt">--optimize-autoloader</span>
+
+<span class="c"># 캐시 최적화</span>
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+
+<span class="c"># 마이그레이션</span>
+php artisan migrate <span class="nt">--force</span>
+
+<span class="c"># 권한 설정</span>
+<span class="nb">chmod</span> <span class="nt">-R</span> 755 storage bootstrap/cache
+
+<span class="nb">echo</span> <span class="s2">"Deployment completed!"</span>
+</code></pre></div></div>
+
+<h2 id="-best-practices">💡 Best Practices</h2>
+
+<h3 id="코딩-표준">코딩 표준</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// PSR-12 표준 준수</span>
+<span class="kd">class</span> <span class="nc">PostController</span> <span class="kd">extends</span> <span class="nc">Controller</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">index</span><span class="p">():</span> <span class="kt">JsonResponse</span>
+    <span class="p">{</span>
+        <span class="nv">$posts</span> <span class="o">=</span> <span class="nc">Post</span><span class="o">::</span><span class="nf">with</span><span class="p">(</span><span class="s1">'author'</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="nf">published</span><span class="p">()</span>
+            <span class="o">-&gt;</span><span class="nf">paginate</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nf">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">json</span><span class="p">([</span>
+            <span class="s1">'data'</span> <span class="o">=&gt;</span> <span class="nc">PostResource</span><span class="o">::</span><span class="nf">collection</span><span class="p">(</span><span class="nv">$posts</span><span class="p">),</span>
+            <span class="s1">'meta'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">'total'</span> <span class="o">=&gt;</span> <span class="nv">$posts</span><span class="o">-&gt;</span><span class="nf">total</span><span class="p">(),</span>
+                <span class="s1">'per_page'</span> <span class="o">=&gt;</span> <span class="nv">$posts</span><span class="o">-&gt;</span><span class="nf">perPage</span><span class="p">(),</span>
+            <span class="p">],</span>
+        <span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="보안-체크리스트">보안 체크리스트</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>CSRF 보호</strong> 활성화</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Mass Assignment</strong> 보호</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>SQL Injection</strong> 방지 (Eloquent 사용)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>XSS 방지</strong> (Blade 이스케이핑)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>HTTPS</strong> 강제 적용</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>환경 변수</strong> 보안 관리</li>
+</ul>
+
+<h2 id="-모니터링">📈 모니터링</h2>
+
+<h3 id="로그-관리">로그 관리</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 커스텀 로그 채널</span>
+<span class="s1">'channels'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">'api'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'driver'</span> <span class="o">=&gt;</span> <span class="s1">'daily'</span><span class="p">,</span>
+        <span class="s1">'path'</span> <span class="o">=&gt;</span> <span class="nf">storage_path</span><span class="p">(</span><span class="s1">'logs/api.log'</span><span class="p">),</span>
+        <span class="s1">'level'</span> <span class="o">=&gt;</span> <span class="s1">'info'</span><span class="p">,</span>
+        <span class="s1">'days'</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">],</span>
+
+<span class="c1">// 사용법</span>
+<span class="nc">Log</span><span class="o">::</span><span class="nf">channel</span><span class="p">(</span><span class="s1">'api'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">info</span><span class="p">(</span><span class="s1">'API 요청'</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">'user_id'</span> <span class="o">=&gt;</span> <span class="nf">auth</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">id</span><span class="p">(),</span>
+    <span class="s1">'endpoint'</span> <span class="o">=&gt;</span> <span class="nf">request</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">fullUrl</span><span class="p">(),</span>
+    <span class="s1">'response_time'</span> <span class="o">=&gt;</span> <span class="nv">$responseTime</span><span class="p">,</span>
+<span class="p">]);</span>
+</code></pre></div></div>
+
+<h2 id="-다음-단계">🎯 다음 단계</h2>
+
+<p>백엔드 개발 기초를 익혔다면:</p>
+
+<ol>
+  <li><strong><a href="./04.jinyphp.html">JinyPHP 패키지</a></strong> - Laravel 확장 기능 활용</li>
+  <li><strong><a href="./03.deploy/">서버 배포</a></strong> - 실제 서버 환경 구축</li>
+  <li><strong><a href="./04.backend/advanced-patterns.html">고급 개발 패턴</a></strong> - 엔터프라이즈 개발</li>
+</ol>
+
+<hr />
+
+<p><strong>네비게이션</strong></p>
+<ul>
+  <li><strong>이전</strong>: <a href="./02.Setup/04.local-development.html">로컬 개발 환경</a></li>
+  <li><strong>다음</strong>: <a href="./04.jinyphp.html">JinyPHP 패키지</a></li>
+  <li><strong>상위</strong>: <a href="./index.html">메인 가이드</a></li>
+</ul>
+
+<hr />
+
+<table>
+  <tbody>
+    <tr>
+      <td>마지막 업데이트: 2025-11-19</td>
+      <td>Laravel 12 &amp; PHP 8.4 기준</td>
+    </tr>
+  </tbody>
+</table>
+
+                        </div>
+                    </div>
+
+<!-- Right Advertisement Area -->
+<div class="col-12 col-xl-3">
+    <div class="ad-area">
+        <!-- 메인 광고 (300x600 Large Rectangle) -->
+        <div class="ad-container">
+            <h6>Advertisement</h6>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 중간 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 관련 링크 -->
+        <div class="ad-container mt-4">
+            <h6>관련 링크</h6>
+            <div class="related-links">
+                <a href="https://laravel.com/docs" target="_blank">Laravel 공식 문서</a>
+                <a href="https://php.net/docs.php" target="_blank">PHP 공식 문서</a>
+                <a href="https://getbootstrap.com/" target="_blank">Bootstrap 문서</a>
+                <a href="https://www.mysql.com/documentation/" target="_blank">MySQL 문서</a>
+                <a href="https://git-scm.com/docs" target="_blank">Git 문서</a>
+            </div>
+        </div>
+
+        <!-- 하단 광고 (300x250 Medium Rectangle) -->
+        <div class="ad-container mt-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="1122334455" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; 2025 JinyDev. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="/assets/w3schools-script.js"></script>
+</body>
+</html>
